@@ -27,6 +27,8 @@
 .rq dd{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;min-width:0}
 .val{font:500 1rem/1.4 var(--f-mono);overflow-wrap:anywhere;user-select:all;min-width:0;flex:1 1 12ch}
 .pay>.btn{align-self:flex-start;margin-top:4px}
+.exec{padding-bottom:clamp(32px,5vw,56px)}
+.exec .pay{max-width:720px}
 .how{padding-block:0 clamp(56px,8vw,100px)}
 .how ul{margin:14px 0 0;padding-left:1.1em;color:var(--graphite);max-width:62ch}
 .how li+li{margin-top:8px}
@@ -253,6 +255,21 @@ SWIFT/BIC: UNJSUAUKXXX
 Отримувач: TORKOTIUK OKSANA
 Адреса отримувача: 02096, Ukraine, Kyiv, st. Novo-Darnytska, build 6, fl. 153." data-done="Скопійовано">Копіювати всі реквізити</button>
     </article>
+</section>
+
+<section class="wrap exec" aria-labelledby="ex">
+  <article class="pay rv">
+    <header><span class="chip">Виконавець</span></header>
+    <h2 id="ex">Дані виконавця</h2>
+    <dl>
+        <div class="rq"><dt>Виконавець</dt><dd><span class="val">ФОП Торкотюк Оксана Петрівна</span><button class="btn ghost sm" type="button" data-copy="ФОП Торкотюк Оксана Петрівна" data-done="Скопійовано" aria-label="Скопіювати: Виконавець">Копіювати</button></dd></div>
+        <div class="rq"><dt>ЄДРПОУ/ІПН</dt><dd><span class="val">2915615688</span><button class="btn ghost sm" type="button" data-copy="2915615688" data-done="Скопійовано" aria-label="Скопіювати: ЄДРПОУ/ІПН">Копіювати</button></dd></div>
+        <div class="rq"><dt>Адреса</dt><dd><span class="val">м. Київ, вул. Новодарницька, 6</span><button class="btn ghost sm" type="button" data-copy="м. Київ, вул. Новодарницька, 6" data-done="Скопійовано" aria-label="Скопіювати: Адреса">Копіювати</button></dd></div>
+    </dl>
+    <button class="btn sm" type="button" data-copy="Виконавець: ФОП Торкотюк Оксана Петрівна
+ЄДРПОУ/ІПН: 2915615688
+Адреса: м. Київ, вул. Новодарницька, 6" data-done="Скопійовано">Копіювати дані виконавця</button>
+  </article>
 </section>
 
 <section class="wrap how">
