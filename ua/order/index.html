@@ -301,6 +301,7 @@ svg.dev.play .skt{animation:skfade .3s ease-out var(--dl,0s) backwards}
       <label class="fld"><span>Пишіть що завгодно, одним полем</span>
         <textarea id="msg" maxlength="2000" placeholder="Слово, побажання, питання. Якщо хочете відповідь, лишіть Telegram, телефон чи email."></textarea>
       </label>
+      <input type="text" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <p class="mute" id="hint">Контакт не обов’язковий. Не лишите, то й не дзвонитимемо.</p>
       <label class="chk"><input type="checkbox" id="wallok"><span>Це тепле слово. Можна показати його на стіні без контакту й лише після нашого схвалення.</span></label>
       <div class="acts">
@@ -342,7 +343,7 @@ svg.dev.play .skt{animation:skfade .3s ease-out var(--dl,0s) backwards}
     own: { n: "Додаток для вашої справи", s: ["Головна", "Замовлення", "Кабінет"], q: ["Клієнти не знають, що ви є", "Багато роботи робиться вручну", "Немає зв’язку з постійними клієнтами", "Заявки губляться в чатах", "Не видно, що працює, а що ні", "Хочеться, щоб було простіше"] }
   };
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var type = "", own = "", picks = [], off = 0;
+  var type = "", own = "", picks = [], off = 0, t0 = Date.now();
   var $ = function (id) { return document.getElementById(id); };
   var steps = ["s1", "s2", "s3"], dots = document.querySelectorAll(".dots li");
 
@@ -481,7 +482,7 @@ svg.dev.play .skt{animation:skfade .3s ease-out var(--dl,0s) backwards}
 
   $("send").addEventListener("click", function () {
     var text = $("msg").value.trim();
-    var payload = { type: type, own: own, picks: picks, text: text, wall: $("wallok").checked, page: location.pathname };
+    var payload = { type: type, own: own, picks: picks, text: text, wall: $("wallok").checked, page: location.pathname, hp: $("hp").value, t: Date.now() - t0 };
     function ok() {
       var has = re.test(text);
       $("doneTxt").textContent = has
