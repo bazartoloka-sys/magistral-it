@@ -1,0 +1,20 @@
+/* Пташка з прапорцем: небо над заголовком. Скопійовано з ua/index.html */
+.sky{container-type:inline-size;position:relative;height:74px;margin-top:4px;overflow:hidden}
+@media (max-width:520px){.flag .tag{display:none}}
+.flier{position:absolute;left:0;top:6px;display:grid;animation:fly 28s ease-in-out infinite}
+.flier>div{grid-area:1/1;display:flex;align-items:center;gap:0}
+.flier .toL{flex-direction:row-reverse;opacity:0}
+.flier .toR{animation:dirR 28s linear infinite}
+.flier .toL{animation:dirL 28s linear infinite}
+@keyframes fly{0%,100%{transform:translateX(0)}50%{transform:translateX(calc(100cqw - 100%))}}
+@keyframes dirR{0%,49.8%{opacity:1}50%,100%{opacity:0}}
+@keyframes dirL{0%,49.8%{opacity:0}50%,100%{opacity:1}}
+.flag{font:400 1.12rem/1 var(--f-display);white-space:nowrap;background:var(--hl);color:var(--hl-ink);border:2.5px solid var(--ink);padding:.45rem .8rem .4rem;
+  clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%)}
+.flier .toL .flag{clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%)}
+.rope{width:34px;height:2px;background:var(--ink)}
+.bird{width:58px;height:44px;flex:none;overflow:visible}
+.toL .bird{transform:scaleX(-1)}
+.wing{transform-box:fill-box;transform-origin:20% 90%;animation:flap .45s ease-in-out infinite alternate}
+@keyframes flap{from{transform:rotate(14deg)}to{transform:rotate(-26deg)}}
+@media (prefers-reduced-motion:reduce){.flier .toL{display:none}.flier .toR{opacity:1}}
