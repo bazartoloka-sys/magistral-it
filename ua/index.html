@@ -26,21 +26,30 @@
 @media (max-width:520px){.flag .tag{display:none}}
 .flier{position:absolute;left:0;top:6px;display:grid;animation:fly 28s ease-in-out infinite}
 .flier>div{grid-area:1/1;display:flex;align-items:center;gap:0}
-.flier .toL{flex-direction:row-reverse;opacity:0}
+.flier .toL{flex-direction:row-reverse;opacity:0;visibility:hidden}
 .flier .toR{animation:dirR 28s linear infinite}
 .flier .toL{animation:dirL 28s linear infinite}
 @keyframes fly{0%,100%{transform:translateX(0)}50%{transform:translateX(calc(100cqw - 100%))}}
-@keyframes dirR{0%,49.8%{opacity:1}50%,100%{opacity:0}}
-@keyframes dirL{0%,49.8%{opacity:0}50%,100%{opacity:1}}
+@keyframes dirR{0%,49.8%{opacity:1;visibility:visible}50%,100%{opacity:0;visibility:hidden}}
+@keyframes dirL{0%,49.8%{opacity:0;visibility:hidden}50%,100%{opacity:1;visibility:visible}}
 .flag{font:400 1.12rem/1 var(--f-display);white-space:nowrap;background:var(--hl);color:var(--hl-ink);border:2.5px solid var(--ink);padding:.45rem .8rem .4rem;
   clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%)}
 .flier .toL .flag{clip-path:polygon(0 0,100% 0,96% 50%,100% 100%,0 100%,4% 50%)}
 .rope{width:34px;height:2px;background:var(--ink)}
+a.flag{color:#1a0b2e;background:#c084fc;text-decoration:none;cursor:pointer}
+a.flag:hover,a.flag:focus-visible{text-decoration:underline;text-underline-offset:3px;filter:brightness(1.08)}
+.flier:hover,.flier:hover>div{animation-play-state:paused}
+.sky.promo{height:104px}
+.sky.promo .flier{top:10px}
+.sky.promo a.flag{font-size:clamp(1.05rem,3.4vw,1.75rem);padding:.7rem 1.4rem .6rem;border-width:3px}
+.sky.promo .bird{width:80px;height:61px}
+.sky.promo .rope{width:42px;height:3px}
+@media (max-width:520px){.sky.promo a.flag{padding:.55rem .9rem .5rem}.sky.promo .bird{width:62px;height:47px}.sky.promo .rope{width:26px}}
 .bird{width:58px;height:44px;flex:none;overflow:visible}
 .toL .bird{transform:scaleX(-1)}
 .wing{transform-box:fill-box;transform-origin:20% 90%;animation:flap .45s ease-in-out infinite alternate}
 @keyframes flap{from{transform:rotate(14deg)}to{transform:rotate(-26deg)}}
-@media (prefers-reduced-motion:reduce){.flier .toL{display:none}.flier .toR{opacity:1}}
+@media (prefers-reduced-motion:reduce){.flier,.flier .toR{animation:none}.flier .toL{display:none}.flier .toR{opacity:1}}
 
 /* ── hero ── */
 .hero{padding-block:0 clamp(48px,7vw,88px)}
@@ -158,6 +167,20 @@
     <path class="ln fl" d="M33 31 C28 9 52 -3 69 10 C76 15 73 27 70 32 C62 23 46 20 33 31Z"/>
   </g>
   <g id="guy"><use href="#legsS"/><use href="#guyTop"/></g>
+
+  <!-- МАРІЧКА: ступні на y=186, центр x=51, обличчя й руки ті самі, що у Василя -->
+  <g id="girlTop">
+    <path class="ln hat" d="M33 30 C24 52 25 74 29 92 L45 88 C40 74 38 60 39 44Z"/>
+    <path class="ln hat" d="M69 30 C78 52 77 74 73 92 L57 88 C62 74 64 60 63 44Z"/>
+    <path class="ln fl" d="M37 78 C30 100 24 126 20 150 L82 150 C78 126 72 100 65 78 C58 72 44 72 37 78Z"/>
+    <path class="ln" d="M42 77 C46 86 56 86 60 77"/>
+    <path class="ln thin" d="M32 116 C44 120 58 120 70 116"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M46 62 L46 72 M57 62 L57 72"/>
+    <path class="ln hat" d="M33 34 C27 8 52 -4 69 10 C76 16 74 28 69 34 C66 24 58 19 52 25 C46 19 37 24 33 34Z"/>
+    <circle class="ln thin hlf" cx="33" cy="47" r="2.4"/><circle class="ln thin hlf" cx="69" cy="47" r="2.4"/>
+  </g>
+  <g id="girl"><use href="#legsS"/><use href="#girlTop"/></g>
   <g id="armL"><path class="limb" d="M32 82 C22 100 20 120 24 138"/><path class="limb-in" d="M32 82 C22 100 20 120 24 138"/><circle class="ln fl" cx="24" cy="142" r="5"/></g>
   <g id="armR"><path class="limb" d="M70 82 C80 100 82 120 78 138"/><path class="limb-in" d="M70 82 C80 100 82 120 78 138"/><circle class="ln fl" cx="78" cy="142" r="5"/></g>
   <g id="armLup"><path class="limb" d="M32 82 C16 70 12 52 16 34"/><path class="limb-in" d="M32 82 C16 70 12 52 16 34"/><circle class="ln fl" cx="16" cy="29" r="5"/></g>
@@ -297,11 +320,11 @@
 <!-- ═══ Розділ 1. Проблема ═══ -->
 <section class="hero" id="problem">
   <div class="wrap">
-    <div class="sky" aria-hidden="true">
+    <div class="sky promo">
       <div class="flier">
         <div class="toR">
-          <span class="flag">Magistral IT<span class="tag"> · мобільні додатки для бізнесу</span></span><span class="rope"></span>
-          <svg class="bird" viewBox="0 0 58 44"><g filter="url(#pencil)">
+          <a class="flag" href="mikrosait/"><span aria-hidden="true">👉</span> Тицяй сюди: акції! <span aria-hidden="true">👈</span></a><span class="rope"></span>
+          <svg class="bird" aria-hidden="true" viewBox="0 0 58 44"><g filter="url(#pencil)">
             <path class="ln fl" d="M6 26 C10 14 30 12 40 18 C46 14 54 16 56 22 L48 24 C46 32 36 38 22 36 C14 35 8 31 6 26Z"/>
             <path class="ln hlf" d="M54 20 L58 22 L53 24Z"/><circle class="dot" cx="47" cy="19.5" r="1.6"/>
             <path class="ln fl wing" d="M20 24 C22 10 30 2 36 4 C34 12 30 20 26 26Z"/>
@@ -309,8 +332,8 @@
           </g></svg>
         </div>
         <div class="toL">
-          <span class="flag">Magistral IT<span class="tag"> · мобільні додатки для бізнесу</span></span><span class="rope"></span>
-          <svg class="bird" viewBox="0 0 58 44"><g filter="url(#pencil)">
+          <a class="flag" href="mikrosait/"><span aria-hidden="true">👉</span> Тицяй сюди: акції! <span aria-hidden="true">👈</span></a><span class="rope"></span>
+          <svg class="bird" aria-hidden="true" viewBox="0 0 58 44"><g filter="url(#pencil)">
             <path class="ln fl" d="M6 26 C10 14 30 12 40 18 C46 14 54 16 56 22 L48 24 C46 32 36 38 22 36 C14 35 8 31 6 26Z"/>
             <path class="ln hlf" d="M54 20 L58 22 L53 24Z"/><circle class="dot" cx="47" cy="19.5" r="1.6"/>
             <path class="ln fl wing" d="M20 24 C22 10 30 2 36 4 C34 12 30 20 26 26Z"/>

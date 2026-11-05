@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Безкоштовний мікросайт для магазину в TikTok та Instagram — Magistral IT</title>
+<meta name="description" content="Акція Magistral IT: безкоштовно робимо мікросайт для вашого магазину в TikTok чи Instagram з дзвінками й чатом через Голосник прямо з браузера. Історія Марічки, намальована олівцем.">
+<link rel="canonical" href="https://magistral-it.com/ua/mikrosait/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Безкоштовний мікросайт для магазину в TikTok та Instagram">
+<meta property="og:description" content="Покупці пишуть, а дійти до вас не можуть? Своя сторінка з кнопкою дзвінка — безкоштовно, за умовами акції.">
+<meta property="og:url" content="https://magistral-it.com/ua/mikrosait/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Neucha&family=Onest:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/comic.css">
+<link rel="stylesheet" href="../../assets/bird.css">
+<style>
+/* ── hero ── */
+.hero{padding-block:0 clamp(48px,7vw,88px)}
+.hero .kicker{margin-top:6px;margin-bottom:14px}
+.hero .lead{margin-top:18px}
+.hero .row{margin-top:26px}
+.hero .scene{margin-top:clamp(28px,4vw,44px)}
+.badge{display:inline-block;margin-bottom:14px;font:500 .8rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;background:var(--hl);color:var(--hl-ink);border:2px solid var(--ink);border-radius:40px;padding:.5rem .8rem}
+
+/* ── розділ 1: шквал коментарів ── */
+.blink{animation:blink 1.1s steps(1,end) infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* ── розділ 2: підказка згори (як на головній) ── */
+.descend{transform:translateY(0)}
+.play .descend{animation:descend .7s cubic-bezier(.2,1.3,.4,1) .1s backwards}
+@keyframes descend{from{transform:translateY(-320px)}}
+.tap{transform-box:view-box;transform-origin:112px 120px}
+.play .tap{animation:tap 1.2s ease-in-out .6s backwards}
+@keyframes tap{0%{transform:rotate(0)}35%{transform:rotate(-80deg)}55%{transform:rotate(-49deg)}72%{transform:rotate(-49deg)}100%{transform:rotate(0)}}
+.before{opacity:0}
+.play .before{animation:on 1.3s steps(1,end) backwards}
+.play .after{animation:off 1.3s steps(1,end) backwards}
+@keyframes on{0%,100%{opacity:1}}
+@keyframes off{0%,100%{opacity:0}}
+.stars,.bulb{opacity:0}
+.play .stars{animation:flash .6s ease-out 1.25s}
+.play .bulb{animation:flash .8s ease-out 1.45s}
+@keyframes flash{0%{opacity:0;transform:scale(.4)}20%{opacity:1;transform:scale(1.1)}75%{opacity:1;transform:scale(1)}100%{opacity:0}}
+.phone{transform-box:fill-box;transform-origin:center}
+.play .phone{animation:phonein .7s cubic-bezier(.2,1.5,.4,1) 2.1s backwards}
+@keyframes phonein{from{opacity:0;transform:scale(.3) rotate(-30deg)}}
+
+/* ── розділ 3: умови ── */
+.terms{margin-top:clamp(28px,4vw,40px);border:2.5px dashed var(--ink);border-radius:16px;padding:22px 24px;max-width:72ch}
+.terms h3{margin-bottom:8px}
+.terms ul{margin:0;padding-left:1.2em}
+.terms li{margin-top:8px;line-height:1.55}
+.terms .why{margin-top:14px;color:var(--graphite)}
+
+/* ── розділ 4: дзвінок ── */
+.ring{transform-box:fill-box;transform-origin:center}
+.play .ring{animation:ring .5s ease-in-out 2.4s 4}
+@keyframes ring{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+.wave{opacity:0}
+.play .wave{animation:wave 1s ease-out 2.4s 3}
+@keyframes wave{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+.tapdot{opacity:0;transform-box:fill-box;transform-origin:center}
+.play .tapdot{animation:tapdot .9s ease-out 1.3s 2}
+@keyframes tapdot{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(1.6)}}
+.line-call{stroke-dasharray:9 9;opacity:0}
+.play .line-call{animation:linecall .6s ease-out 1.9s forwards,flowdash 1s linear 1.9s infinite}
+@keyframes linecall{to{opacity:1}}
+@keyframes flowdash{to{stroke-dashoffset:-18}}
+
+/* ── розділ 5: заявка ── */
+.cta{padding-block:clamp(64px,9vw,120px);border-top:2px dashed color-mix(in srgb,var(--ink) 28%,transparent)}
+.apply{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:860px){.apply{grid-template-columns:1fr}.apply .side{order:-1;max-width:420px}}
+.side .bubble{font-size:clamp(1.1rem,1.9vw,1.35rem)}
+.side svg{display:block;width:120px;height:auto;margin:18px 0 0 auto}
+.fld{display:block;margin-top:22px}
+.fld>span{display:block;font:500 .78rem/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+.fld input,.fld textarea{width:100%;font:400 1.05rem/1.5 var(--f-body);color:var(--ink);background:var(--paper);border:2.5px solid var(--ink);border-radius:12px;padding:.8rem 1rem}
+.fld textarea{min-height:110px;resize:vertical}
+.fld input[aria-invalid="true"]{border-style:dashed;background:color-mix(in srgb,var(--hl) 22%,var(--paper))}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;background:var(--paper-2);border:2.5px solid var(--ink);border-radius:14px;padding:12px 16px;cursor:pointer;font-size:1.02rem}
+.opt input{width:18px;height:18px;accent-color:var(--ink);flex:none}
+.opt:has(input:checked){background:var(--hl);color:var(--hl-ink)}
+.mute{margin-top:16px;color:var(--graphite);font-size:.95rem}
+.acts{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:4px 4px 0 var(--ink);transform:none}
+.stamp{display:inline-block;transform:rotate(-6deg);border:4px solid var(--ink);padding:.4rem 1.1rem;font:400 2rem/1 var(--f-display);margin-top:24px}
+#done h2:focus{outline:none}
+</style>
+</head>
+<body>
+<!-- kit:start -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <filter id="pencil" x="-4%" y="-4%" width="108%" height="108%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="7" class="hl-line"/>
+  </pattern>
+
+  <!-- ВАСИЛЬ та перехожі: ступні на y=186, центр x=51 -->
+  <g id="legsS">
+    <path class="limb" d="M43 134 L41 178"/><path class="limb-in" d="M43 134 L41 178"/>
+    <path class="limb" d="M59 134 L61 178"/><path class="limb-in" d="M59 134 L61 178"/>
+    <path class="ln fl" d="M30 187 C30 180 44 178 47 181 L47 187Z"/>
+    <path class="ln fl" d="M72 187 C72 180 58 178 55 181 L55 187Z"/>
+  </g>
+  <g id="legsA">
+    <path class="limb" d="M59 134 L80 156 L90 178"/><path class="limb-in" d="M59 134 L80 156 L90 178"/>
+    <path class="limb" d="M43 134 L30 164 L14 158"/><path class="limb-in" d="M43 134 L30 164 L14 158"/>
+    <circle class="ln fl" cx="94" cy="180" r="6"/><circle class="ln fl" cx="10" cy="156" r="6"/>
+  </g>
+  <g id="legsB">
+    <path class="limb" d="M43 134 L66 160 L76 182"/><path class="limb-in" d="M43 134 L66 160 L76 182"/>
+    <path class="limb" d="M59 134 L50 166 L32 172"/><path class="limb-in" d="M59 134 L50 166 L32 172"/>
+    <circle class="ln fl" cx="80" cy="184" r="6"/><circle class="ln fl" cx="27" cy="173" r="6"/>
+  </g>
+  <g id="guyTop">
+    <path class="ln fl" d="M30 78 C26 100 28 120 30 136 L72 136 C74 118 76 98 70 78 C62 74 40 74 30 78Z"/>
+    <path class="ln" d="M51 84 L51 134"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M36 62 C44 70 60 70 68 62 L70 76 C60 84 44 84 34 76Z"/>
+    <path class="ln fl" d="M60 78 L66 116 L75 111 L69 76Z"/>
+    <path class="ln fl" d="M33 31 C28 9 52 -3 69 10 C76 15 73 27 70 32 C62 23 46 20 33 31Z"/>
+  </g>
+  <g id="guy"><use href="#legsS"/><use href="#guyTop"/></g>
+
+  <!-- МАРІЧКА: ступні на y=186, центр x=51, обличчя й руки ті самі, що у Василя -->
+  <g id="girlTop">
+    <path class="ln hat" d="M33 30 C24 52 25 74 29 92 L45 88 C40 74 38 60 39 44Z"/>
+    <path class="ln hat" d="M69 30 C78 52 77 74 73 92 L57 88 C62 74 64 60 63 44Z"/>
+    <path class="ln fl" d="M37 78 C30 100 24 126 20 150 L82 150 C78 126 72 100 65 78 C58 72 44 72 37 78Z"/>
+    <path class="ln" d="M42 77 C46 86 56 86 60 77"/>
+    <path class="ln thin" d="M32 116 C44 120 58 120 70 116"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M46 62 L46 72 M57 62 L57 72"/>
+    <path class="ln hat" d="M33 34 C27 8 52 -4 69 10 C76 16 74 28 69 34 C66 24 58 19 52 25 C46 19 37 24 33 34Z"/>
+    <circle class="ln thin hlf" cx="33" cy="47" r="2.4"/><circle class="ln thin hlf" cx="69" cy="47" r="2.4"/>
+  </g>
+  <g id="girl"><use href="#legsS"/><use href="#girlTop"/></g>
+  <g id="armL"><path class="limb" d="M32 82 C22 100 20 120 24 138"/><path class="limb-in" d="M32 82 C22 100 20 120 24 138"/><circle class="ln fl" cx="24" cy="142" r="5"/></g>
+  <g id="armR"><path class="limb" d="M70 82 C80 100 82 120 78 138"/><path class="limb-in" d="M70 82 C80 100 82 120 78 138"/><circle class="ln fl" cx="78" cy="142" r="5"/></g>
+  <g id="armLup"><path class="limb" d="M32 82 C16 70 12 52 16 34"/><path class="limb-in" d="M32 82 C16 70 12 52 16 34"/><circle class="ln fl" cx="16" cy="29" r="5"/></g>
+  <g id="armRup"><path class="limb" d="M70 82 C86 70 90 52 86 34"/><path class="limb-in" d="M70 82 C86 70 90 52 86 34"/><circle class="ln fl" cx="86" cy="29" r="5"/></g>
+  <g id="armRcup">
+    <path class="limb" d="M70 82 C84 96 86 108 80 112 L62 104"/><path class="limb-in" d="M70 82 C84 96 86 108 80 112 L62 104"/>
+    <path class="ln fl" d="M50 92 L52 110 L64 110 L66 92Z"/><path class="ln" d="M66 96 C72 96 72 104 65 105"/>
+    <path class="ln steam" d="M55 88 C52 82 58 78 55 72 M61 88 C58 82 64 78 61 72"/>
+  </g>
+  <g id="armsRun">
+    <path class="limb" d="M32 84 L16 104 L34 120"/><path class="limb-in" d="M32 84 L16 104 L34 120"/>
+    <path class="limb" d="M70 84 L88 98 L76 84"/><path class="limb-in" d="M70 84 L88 98 L76 84"/>
+  </g>
+  <g id="fSad">
+    <circle class="dot" cx="45" cy="45" r="1.8"/><circle class="dot" cx="58" cy="45" r="1.8"/>
+    <path class="ln thin" d="M39 37 L48 40 M64 37 L55 40"/>
+    <path class="ln thin" d="M45 57 C49 52 55 52 59 57"/>
+  </g>
+  <g id="fHappy">
+    <path class="ln thin" d="M40 45 C43 40 48 40 50 45 M54 45 C56 40 61 40 64 45"/>
+    <path class="ln thin fl" d="M43 51 C47 62 59 62 63 51Z"/>
+  </g>
+  <g id="fWow">
+    <circle class="ln thin fl" cx="45" cy="44" r="3.6"/><circle class="ln thin fl" cx="58" cy="44" r="3.6"/>
+    <circle class="dot" cx="46" cy="44" r="1.3"/><circle class="dot" cx="59" cy="44" r="1.3"/>
+    <path class="ln thin" d="M40 35 C43 32 47 32 50 35 M54 35 C57 32 61 32 64 35"/>
+    <ellipse class="ln thin fl" cx="52" cy="55" rx="4" ry="5"/>
+  </g>
+  <g id="fFire">
+    <path class="ln thin hlf" d="M41 47 C39 41 44 39 44 35 C47 39 50 41 48 47Z"/>
+    <path class="ln thin hlf" d="M55 47 C53 41 58 39 58 35 C61 39 64 41 62 47Z"/>
+    <path class="ln thin fl" d="M43 52 C47 61 58 61 62 52Z"/>
+  </g>
+
+  <!-- РОЗРОБНИК: ступні на y=186 -->
+  <g id="devTop">
+    <path class="ln fl" d="M29 80 C25 104 27 122 29 136 L75 136 C77 120 79 102 73 80 C66 72 38 72 29 80Z"/>
+    <path class="ln" d="M38 76 C44 90 62 90 68 76"/>
+    <path class="ln fl" d="M41 112 L63 112 L61 128 L43 128Z"/>
+    <path class="ln fl" d="M35 40 C35 58 42 66 52 66 C62 66 69 58 69 40"/>
+    <path class="ln fl" d="M33 40 C31 12 72 12 71 40 C60 33 44 33 33 40Z"/>
+    <path class="ln" d="M33 39 L71 39"/>
+    <circle class="ln" cx="44" cy="52" r="6"/><circle class="ln" cx="61" cy="52" r="6"/><path class="ln" d="M50 52 L55 52"/>
+    <circle class="dot" cx="44" cy="52" r="1.6"/><circle class="dot" cx="61" cy="52" r="1.6"/>
+    <path class="ln" d="M46 60 C50 64 57 64 60 60"/>
+  </g>
+  <g id="dev"><use href="#legsS"/><use href="#devTop"/></g>
+
+  <!-- ПЕРЕХОЖИЙ з телефоном -->
+  <g id="ped">
+    <path class="limb" d="M46 136 L38 180"/><path class="limb-in" d="M46 136 L38 180"/>
+    <path class="limb" d="M60 136 L68 178"/><path class="limb-in" d="M60 136 L68 178"/>
+    <path class="ln fl" d="M26 187 C26 181 38 179 41 182 L41 187Z"/><path class="ln fl" d="M62 187 C62 181 74 179 77 182 L77 187Z"/>
+    <path class="ln fl" d="M38 70 C33 98 34 122 38 138 L70 138 C72 116 72 92 64 70 C56 64 44 64 38 70Z"/>
+    <circle class="ln fl" cx="56" cy="48" r="14"/>
+    <path class="ln fl" d="M42 46 C42 30 66 30 70 44 C60 38 50 40 42 46Z"/>
+    <path class="limb" d="M44 82 C50 102 62 108 72 100 L75 84"/><path class="limb-in" d="M44 82 C50 102 62 108 72 100 L75 84"/>
+    <rect class="ln scr" x="68" y="62" width="14" height="24" rx="2.5" transform="rotate(10 75 74)"/>
+  </g>
+
+  <!-- ЦИФРОВИЙ ГЕФЕСТ: ступні на y=300, дивиться праворуч. Плече з молотом — точка обертання (112,120) -->
+  <g id="hLegsS">
+    <path class="limb" d="M72 222 L68 290"/><path class="limb-in" d="M72 222 L68 290"/>
+    <path class="limb" d="M94 222 L98 290"/><path class="limb-in" d="M94 222 L98 290"/>
+    <path class="ln fl" d="M50 300 C50 292 66 290 72 294 L74 300Z"/><path class="ln fl" d="M94 300 C94 292 112 290 118 296 L118 300Z"/>
+    <path class="ln thin" d="M60 284 L74 294 M98 284 L110 294"/>
+  </g>
+  <g id="hLegsA">
+    <path class="limb" d="M94 222 L116 256 L126 290"/><path class="limb-in" d="M94 222 L116 256 L126 290"/>
+    <path class="limb" d="M72 222 L58 258 L40 284"/><path class="limb-in" d="M72 222 L58 258 L40 284"/>
+    <ellipse class="ln fl" cx="132" cy="294" rx="13" ry="6"/><ellipse class="ln fl" cx="34" cy="288" rx="12" ry="6" transform="rotate(-25 34 288)"/>
+  </g>
+  <g id="hLegsB">
+    <path class="limb" d="M72 222 L92 258 L100 292"/><path class="limb-in" d="M72 222 L92 258 L100 292"/>
+    <path class="limb" d="M94 222 L84 260 L66 288"/><path class="limb-in" d="M94 222 L84 260 L66 288"/>
+    <ellipse class="ln fl" cx="106" cy="296" rx="13" ry="6"/><ellipse class="ln fl" cx="60" cy="292" rx="12" ry="6" transform="rotate(-20 60 292)"/>
+  </g>
+  <g id="hBody">
+    <path class="limb" d="M54 122 L28 160 L50 186"/><path class="limb-in" d="M54 122 L28 160 L50 186"/>
+    <circle class="ln fl" cx="52" cy="186" r="6"/>
+    <path class="ln fl" d="M50 112 C44 150 40 190 36 226 L128 226 C124 190 120 150 114 112 C104 102 60 102 50 112Z"/>
+    <path class="ln" d="M52 114 C72 140 98 168 124 196"/>
+    <path class="ln thin" d="M58 160 L50 222 M84 186 L82 224 M106 200 L110 224"/>
+    <path class="ln thick" d="M44 178 C70 186 96 186 121 178"/>
+    <path class="ln thin" d="M38 226 L48 219 L60 226 L72 219 L84 226 L96 219 L108 226 L120 219 L128 226"/>
+    <path class="ln fl" d="M64 48 C62 76 70 92 86 92 C102 92 110 76 108 48Z"/>
+    <path class="ln fl" d="M106 60 C118 64 116 74 104 74"/>
+    <path class="ln thin" d="M60 50 C52 54 54 62 60 62 C52 66 54 74 62 74"/>
+    <path class="ln fl" d="M62 72 C52 88 54 108 66 118 C70 128 84 132 92 126 C102 132 114 122 112 108 C120 96 116 80 108 72 C100 84 72 86 62 72Z"/>
+    <path class="ln thin" d="M72 96 c4 -5 9 0 4 4 M90 104 c4 -5 9 0 4 4 M100 90 c4 -5 9 0 4 4 M80 114 c4 -5 9 0 4 4 M66 104 c4 -5 9 0 4 4"/>
+    <path class="ln fl" d="M78 82 C86 75 98 75 106 82 C98 87 86 87 78 82Z"/>
+    <path class="ln hlf" d="M58 48 C58 16 112 16 112 48Z"/>
+    <path class="ln thin" d="M85 21 L85 47 M72 26 C70 34 70 40 70 47"/>
+    <path class="ln hlf" d="M50 46 L122 46 L124 53 L48 53Z"/>
+  </g>
+  <g id="hSmug">
+    <path class="ln" d="M76 63 C80 60 86 60 90 63 M95 63 C98 60 102 60 105 63"/>
+    <path class="ln thick" d="M74 56 L91 53 M93 53 L106 56"/>
+  </g>
+  <g id="hLook">
+    <circle class="ln fl" cx="84" cy="63" r="4.5"/><circle class="ln fl" cx="100" cy="63" r="4.5"/>
+    <circle class="dot" cx="84" cy="64" r="1.9"/><circle class="dot" cx="100" cy="64" r="1.9"/>
+    <path class="ln thick" d="M75 53 L91 57 M93 57 L107 52"/>
+  </g>
+  <!-- рука з молотом у спокої: молот стоїть головою на землі -->
+  <g id="hArm">
+    <path class="limb" d="M142 176 L146 266"/><path class="limb-in" d="M142 176 L146 266"/>
+    <rect class="ln thick hat" x="106" y="260" width="80" height="40" rx="5"/>
+    <rect class="ln fl" x="124" y="270" width="44" height="20" rx="3"/>
+    <text class="t" x="146" y="286" font-size="15" style="font-family:var(--f-mono)">&lt;/&gt;</text>
+    <path class="limb" d="M112 120 L134 156 L141 184"/><path class="limb-in" d="M112 120 L134 156 L141 184"/>
+    <circle class="ln fl" cx="141" cy="186" r="7"/>
+  </g>
+</defs>
+</svg>
+<!-- kit:end -->
+
+<header class="wrap top">
+  <a class="logo" href="../" aria-label="Magistral IT — на головну">
+    <svg viewBox="0 0 34 34" aria-hidden="true"><g filter="url(#pencil)"><path class="ln fl" d="M5 29 L8 21 L24 5 L29 10 L13 26Z"/><path class="ln" d="M8 21 L13 26 M21 8 L26 13"/><path class="ln hlf" d="M24 5 L29 10 L31 8 L26 3Z"/></g></svg>
+    <span>Magistral<b>IT</b></span>
+  </a>
+  <nav class="nav" aria-label="Розділи сайту">
+    <a href="../">Історія</a>
+    <a href="../cases/">Кейси</a>
+    <a href="../blog/">Блог</a>
+    <a href="../order/">Замовити</a>
+  </nav>
+</header>
+
+<main>
+<!-- ═══ Розділ 1. Проблема ═══ -->
+<section class="hero" id="problem">
+  <div class="wrap">
+    <div class="sky" aria-hidden="true">
+      <div class="flier">
+        <div class="toR">
+          <span class="flag">Magistral IT<span class="tag"> · мікросайти для магазинів</span></span><span class="rope"></span>
+          <svg class="bird" viewBox="0 0 58 44"><g filter="url(#pencil)">
+            <path class="ln fl" d="M6 26 C10 14 30 12 40 18 C46 14 54 16 56 22 L48 24 C46 32 36 38 22 36 C14 35 8 31 6 26Z"/>
+            <path class="ln hlf" d="M54 20 L58 22 L53 24Z"/><circle class="dot" cx="47" cy="19.5" r="1.6"/>
+            <path class="ln fl wing" d="M20 24 C22 10 30 2 36 4 C34 12 30 20 26 26Z"/>
+            <path class="ln" d="M6 26 L0 22 M6 26 L0 30"/>
+          </g></svg>
+        </div>
+        <div class="toL">
+          <span class="flag">Magistral IT<span class="tag"> · мікросайти для магазинів</span></span><span class="rope"></span>
+          <svg class="bird" viewBox="0 0 58 44"><g filter="url(#pencil)">
+            <path class="ln fl" d="M6 26 C10 14 30 12 40 18 C46 14 54 16 56 22 L48 24 C46 32 36 38 22 36 C14 35 8 31 6 26Z"/>
+            <path class="ln hlf" d="M54 20 L58 22 L53 24Z"/><circle class="dot" cx="47" cy="19.5" r="1.6"/>
+            <path class="ln fl wing" d="M20 24 C22 10 30 2 36 4 C34 12 30 20 26 26Z"/>
+            <path class="ln" d="M6 26 L0 22 M6 26 L0 30"/>
+          </g></svg>
+        </div>
+      </div>
+    </div>
+
+    <span class="badge">Акція · мікросайт безкоштовно</span>
+    <p class="kicker">Розділ 1 · Проблема</p>
+    <h1>«Покупці пишуть, а <span class="mark">дійти до мене</span> не можуть»</h1>
+    <p class="lead">Це Марічка. Вона в'яже светри й продає їх у TikTok та Instagram. Коментарі сиплються під кожним відео, директ переповнений, і відповісти всім вона просто не встигає. Частина покупців так і не дочекалася відповіді.</p>
+    <div class="row">
+      <a class="btn" href="#hint">Що було далі?</a>
+      <a class="btn ghost" href="#apply">Хочу мікросайт</a>
+    </div>
+
+    <div class="scene">
+      <svg viewBox="0 0 960 380" role="img" aria-label="Олівцевий малюнок: Марічка веде пряму трансляцію перед кільцевою лампою з телефоном, а навколо неї сиплються коментарі: Ціна? А розмір M є? Скиньте в директ! Ще актуально? Лічильник показує 99+ непрочитаних">
+        <rect class="bg" width="960" height="380"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="364" style="--t:1.3s"/>
+          <path class="ln d" d="M14 350 L946 350" style="--dl:.2s"/>
+          <path class="ln d thin" d="M40 362 L120 362 M330 364 L450 364 M640 362 L760 362" style="--dl:.4s"/>
+          <!-- кільцева лампа з телефоном -->
+          <g style="--dl:.3s;--t:1.2s">
+            <circle class="ln d thick" cx="150" cy="140" r="62"/>
+            <circle class="ln d thin" cx="150" cy="140" r="50"/>
+            <path class="ln d" d="M150 202 L150 334 M150 334 L112 350 M150 334 L188 350 M150 334 L150 350"/>
+          </g>
+          <g class="pop" style="--dl:.7s">
+            <rect class="ln scr" x="132" y="108" width="36" height="62" rx="6"/>
+            <circle class="dot" cx="150" cy="116" r="2"/>
+            <rect class="ln hlf" x="98" y="58" width="56" height="24" rx="5"/>
+            <circle class="dot blink" cx="110" cy="70" r="4"/>
+            <text class="t y" x="132" y="76" font-size="16">LIVE</text>
+          </g>
+          <!-- Марічка -->
+          <g class="pop" style="--dl:.5s"><g transform="translate(250 144) scale(1.1)"><use href="#girl"/><use href="#armL"/><use href="#armRup"/><use href="#fWow"/></g></g>
+          <!-- коментарі -->
+          <g class="pop" style="--dl:1s">
+            <rect class="ln fl" x="430" y="34" width="120" height="46" rx="14"/>
+            <path class="ln fl" d="M446 80 L436 96 L466 80"/>
+            <text class="t" x="490" y="64" font-size="21">Ціна?</text>
+          </g>
+          <g class="pop" style="--dl:1.25s">
+            <rect class="ln fl" x="600" y="46" width="190" height="46" rx="14"/>
+            <path class="ln fl" d="M616 92 L606 108 L636 92"/>
+            <text class="t" x="695" y="76" font-size="21">А розмір M є?</text>
+          </g>
+          <g class="pop" style="--dl:1.5s">
+            <rect class="ln hlf" x="470" y="128" width="216" height="46" rx="14"/>
+            <path class="ln hlf" d="M486 174 L476 190 L506 174"/>
+            <text class="t y" x="578" y="158" font-size="21">Скиньте в директ!</text>
+          </g>
+          <g class="pop" style="--dl:1.75s">
+            <rect class="ln fl" x="730" y="138" width="190" height="46" rx="14"/>
+            <path class="ln fl" d="M746 184 L736 200 L766 184"/>
+            <text class="t" x="825" y="168" font-size="21">Ще актуально??</text>
+          </g>
+          <g class="pop" style="--dl:2s">
+            <rect class="ln fl" x="430" y="226" width="200" height="46" rx="14"/>
+            <path class="ln fl" d="M446 272 L436 288 L466 272"/>
+            <text class="t" x="530" y="256" font-size="21">Ау, відповідайте!</text>
+          </g>
+          <g class="pop" style="--dl:2.25s">
+            <rect class="ln fl" x="672" y="232" width="170" height="46" rx="14"/>
+            <path class="ln fl" d="M688 278 L678 294 L708 278"/>
+            <text class="t" x="757" y="262" font-size="21">Як замовити?</text>
+          </g>
+          <g class="pop" style="--dl:2.6s">
+            <rect class="ln hlf thick" x="740" y="300" width="196" height="40" rx="8"/>
+            <text class="t y" x="838" y="327" font-size="19">Непрочитаних: 99+</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 2. Підказка згори ═══ -->
+<section class="chapter" id="hint">
+  <div class="wrap">
+    <p class="kicker ch">Розділ 2 · Підказка згори</p>
+    <div class="scene">
+      <svg viewBox="0 0 960 380" role="img" aria-label="Олівцевий малюнок: з хмари бог-майстер у касці легенько стукає Марічку молотом, над нею загоряється лампочка й перетворюється на смартфон, а Марічка вигукує: Евріка! Мені потрібна своя сторінка з кнопкою дзвінка">
+        <rect class="bg" width="960" height="380"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="364" style="--t:1.3s"/>
+          <path class="ln d" d="M14 350 L946 350" style="--dl:.2s"/>
+          <!-- Гефест на хмарі -->
+          <g class="descend">
+            <path class="ln thin" d="M150 150 L150 112 M196 146 L196 100 M236 152 L236 118"/>
+            <g transform="translate(110 5) scale(.7)">
+              <use href="#hLegsS"/>
+              <use href="#hBody"/>
+              <use href="#hLook"/>
+              <g class="tap"><use href="#hArm"/></g>
+            </g>
+            <path class="ln fl" d="M110 238 C84 238 80 210 106 206 C108 184 140 178 156 194 C168 176 204 178 210 198 C236 192 252 214 238 232 C252 246 226 252 214 244 C200 256 170 256 160 244 C146 256 116 254 110 238Z"/>
+          </g>
+          <!-- Марічка -->
+          <g transform="translate(234 143) scale(1.1)">
+            <use href="#girl"/><use href="#armL"/>
+            <g class="before"><use href="#armR"/><use href="#fSad"/></g>
+            <g class="after"><use href="#armRup"/><use href="#fWow"/></g>
+          </g>
+          <g class="stars fit"><path class="ln thin" d="M262 132 L254 118 M292 124 L292 108 M322 132 L332 118 M246 146 L232 142 M338 146 L352 142"/></g>
+          <g class="bulb fit">
+            <path class="ln hlf" d="M300 30 C286 30 282 46 290 56 C294 61 294 64 294 68 L306 68 C306 64 306 61 310 56 C318 46 314 30 300 30Z"/>
+            <path class="ln" d="M294 72 L306 72 M296 76 L304 76"/>
+          </g>
+          <g class="phone">
+            <g transform="rotate(-8 300 50)">
+              <rect class="ln hlf" x="286" y="24" width="28" height="48" rx="5"/>
+              <rect class="ln fl" x="290" y="30" width="20" height="33" rx="2"/>
+              <path class="ln thin" d="M294 37 L306 37 M294 43 L306 43"/>
+              <rect class="ln thin hlf" x="293" y="50" width="14" height="8" rx="2"/>
+              <circle class="dot" cx="300" cy="68" r="1.4"/>
+            </g>
+            <path class="ln thin" d="M300 16 L300 6 M276 26 L268 18 M324 26 L332 18 M270 50 L260 50 M330 50 L340 50"/>
+          </g>
+          <!-- Евріка -->
+          <g class="pop" style="--dl:2.3s">
+            <path class="ln fl" d="M446 40 L926 40 L926 236 L520 236 L404 196 L486 236 L446 236Z"/>
+            <text class="t" x="686" y="98" font-size="50">Евріка!</text>
+            <text class="t" x="686" y="146" font-size="27">Мені потрібна своя сторінка,</text>
+            <text class="t" x="686" y="182" font-size="27">де покупець одразу дзвонить!</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="copy">
+      <div class="rv">
+        <h2>Не ще один чат. <span class="mark">Своя сторінка</span></h2>
+      </div>
+      <p class="lead rv" style="--dl:.1s">Наш цифровий бог-майстер знову при ділі. Цього разу лампочка стає посиланням у профілі, а за ним маленький сайт Марічки: товари, ціни й кнопка «Подзвонити». Покупець тисне й одразу чує Марічку, без довгого листування й без пошуку номера.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 3. Три кроки ═══ -->
+<section class="chapter" id="steps">
+  <div class="wrap">
+    <p class="kicker ch">Розділ 3 · Умови акції</p>
+    <div class="copy" style="margin-top:0">
+      <div class="rv">
+        <h2>Три кроки, і сторінка <span class="mark">ваша</span></h2>
+      </div>
+    </div>
+    <ol class="steps rv" style="margin-top:clamp(24px,4vw,36px)">
+      <li><h3>Встановіть Голосник</h3><p>Через нього вам і дзвонитимуть покупці з вашої сторінки. <a href="https://play.google.com/apps/testing/ua.toloka.holosnyk" target="_blank" rel="noopener">Встановити з Google Play</a> або завантажити на <a href="https://golosnik.com.ua/" target="_blank" rel="noopener">golosnik.com.ua</a>.</p></li>
+      <li><h3>Надішліть заявку</h3><p>Обов'язково з посиланням на ваш магазин у TikTok чи Instagram і вашим Community ID у Голосникові.</p></li>
+      <li><h3>Отримайте сторінку</h3><p>Збираємо мікросайт з вашими товарами, кнопками дзвінка й чату та показуємо вам до публікації.</p></li>
+    </ol>
+    <div class="row rv" style="margin-top:30px">
+      <a class="btn" href="https://play.google.com/apps/testing/ua.toloka.holosnyk" target="_blank" rel="noopener">Встановити Голосник</a>
+      <a class="btn ghost" href="https://golosnik.com.ua/" target="_blank" rel="noopener">golosnik.com.ua</a>
+    </div>
+    <div class="terms rv">
+      <h3>Чесно про умови</h3>
+      <ul>
+        <li>Розробка мікросайту безкоштовна.</li>
+        <li>Домен і хостинг ваші. Якщо їх ще немає, допоможемо обрати й придбати, а оплачуєте їх ви.</li>
+        <li>Без встановленого Голосника й посилання на магазин заявку не розглядаємо.</li>
+      </ul>
+      <p class="why">Навіщо це нам? Так ми розвиваємо Голосник і показуємо на живих прикладах, як працюють наші рішення для бізнесу.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 4. Результат ═══ -->
+<section class="chapter" id="result">
+  <div class="wrap">
+    <p class="kicker ch">Розділ 4 · Результат</p>
+    <div class="scene">
+      <svg viewBox="0 0 960 380" role="img" aria-label="Олівцевий малюнок: покупчиня відкриває сторінку Марічки на телефоні й тисне Подзвонити, пунктирна лінія йде до Марічки, у якої дзвонить Голосник. Покупчиня питає: А розмір M є? Марічка відповідає: Є! Відправлю сьогодні">
+        <rect class="bg" width="960" height="380"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="364" style="--t:1.3s"/>
+          <path class="ln d" d="M14 350 L946 350" style="--dl:.2s"/>
+          <!-- покупчиня -->
+          <g class="pop" style="--dl:.4s"><g transform="translate(40 156) scale(1.05)"><use href="#ped"/></g></g>
+          <g class="pop" style="--dl:2.8s">
+            <rect class="ln fl" x="24" y="36" width="210" height="48" rx="14"/>
+            <path class="ln fl" d="M96 84 L104 104 L120 84"/>
+            <text class="t" x="129" y="67" font-size="22">А розмір M є?</text>
+          </g>
+          <!-- сторінка Марічки -->
+          <g style="--dl:.5s;--t:1s">
+            <rect class="ln d fl thick" x="290" y="26" width="196" height="318" rx="24"/>
+            <rect class="ln d pf" x="304" y="54" width="168" height="262" rx="6"/>
+            <path class="ln d" d="M366 40 L410 40"/>
+          </g>
+          <g class="pop" style="--dl:.9s">
+            <rect class="ln hlf" x="304" y="54" width="168" height="34"/>
+            <text class="t y" x="388" y="78" font-size="17">Марічка · светри</text>
+            <rect class="ln hat" x="314" y="98" width="46" height="50" rx="4"/>
+            <rect class="ln hat" x="365" y="98" width="46" height="50" rx="4"/>
+            <rect class="ln hat" x="416" y="98" width="46" height="50" rx="4"/>
+            <path class="ln thin" d="M316 160 L380 160 M392 160 L460 160"/>
+          </g>
+          <g class="pop" style="--dl:1.1s">
+            <rect class="ln hlf thick" x="318" y="178" width="140" height="44" rx="12"/>
+            <text class="t y" x="388" y="207" font-size="20">Подзвонити</text>
+            <rect class="ln fl" x="318" y="232" width="140" height="40" rx="12"/>
+            <text class="t" x="388" y="258" font-size="19">Написати</text>
+          </g>
+          <circle class="ln thick tapdot" cx="430" cy="200" r="16"/>
+          <!-- лінія дзвінка -->
+          <path class="ln line-call" d="M470 200 C540 120 620 110 700 150"/>
+          <g class="pop" style="--dl:2s">
+            <text class="t g" x="590" y="112" font-size="18">напряму, без номерів</text>
+          </g>
+          <!-- Марічка з телефоном -->
+          <g class="pop" style="--dl:.6s"><g transform="translate(760 144) scale(1.1)"><use href="#girl"/><use href="#armL"/><use href="#armRup"/><use href="#fHappy"/></g></g>
+          <g class="ring" >
+            <rect class="ln hlf thick" x="840" y="150" width="30" height="50" rx="6"/>
+            <rect class="ln fl" x="845" y="158" width="20" height="30" rx="2"/>
+          </g>
+          <path class="ln thin wave" d="M880 160 C888 168 888 182 880 190 M890 152 C902 164 902 186 890 198 M830 160 C822 168 822 182 830 190"/>
+          <g class="pop" style="--dl:2.2s">
+            <rect class="ln fl" x="590" y="252" width="150" height="36" rx="10"/>
+            <path class="ln fl" d="M740 262 L762 254 L740 276"/>
+            <text class="t" x="665" y="276" font-size="18">Голосник: дзвінок</text>
+          </g>
+          <g class="pop" style="--dl:3.3s">
+            <rect class="ln hlf" x="640" y="36" width="270" height="48" rx="14"/>
+            <path class="ln hlf" d="M830 84 L842 104 L854 84"/>
+            <text class="t y" x="775" y="67" font-size="22">Є! Відправлю сьогодні</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="copy">
+      <div class="rv">
+        <h2>Дзвінок <span class="mark">прямо зі сторінки</span></h2>
+      </div>
+      <p class="lead rv" style="--dl:.1s">Покупчиня відкриває посилання в профілі Марічки й тисне «Подзвонити», а в Марічки дзвонить Голосник. Покупчині нічого не треба встановлювати, а номерами телефонів ніхто не обмінюється.</p>
+    </div>
+    <div class="bar rv" style="--dl:.2s">
+      <span class="chip">Дзвінок і чат з браузера</span>
+      <span class="chip">Без номерів телефонів</span>
+      <span class="chip">Ваша адреса, ваш бренд</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 5. Заявка ═══ -->
+<section class="cta" id="apply">
+  <div class="wrap">
+    <p class="kicker" style="margin-bottom:18px">Розділ 5 · Заявка</p>
+    <div class="apply">
+      <div>
+        <h2 id="ask">Хочете таку сторінку <span class="mark">для свого магазину</span>?</h2>
+        <form id="form" novalidate>
+          <label class="fld"><span>Посилання на ваш магазин у TikTok або Instagram *</span>
+            <input type="url" id="link" inputmode="url" autocomplete="url" maxlength="300" placeholder="https://www.tiktok.com/@ваш_магазин" required>
+          </label>
+          <label class="fld"><span>Ваш Community ID у Голосникові *</span>
+            <input type="text" id="gid" maxlength="20" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ГЛС-8527-ИБС" required>
+            <p class="mute" style="margin-top:8px">Три літери, чотири цифри, три літери. Його видно у вашому профілі в Голосникові.</p>
+          </label>
+          <fieldset class="fld" style="border:0;padding:0;margin-inline:0">
+            <span>Домен і хостинг</span>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="domain" value="own"> Уже є свої</label>
+              <label class="opt"><input type="radio" name="domain" value="help" checked> Потрібна допомога з придбанням</label>
+              <label class="opt"><input type="radio" name="domain" value="ask"> Ще не знаю</label>
+            </div>
+          </fieldset>
+          <label class="fld"><span>Побажання (необов'язково)</span>
+            <textarea id="note" maxlength="500" placeholder="Наприклад: що продаєте, які кольори любите, що має бути на сторінці"></textarea>
+          </label>
+          <input type="text" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <div class="acts">
+            <button type="submit" class="btn" id="send">Хочу мікросайт</button>
+          </div>
+          <p class="mute" id="err" role="alert" hidden></p>
+          <p class="mute">Відповімо в Голосник за вашим Community ID. Телефон чи email не потрібні.</p>
+          <p class="mute">Ще немає Голосника? <a href="https://play.google.com/apps/testing/ua.toloka.holosnyk" target="_blank" rel="noopener">Встановити з Google Play</a> або <a href="https://golosnik.com.ua/" target="_blank" rel="noopener">golosnik.com.ua</a>.</p>
+        </form>
+        <div id="done" hidden>
+          <h2 tabindex="-1">Заявку отримали</h2>
+          <div class="stamp">ПРИЙНЯТО</div>
+          <p class="lead" style="margin-top:20px">Подивимось ваш магазин і напишемо вам у Голосник. Сторінку покажемо до публікації.</p>
+          <div class="acts"><a class="btn" href="../cases/">Подивитися кейси</a><a class="btn ghost" href="../">До історії Василя</a></div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="bubble rv">
+          <p>Марічка вигадана, а мікросайт буде цілком справжній. Надсилайте заявку, ми подивимось ваш магазин і покажемо сторінку до публікації.</p>
+        </div>
+        <svg viewBox="10 0 100 195" aria-hidden="true"><g filter="url(#pencil)"><use href="#dev"/><use href="#armL"/><use href="#armRup"/></g></svg>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 Magistral IT</span>
+  <span><a href="../cases/">Кейси</a> · <a href="../order/">Замовити</a> · <a href="../pay/">Реквізити</a> · magistral-it.com</span>
+</footer>
+
+<script src="../../assets/comic.js"></script>
+<script>
+(function () {
+  var ENDPOINT = "https://magistral-order.bazartoloka.workers.dev/";
+  var t0 = Date.now();
+  function $(id) { return document.getElementById(id); }
+  var LET = "[\\p{Script=Cyrillic}A-Z]";
+  var GID = new RegExp("^(" + LET + "{3})[-\\s_–—]*(\\d{4})[-\\s_–—]*(" + LET + "{3})$", "u");
+  function gidNorm(v) {
+    var m = String(v || "").trim().toUpperCase().match(GID);
+    return m ? m[1] + "-" + m[2] + "-" + m[3] : "";
+  }
+  function shopLink(v) {
+    var u;
+    try { u = new URL(String(v || "").trim()); } catch (e) { return ""; }
+    if (u.protocol !== "https:" && u.protocol !== "http:") return "";
+    var h = u.hostname.toLowerCase();
+    var ok = ["instagram.com", "tiktok.com"].some(function (d) { return h === d || h.slice(-(d.length + 1)) === "." + d; });
+    return ok ? u.href : "";
+  }
+  var MSG = {
+    link: "Потрібне посилання на ваш магазин у TikTok або Instagram, наприклад https://www.tiktok.com/@ваш_магазин",
+    gid: "Вкажіть ID у форматі ГЛС-8527-ИБС: три літери, чотири цифри, три літери.",
+    slow: "Забагато заявок з цієї адреси. Спробуйте ще раз за кілька хвилин.",
+    fail: "Не вдалося надіслати. Спробуйте ще раз трохи згодом."
+  };
+  function fail(key, field) {
+    $("err").textContent = MSG[key]; $("err").hidden = false;
+    ["link", "gid"].forEach(function (f) { $(f).removeAttribute("aria-invalid"); });
+    if (field) { $(field).setAttribute("aria-invalid", "true"); $(field).focus(); }
+  }
+  $("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    $("err").hidden = true;
+    var link = shopLink($("link").value);
+    var gid = gidNorm($("gid").value);
+    if (!link) return fail("link", "link");
+    if (!gid) return fail("gid", "gid");
+    var pick = document.querySelector('input[name="domain"]:checked');
+    var payload = { kind: "mikrosait", link: link, gid: gid, domain: pick ? pick.value : "", note: $("note").value.trim(), page: location.pathname, hp: $("hp").value, t: Date.now() - t0 };
+    $("send").disabled = true;
+    fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+      .then(function (r) {
+        if (r.ok) {
+          $("form").hidden = true; $("ask").hidden = true; $("done").hidden = false;
+          $("done").querySelector("h2").focus();
+          return;
+        }
+        return r.text().then(function (t) {
+          if (t === "link") fail("link", "link");
+          else if (t === "gid") fail("gid", "gid");
+          else if (r.status === 429) fail("slow");
+          else fail("fail");
+        });
+      })
+      .catch(function () { fail("fail"); })
+      .then(function () { $("send").disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
