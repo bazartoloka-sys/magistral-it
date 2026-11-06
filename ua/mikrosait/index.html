@@ -123,10 +123,13 @@
 .demo-av{width:14.36cqw;height:14.36cqw;border-radius:50%;background:#F6B79C;border:2px solid #4B2C1F;display:flex;align-items:center;justify-content:center;flex:none;transition:background .2s}
 .demo-av span{font:800 5.64cqw/1 'Onest',sans-serif;color:#4B2C1F}
 .demo-name{font:800 5.13cqw/1.1 'Onest',sans-serif;color:#4B2C1F}
-.demo-badge{margin-top:1.03cqw;display:inline-block;font:700 3.08cqw/1 'Onest',sans-serif;padding:0.51cqw 2.05cqw;border-radius:10px;background:#F3C35F;border:1.5px solid #4B2C1F;color:#4B2C1F}
+.demo-badge{margin-top:1.03cqw;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:700 3.08cqw/1 'Onest',sans-serif;padding:0.51cqw 2.05cqw;border-radius:10px;background:#F3C35F;border:1.5px solid #4B2C1F;color:#4B2C1F;transition:background .2s}
 .demo-cart{margin-left:auto;width:11.28cqw;height:11.28cqw;border-radius:50%;border:2px solid #4B2C1F;background:#fff;display:flex;align-items:center;justify-content:center;flex:none}
 .demo-cart svg{width:5.64cqw;height:5.64cqw}
-.demo-grid{position:absolute;left:5.13cqw;top:29.74cqw;width:89.74cqw;height:129.23cqw;box-sizing:border-box;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3.59cqw}
+.demo-grid{position:absolute;left:5.13cqw;top:29.74cqw;width:89.74cqw;height:117.95cqw;box-sizing:border-box;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3.59cqw}
+.demo-pay{position:absolute;left:5.13cqw;top:150.77cqw;width:89.74cqw}
+.demo-pay-btn{width:100%;height:12.31cqw;border-radius:14px;border:2px solid #4B2C1F;display:flex;align-items:center;justify-content:center;gap:2.05cqw;font:800 3.59cqw/1 'Onest',sans-serif;color:#4B2C1F;cursor:pointer;transition:background .2s}
+.demo-pay-btn svg{width:5.13cqw;height:5.13cqw;flex:none}
 .demo-card{background:#fff;border:2px solid #4B2C1F;border-radius:14px;padding:2.05cqw;box-sizing:border-box;display:flex;flex-direction:column;gap:1.54cqw;min-width:0;min-height:0}
 .demo-ph{flex:1;min-height:0;border-radius:10px;background:#F6E6D2;display:flex;align-items:center;justify-content:center;font:700 2.82cqw/1 'Onest',sans-serif;color:#8A6A58;text-align:center}
 .demo-pname{font:700 3.59cqw/1.2 'Onest',sans-serif;color:#4B2C1F;padding:0 1.03cqw}
@@ -924,7 +927,7 @@
   <div class="demo-av" id="demoAv"><span id="demoAvLetter">В</span></div>
   <div style="flex:1;min-width:0">
     <div class="demo-name" id="demoName">В'язаний затишок</div>
-    <div class="demo-badge">на Базарі</div>
+    <div class="demo-badge" id="demoBadge">В'язання і хендмейд</div>
   </div>
   <button class="demo-cart" aria-label="Кошик" type="button">
     <svg viewBox="0 0 24 24" fill="none" stroke="#4B2C1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H6"/></svg>
@@ -936,6 +939,12 @@
   <article class="demo-card"><div class="demo-ph">фото товару</div><div class="demo-pname" data-p="2-name">Светр</div><div class="demo-pprice"><span data-p="2-price">650</span> ₴</div></article>
   <article class="demo-card"><div class="demo-ph">фото товару</div><div class="demo-pname" data-p="3-name">Рукавички</div><div class="demo-pprice"><span data-p="3-price">180</span> ₴</div></article>
 </main>
+  <section class="demo-pay">
+    <button type="button" class="demo-pay-btn" id="demoPayBtn" style="background:#F6B79C">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4B2C1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+      Оплатити замовлення
+    </button>
+  </section>
   <section class="demo-bar" aria-hidden="true">
   <div class="demo-bar-grid">
     <div class="demo-bar-btn" style="background:#E5836A"><svg viewBox="0 0 24 24" fill="none" stroke="#4B2C1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Аудіо</div>
@@ -1058,18 +1067,23 @@
   }
 
   var DEMO_THEMES = {
-    A1: { store: "В'язаний затишок", avatar: "В", avatarColor: "#F6B79C", products: [["Шапка","320"],["Шарф","280"],["Светр","650"],["Рукавички","180"]] },
-    A2: { store: "Базар від Марічки", avatar: "Б", avatarColor: "#F3C35F", products: [["Футболка","250"],["Сукня","420"],["Джинси","550"],["Шарф","180"]] },
-    A3: { store: "ТехноБазар", avatar: "Т", avatarColor: "#E5836A", products: [["Навушники","650"],["Колонка","890"],["Кабель","120"],["Чохол","150"]] },
-    A4: { store: "Майстерня шиття", avatar: "М", avatarColor: "#F6B79C", products: [["Тканина","180"],["Нитки","45"],["Викрійка","90"],["Ґудзики","25"]] },
-    A5: { store: "АудіоХаб", avatar: "А", avatarColor: "#F3C35F", products: [["Навушники","750"],["Колонка","990"],["Мікрофон","650"],["Кабель","120"]] },
-    A6: { store: "Крок стиль", avatar: "К", avatarColor: "#E5836A", products: [["Кросівки","890"],["Сумка","650"],["Капці","280"],["Рюкзак","720"]] },
-    A7: { store: "Догляд від душі", avatar: "Д", avatarColor: "#F6B79C", products: [["Крем","320"],["Помада","180"],["Парфуми","650"],["Щітка","150"]] },
-    A8: { store: "Малятко shop", avatar: "М", avatarColor: "#F3C35F", products: [["Іграшка","250"],["Пляшечка","120"],["Пустушка","60"],["Брязкальце","90"]] },
-    A9: { store: "Зелений світ", avatar: "З", avatarColor: "#E5836A", products: [["Фікус","350"],["Горщик","120"],["Насіння","40"],["Лійка","180"]] },
-    A10: { store: "Моя вітрина", avatar: "М", avatarColor: "#F6B79C", products: [["Товар 1","250"],["Товар 2","350"],["Товар 3","180"],["Товар 4","420"]] }
+    A1: { store: "В'язаний затишок", avatar: "В", avatarColor: "#F6B79C", category: "В'язання і хендмейд", products: [["Шапка","320"],["Шарф","280"],["Светр","650"],["Рукавички","180"]] },
+    A2: { store: "Базар від Марічки", avatar: "Б", avatarColor: "#F3C35F", category: "Базар, одяг", products: [["Футболка","250"],["Сукня","420"],["Джинси","550"],["Шарф","180"]] },
+    A3: { store: "ТехноБазар", avatar: "Т", avatarColor: "#E5836A", category: "Техніка, гаджети", products: [["Навушники","650"],["Колонка","890"],["Кабель","120"],["Чохол","150"]] },
+    A4: { store: "Майстерня шиття", avatar: "М", avatarColor: "#F6B79C", category: "Швейна справа", products: [["Тканина","180"],["Нитки","45"],["Викрійка","90"],["Ґудзики","25"]] },
+    A5: { store: "АудіоХаб", avatar: "А", avatarColor: "#F3C35F", category: "Навушники, колонки", products: [["Навушники","750"],["Колонка","990"],["Мікрофон","650"],["Кабель","120"]] },
+    A6: { store: "Крок стиль", avatar: "К", avatarColor: "#E5836A", category: "Взуття і сумки", products: [["Кросівки","890"],["Сумка","650"],["Капці","280"],["Рюкзак","720"]] },
+    A7: { store: "Догляд від душі", avatar: "Д", avatarColor: "#F6B79C", category: "Косметика і догляд", products: [["Крем","320"],["Помада","180"],["Парфуми","650"],["Щітка","150"]] },
+    A8: { store: "Малятко shop", avatar: "М", avatarColor: "#F3C35F", category: "Дитячі речі", products: [["Іграшка","250"],["Пляшечка","120"],["Пустушка","60"],["Брязкальце","90"]] },
+    A9: { store: "Зелений світ", avatar: "З", avatarColor: "#E5836A", category: "Рослини і сад", products: [["Фікус","350"],["Горщик","120"],["Насіння","40"],["Лійка","180"]] },
+    A10: { store: "Моя вітрина", avatar: "М", avatarColor: "#F6B79C", category: "Універсальний", products: [["Товар 1","250"],["Товар 2","350"],["Товар 3","180"],["Товар 4","420"]] }
   };
   var selectedAccent = null;
+  function applyAccent(color) {
+    $("demoAv").style.background = color;
+    $("demoBadge").style.background = color;
+    $("demoPayBtn").style.background = color;
+  }
   function showDemo(code) {
     var t = DEMO_THEMES[code];
     if (!t) return;
@@ -1080,7 +1094,8 @@
     });
     $("demoName").textContent = t.store;
     $("demoAvLetter").textContent = t.avatar;
-    $("demoAv").style.background = selectedAccent || t.avatarColor;
+    $("demoBadge").textContent = t.category;
+    applyAccent(selectedAccent || t.avatarColor);
     t.products.forEach(function (p, i) {
       var nameEl = phone.querySelector('[data-p="' + i + '-name"]');
       var priceEl = phone.querySelector('[data-p="' + i + '-price"]');
@@ -1106,7 +1121,7 @@
   document.querySelectorAll(".demo-color").forEach(function (btn) {
     btn.addEventListener("click", function () {
       selectedAccent = btn.getAttribute("data-color");
-      $("demoAv").style.background = selectedAccent;
+      applyAccent(selectedAccent);
       document.querySelectorAll(".demo-color").forEach(function (b) {
         b.classList.toggle("active", b === btn);
       });
