@@ -114,6 +114,11 @@
 .demo-wrap{margin:clamp(20px,3vw,32px) 0 clamp(28px,4vw,40px);display:flex;flex-direction:column;align-items:center;gap:10px}
 .demo-phone{position:relative;width:min(390px,94vw);aspect-ratio:390/844;container-type:inline-size;border:3px solid var(--ink);border-radius:30px;overflow:hidden;background:#FBF3E6;box-shadow:4px 4px 0 var(--ink);flex:none}
 .demo-hint{font:500 .9rem/1.4 var(--f-body);color:var(--graphite);text-align:center;max-width:46ch}
+.demo-hint-sm{font-size:.82rem;max-width:34ch;margin-top:2px}
+.demo-colors{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:4px}
+.demo-color{width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);cursor:pointer;padding:0;flex:none;box-shadow:2px 2px 0 var(--ink);transition:transform .15s}
+.demo-color:hover{transform:translateY(-2px)}
+.demo-color.active{outline:3px solid var(--hl-ink);outline-offset:2px}
 .demo-hd{position:absolute;left:0;top:0;width:100%;box-sizing:border-box;padding:5.13cqw 5.13cqw 0;display:flex;align-items:center;gap:3.08cqw}
 .demo-av{width:14.36cqw;height:14.36cqw;border-radius:50%;background:#F6B79C;border:2px solid #4B2C1F;display:flex;align-items:center;justify-content:center;flex:none;transition:background .2s}
 .demo-av span{font:800 5.64cqw/1 'Onest',sans-serif;color:#4B2C1F}
@@ -941,6 +946,17 @@
 </section>
   <footer class="demo-foot">Розроблено Магістраль-ІТ</footer>
 </div>
+      <div class="demo-colors" id="demoColors" role="group" aria-label="Колір акценту вітрини">
+        <button type="button" class="demo-color" data-color="#F6B79C" style="background:#F6B79C" aria-label="Персиковий"></button>
+        <button type="button" class="demo-color" data-color="#F3C35F" style="background:#F3C35F" aria-label="Золотистий"></button>
+        <button type="button" class="demo-color" data-color="#E5836A" style="background:#E5836A" aria-label="Теракотовий"></button>
+        <button type="button" class="demo-color" data-color="#7FE9F4" style="background:#7FE9F4" aria-label="Бірюзовий"></button>
+        <button type="button" class="demo-color" data-color="#9ED8B0" style="background:#9ED8B0" aria-label="М'ятний"></button>
+        <button type="button" class="demo-color" data-color="#C9A8E0" style="background:#C9A8E0" aria-label="Лавандовий"></button>
+        <button type="button" class="demo-color" data-color="#F2A6C6" style="background:#F2A6C6" aria-label="Рожевий"></button>
+        <button type="button" class="demo-color" data-color="#A8C8E8" style="background:#A8C8E8" aria-label="Небесно-блакитний"></button>
+      </div>
+      <p class="demo-hint demo-hint-sm">Колір акценту — лише приклад, підбираємо під твій бренд індивідуально</p>
     </div>
   </div>
 </section>
@@ -1053,6 +1069,7 @@
     A9: { store: "Зелений світ", avatar: "З", avatarColor: "#E5836A", products: [["Фікус","350"],["Горщик","120"],["Насіння","40"],["Лійка","180"]] },
     A10: { store: "Моя вітрина", avatar: "М", avatarColor: "#F6B79C", products: [["Товар 1","250"],["Товар 2","350"],["Товар 3","180"],["Товар 4","420"]] }
   };
+  var selectedAccent = null;
   function showDemo(code) {
     var t = DEMO_THEMES[code];
     if (!t) return;
@@ -1063,7 +1080,7 @@
     });
     $("demoName").textContent = t.store;
     $("demoAvLetter").textContent = t.avatar;
-    $("demoAv").style.background = t.avatarColor;
+    $("demoAv").style.background = selectedAccent || t.avatarColor;
     t.products.forEach(function (p, i) {
       var nameEl = phone.querySelector('[data-p="' + i + '-name"]');
       var priceEl = phone.querySelector('[data-p="' + i + '-price"]');
@@ -1086,6 +1103,15 @@
     });
   });
   showDemo("A1");
+  document.querySelectorAll(".demo-color").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      selectedAccent = btn.getAttribute("data-color");
+      $("demoAv").style.background = selectedAccent;
+      document.querySelectorAll(".demo-color").forEach(function (b) {
+        b.classList.toggle("active", b === btn);
+      });
+    });
+  });
   $("form").addEventListener("submit", function (e) {
     e.preventDefault();
     $("err").hidden = true;
