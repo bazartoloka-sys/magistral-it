@@ -1,0 +1,33 @@
+# Magistral IT
+
+> IT-агенція Magistral IT: мобільні застосунки та інтернет-рішення для бізнесу. Розробник P2P-месенджера Голосник і маркетплейсу Базар Толока.
+
+Magistral IT робить мобільні застосунки та інтернет-рішення для бізнесу. Замовлення починається з ідеї клієнта: на сторінці замовлення ми показуємо ескіз застосунку для його типу бізнесу.
+
+## Екосистема Толока
+
+- [Голосник](https://golosnik.com.ua/): P2P-месенджер, розробник Magistral IT.
+- [Базар Толока](https://bazar.in.ua/): маркетплейс, розробник Magistral IT. Єдиний акаунт і спільний внутрішній баланс із Голосником.
+- [Безкоштовний мікросайт для продавців TikTok та Instagram](https://magistral-it.com/ua/mikrosait/): вітрина з вбудованим Голосником.
+- [Інструкція: як зареєструвати мікросайт](https://magistral-it.com/ua/mikrosait/instruktsiya/): покроково, зі скриншотами.
+
+## Ключові сторінки
+
+- [Історія Magistral IT](https://magistral-it.com/ua/): як ми працюємо, у вигляді коміксу.
+- [Кейси](https://magistral-it.com/ua/cases/): Базар Толока та Голосник.
+- [Замовити рішення](https://magistral-it.com/ua/order/): форма замовлення.
+- [Блог](https://magistral-it.com/ua/blog/): статті для замовників застосунків і продавців.
+
+## Статті
+
+- [Скільки коштує мобільний додаток](https://magistral-it.com/ua/blog/skilky-koshtuye-dodatok/)
+- [Скільки часу займає розробка додатка](https://magistral-it.com/ua/blog/skilky-chasu-rozrobka-dodatka/)
+- [Що таке MVP](https://magistral-it.com/ua/blog/shcho-take-mvp/)
+- [Як вибрати розробника додатків](https://magistral-it.com/ua/blog/yak-vybraty-rozrobnyka/)
+- [Додаток чи сайт: що обрати бізнесу](https://magistral-it.com/ua/blog/dodatok-chy-sait/)
+- [Безкоштовний мікросайт для продавців TikTok та Instagram](https://magistral-it.com/ua/blog/bezkoshtovnyi-mikrosait-tiktok-instagram/)
+- [Як створити безкоштовний сайт для TikTok та Instagram](https://magistral-it.com/ua/blog/yak-stvoryty-bezkoshtovnyi-sait-tiktok-instagram/)
+
+## Мови
+
+Основна версія українською. Англійська та польська версії готуються.
