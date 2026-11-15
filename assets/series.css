@@ -1,0 +1,48 @@
+/* Magistral IT — серіал «Навіщо ми це зробили»: спільні стилі серій. */
+.ser-bar{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;margin-top:8px}
+.eps{display:flex;flex-wrap:wrap;gap:8px}
+.eps a,.eps span{font:500 .8rem/1 var(--f-mono);border:2px solid var(--ink);padding:.5rem .7rem;border-radius:40px;text-decoration:none;min-width:2.4rem;text-align:center}
+.eps a:hover{background:var(--paper-2)}
+.eps [aria-current="page"]{background:var(--hl);color:var(--hl-ink)}
+.eps span{opacity:.45;border-style:dashed}
+
+.ep-title{margin-top:14px}
+.ep-title .lead{margin-top:14px}
+
+/* слово розробника перед сценою */
+.devsay{display:grid;grid-template-columns:clamp(88px,15vw,160px) minmax(0,1fr);gap:clamp(18px,3.4vw,40px);align-items:end;margin-top:clamp(22px,3.4vw,40px)}
+.devsay svg{width:100%;height:auto;display:block}
+.devsay .bubble{font-size:clamp(1.1rem,2vw,1.4rem)}
+.devsay .bubble::before{content:"";position:absolute;left:-15px;bottom:38px;width:26px;height:26px;background:var(--paper-2);
+  border-left:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:rotate(45deg)}
+.devsay .kicker{margin-bottom:10px;display:block}
+
+/* штамп «навіщо» */
+.why{margin-top:clamp(40px,6vw,72px);padding:clamp(20px,3vw,30px) clamp(20px,3.4vw,40px);background:var(--hl);color:var(--hl-ink);
+  border:3px solid var(--ink);border-radius:255px 18px 225px 18px/18px 225px 18px 255px;box-shadow:6px 6px 0 var(--ink);
+  transform:rotate(-.7deg);display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px clamp(18px,3vw,32px);align-items:center}
+.why .w{font:400 clamp(1.8rem,4.6vw,3.2rem)/1 var(--f-display);letter-spacing:.07em;border:3px double var(--hl-ink);padding:.18em .42em .1em;transform:rotate(-3deg);white-space:nowrap}
+.why p{font:400 clamp(1.15rem,2.2vw,1.5rem)/1.35 var(--f-display)}
+@media (max-width:640px){.why{grid-template-columns:1fr}.why .w{justify-self:start}}
+
+/* навігація між серіями */
+.ep-nav{margin-top:clamp(36px,5vw,56px);padding-top:28px;border-top:2px dashed color-mix(in srgb,var(--ink) 28%,transparent);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.ep-nav .row{margin:0}
+.ep-cta{margin-top:clamp(40px,6vw,64px)}
+.ep-cta h2{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+.ep-cta .row{margin-top:22px}
+
+/* картки серій на хабі */
+.note .no{font:500 .78rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--graphite);display:block;margin-bottom:10px}
+.note .btn{margin-top:16px}
+.note.soon{opacity:.62;border-style:dashed}
+.note a.stretch{text-decoration:none}
+
+/* анімації сцен */
+.slide{transform:translateX(0)}
+.play .slide{animation:slidein 1s cubic-bezier(.2,.9,.3,1.05) 2.2s backwards}
+@keyframes slidein{from{transform:translateX(260px)}}
+.sweat{opacity:0}
+.play .sweat{animation:sweat 1.4s ease-in 1.6s infinite}
+@keyframes sweat{0%{opacity:0;transform:translateY(-6px)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+.flyline{stroke-dasharray:5 7;animation:steam 1.6s linear infinite}
