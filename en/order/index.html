@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Order a solution — Magistral IT</title>
+<meta name="description" content="Tell us what your business does and we will show you a sketch of an app for it. No forms, no interrogation.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://magistral-it.com/en/order/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Neucha&family=Onest:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/comic.css">
+<style>
+.ord{max-width:860px;padding-block:clamp(16px,3vw,40px) clamp(56px,8vw,96px)}
+.dots{display:flex;gap:10px;margin:14px 0 26px;padding:0;list-style:none}
+.dots li{width:34px;height:9px;border:2px solid var(--ink);border-radius:9px}
+.dots li.on{background:var(--hl)}
+.step[hidden]{display:none}
+.talk{display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:end}
+.talk .dev{width:96px;height:auto;display:block}
+.say{background:var(--paper-2);border:2.5px solid var(--ink);border-radius:255px 14px 225px 14px/14px 225px 14px 255px;padding:20px 26px 22px}
+.say h1{font-size:clamp(1.8rem,4.4vw,2.8rem);max-width:none}
+.say p{margin-top:10px;color:var(--graphite)}
+.say:focus,.say h1:focus{outline:none}
+@media (max-width:560px){.talk{grid-template-columns:64px minmax(0,1fr);gap:12px}.talk .dev{width:64px}}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:14px;margin-top:26px}
+.pick{font:400 1.3rem/1.2 var(--f-display);color:var(--ink);text-align:left;background:var(--paper-2);border:2.5px solid var(--ink);border-radius:255px 14px 225px 14px/14px 225px 14px 255px;padding:16px 16px;cursor:pointer;transition:transform .15s,background .15s}
+.pick:hover{transform:translateY(-2px) rotate(-.6deg)}
+.pick[aria-pressed="true"]{background:var(--hl);color:var(--hl-ink)}
+.fld{display:block;margin-top:22px}
+.fld span{display:block;font:500 .78rem/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+.fld input,.fld textarea{width:100%;font:400 1.05rem/1.5 var(--f-body);color:var(--ink);background:var(--paper);border:2.5px solid var(--ink);border-radius:12px;padding:.8rem 1rem}
+.fld textarea{min-height:150px;resize:vertical}
+.mute{margin-top:16px;color:var(--graphite);font-size:.95rem}
+.acts{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:4px 4px 0 var(--ink);transform:none}
+.sk{margin-top:26px}
+.sk h2{font-size:clamp(1.6rem,3.6vw,2.3rem)}
+.sk svg{display:block;width:100%;height:auto;margin-top:18px}
+.sits{display:grid;gap:12px;margin-top:22px}
+.sit{display:flex;gap:12px;align-items:center;text-align:left;font:400 1.05rem/1.4 var(--f-body);color:var(--ink);background:var(--paper-2);border:2.5px solid var(--ink);border-radius:14px;padding:12px 16px;cursor:pointer}
+.sit::before{content:"";flex:none;width:18px;height:18px;border:2px solid var(--ink);border-radius:50% 45% 52% 48%;background:var(--paper)}
+.sit[aria-pressed="true"]{background:var(--hl);color:var(--hl-ink)}
+.sit[aria-pressed="true"]::before{background:var(--ink)}
+.chk{display:flex;gap:12px;align-items:flex-start;margin-top:18px;color:var(--graphite);font-size:.95rem}
+.chk input{margin-top:.3em;width:18px;height:18px;accent-color:var(--ink)}
+.wall{margin-top:44px;border:2.5px dashed var(--ink);border-radius:16px;padding:22px 24px}
+.wall h3{margin-bottom:6px}
+.wall p{color:var(--graphite)}
+.stamp{display:inline-block;transform:rotate(-6deg);border:4px solid var(--ink);padding:.4rem 1.1rem;font:400 2rem/1 var(--f-display);margin-top:24px}
+.sk svg.play .d.fl,.sk svg.play .d.hlf{animation:draw var(--t,.6s) ease-out var(--dl,0s) backwards,skfill .5s ease-out calc(var(--dl,0s) + .35s) backwards}
+.sk svg.play .skt{animation:skfade .4s ease-out calc(var(--dl,0s) + .2s) backwards}
+.sit{animation:skfade .5s ease-out backwards}
+@keyframes skfill{from{fill-opacity:0}}
+@keyframes skfade{from{opacity:0}}
+svg.dev.play .d.fl,svg.dev.play .d.hlf{animation:draw var(--t,.5s) ease-out var(--dl,0s) backwards,skfill .4s ease-out calc(var(--dl,0s) + .3s) backwards}
+svg.dev.play .skt{animation:skfade .3s ease-out var(--dl,0s) backwards}
+@media (prefers-reduced-motion:reduce){.pick,.pick:hover{transition:none;transform:none}}
+</style>
+</head>
+<body>
+<!-- kit:start -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <filter id="pencil" x="-4%" y="-4%" width="108%" height="108%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="7" class="hl-line"/>
+  </pattern>
+
+  <!-- ВАСИЛЬ та перехожі: ступні на y=186, центр x=51 -->
+  <g id="legsS">
+    <path class="limb" d="M43 134 L41 178"/><path class="limb-in" d="M43 134 L41 178"/>
+    <path class="limb" d="M59 134 L61 178"/><path class="limb-in" d="M59 134 L61 178"/>
+    <path class="ln fl" d="M30 187 C30 180 44 178 47 181 L47 187Z"/>
+    <path class="ln fl" d="M72 187 C72 180 58 178 55 181 L55 187Z"/>
+  </g>
+  <g id="legsA">
+    <path class="limb" d="M59 134 L80 156 L90 178"/><path class="limb-in" d="M59 134 L80 156 L90 178"/>
+    <path class="limb" d="M43 134 L30 164 L14 158"/><path class="limb-in" d="M43 134 L30 164 L14 158"/>
+    <circle class="ln fl" cx="94" cy="180" r="6"/><circle class="ln fl" cx="10" cy="156" r="6"/>
+  </g>
+  <g id="legsB">
+    <path class="limb" d="M43 134 L66 160 L76 182"/><path class="limb-in" d="M43 134 L66 160 L76 182"/>
+    <path class="limb" d="M59 134 L50 166 L32 172"/><path class="limb-in" d="M59 134 L50 166 L32 172"/>
+    <circle class="ln fl" cx="80" cy="184" r="6"/><circle class="ln fl" cx="27" cy="173" r="6"/>
+  </g>
+  <g id="guyTop">
+    <path class="ln fl" d="M30 78 C26 100 28 120 30 136 L72 136 C74 118 76 98 70 78 C62 74 40 74 30 78Z"/>
+    <path class="ln" d="M51 84 L51 134"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M36 62 C44 70 60 70 68 62 L70 76 C60 84 44 84 34 76Z"/>
+    <path class="ln fl" d="M60 78 L66 116 L75 111 L69 76Z"/>
+    <path class="ln fl" d="M33 31 C28 9 52 -3 69 10 C76 15 73 27 70 32 C62 23 46 20 33 31Z"/>
+  </g>
+  <g id="guy"><use href="#legsS"/><use href="#guyTop"/></g>
+
+  <!-- МАРІЧКА: ступні на y=186, центр x=51, обличчя й руки ті самі, що у Василя -->
+  <g id="girlTop">
+    <path class="ln hat" d="M33 30 C24 52 25 74 29 92 L45 88 C40 74 38 60 39 44Z"/>
+    <path class="ln hat" d="M69 30 C78 52 77 74 73 92 L57 88 C62 74 64 60 63 44Z"/>
+    <path class="ln fl" d="M37 78 C30 100 24 126 20 150 L82 150 C78 126 72 100 65 78 C58 72 44 72 37 78Z"/>
+    <path class="ln" d="M42 77 C46 86 56 86 60 77"/>
+    <path class="ln thin" d="M32 116 C44 120 58 120 70 116"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M46 62 L46 72 M57 62 L57 72"/>
+    <path class="ln hat" d="M33 34 C27 8 52 -4 69 10 C76 16 74 28 69 34 C66 24 58 19 52 25 C46 19 37 24 33 34Z"/>
+    <circle class="ln thin hlf" cx="33" cy="47" r="2.4"/><circle class="ln thin hlf" cx="69" cy="47" r="2.4"/>
+  </g>
+  <g id="girl"><use href="#legsS"/><use href="#girlTop"/></g>
+  <g id="armL"><path class="limb" d="M32 82 C22 100 20 120 24 138"/><path class="limb-in" d="M32 82 C22 100 20 120 24 138"/><circle class="ln fl" cx="24" cy="142" r="5"/></g>
+  <g id="armR"><path class="limb" d="M70 82 C80 100 82 120 78 138"/><path class="limb-in" d="M70 82 C80 100 82 120 78 138"/><circle class="ln fl" cx="78" cy="142" r="5"/></g>
+  <g id="armLup"><path class="limb" d="M32 82 C16 70 12 52 16 34"/><path class="limb-in" d="M32 82 C16 70 12 52 16 34"/><circle class="ln fl" cx="16" cy="29" r="5"/></g>
+  <g id="armRup"><path class="limb" d="M70 82 C86 70 90 52 86 34"/><path class="limb-in" d="M70 82 C86 70 90 52 86 34"/><circle class="ln fl" cx="86" cy="29" r="5"/></g>
+  <g id="armRcup">
+    <path class="limb" d="M70 82 C84 96 86 108 80 112 L62 104"/><path class="limb-in" d="M70 82 C84 96 86 108 80 112 L62 104"/>
+    <path class="ln fl" d="M50 92 L52 110 L64 110 L66 92Z"/><path class="ln" d="M66 96 C72 96 72 104 65 105"/>
+    <path class="ln steam" d="M55 88 C52 82 58 78 55 72 M61 88 C58 82 64 78 61 72"/>
+  </g>
+  <g id="armsRun">
+    <path class="limb" d="M32 84 L16 104 L34 120"/><path class="limb-in" d="M32 84 L16 104 L34 120"/>
+    <path class="limb" d="M70 84 L88 98 L76 84"/><path class="limb-in" d="M70 84 L88 98 L76 84"/>
+  </g>
+  <g id="fSad">
+    <circle class="dot" cx="45" cy="45" r="1.8"/><circle class="dot" cx="58" cy="45" r="1.8"/>
+    <path class="ln thin" d="M39 37 L48 40 M64 37 L55 40"/>
+    <path class="ln thin" d="M45 57 C49 52 55 52 59 57"/>
+  </g>
+  <g id="fHappy">
+    <path class="ln thin" d="M40 45 C43 40 48 40 50 45 M54 45 C56 40 61 40 64 45"/>
+    <path class="ln thin fl" d="M43 51 C47 62 59 62 63 51Z"/>
+  </g>
+  <g id="fWow">
+    <circle class="ln thin fl" cx="45" cy="44" r="3.6"/><circle class="ln thin fl" cx="58" cy="44" r="3.6"/>
+    <circle class="dot" cx="46" cy="44" r="1.3"/><circle class="dot" cx="59" cy="44" r="1.3"/>
+    <path class="ln thin" d="M40 35 C43 32 47 32 50 35 M54 35 C57 32 61 32 64 35"/>
+    <ellipse class="ln thin fl" cx="52" cy="55" rx="4" ry="5"/>
+  </g>
+  <g id="fFire">
+    <path class="ln thin hlf" d="M41 47 C39 41 44 39 44 35 C47 39 50 41 48 47Z"/>
+    <path class="ln thin hlf" d="M55 47 C53 41 58 39 58 35 C61 39 64 41 62 47Z"/>
+    <path class="ln thin fl" d="M43 52 C47 61 58 61 62 52Z"/>
+  </g>
+
+  <!-- ДРУЖИНА Василя: ступні на y=186, центр x=51, обличчя й руки ті самі -->
+  <g id="wifeTop">
+    <circle class="ln hat" cx="52" cy="6" r="11"/>
+    <path class="ln fl" d="M37 78 C30 100 24 128 20 158 L84 158 C80 128 72 100 65 78 C58 72 44 72 37 78Z"/>
+    <path class="ln" d="M42 77 C46 86 56 86 60 77"/>
+    <path class="ln thin" d="M30 112 C44 118 60 118 74 112"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M46 62 L46 72 M57 62 L57 72"/>
+    <path class="ln hat" d="M33 38 C27 10 52 -2 69 12 C76 18 74 32 69 38 C65 26 58 21 52 24 C46 21 38 26 33 38Z"/>
+    <circle class="ln thin hlf" cx="33" cy="48" r="2.2"/><circle class="ln thin hlf" cx="69" cy="48" r="2.2"/>
+  </g>
+  <g id="wife"><use href="#legsS"/><use href="#wifeTop"/></g>
+
+  <!-- РОЗРОБНИК: ступні на y=186 -->
+  <g id="devTop">
+    <path class="ln fl" d="M29 80 C25 104 27 122 29 136 L75 136 C77 120 79 102 73 80 C66 72 38 72 29 80Z"/>
+    <path class="ln" d="M38 76 C44 90 62 90 68 76"/>
+    <path class="ln fl" d="M41 112 L63 112 L61 128 L43 128Z"/>
+    <path class="ln fl" d="M35 40 C35 58 42 66 52 66 C62 66 69 58 69 40"/>
+    <path class="ln fl" d="M33 40 C31 12 72 12 71 40 C60 33 44 33 33 40Z"/>
+    <path class="ln" d="M33 39 L71 39"/>
+    <circle class="ln" cx="44" cy="52" r="6"/><circle class="ln" cx="61" cy="52" r="6"/><path class="ln" d="M50 52 L55 52"/>
+    <circle class="dot" cx="44" cy="52" r="1.6"/><circle class="dot" cx="61" cy="52" r="1.6"/>
+    <path class="ln" d="M46 60 C50 64 57 64 60 60"/>
+  </g>
+  <g id="dev"><use href="#legsS"/><use href="#devTop"/></g>
+
+  <!-- ПЕРЕХОЖИЙ з телефоном -->
+  <g id="ped">
+    <path class="limb" d="M46 136 L38 180"/><path class="limb-in" d="M46 136 L38 180"/>
+    <path class="limb" d="M60 136 L68 178"/><path class="limb-in" d="M60 136 L68 178"/>
+    <path class="ln fl" d="M26 187 C26 181 38 179 41 182 L41 187Z"/><path class="ln fl" d="M62 187 C62 181 74 179 77 182 L77 187Z"/>
+    <path class="ln fl" d="M38 70 C33 98 34 122 38 138 L70 138 C72 116 72 92 64 70 C56 64 44 64 38 70Z"/>
+    <circle class="ln fl" cx="56" cy="48" r="14"/>
+    <path class="ln fl" d="M42 46 C42 30 66 30 70 44 C60 38 50 40 42 46Z"/>
+    <path class="limb" d="M44 82 C50 102 62 108 72 100 L75 84"/><path class="limb-in" d="M44 82 C50 102 62 108 72 100 L75 84"/>
+    <rect class="ln scr" x="68" y="62" width="14" height="24" rx="2.5" transform="rotate(10 75 74)"/>
+  </g>
+
+  <!-- ЦИФРОВИЙ ГЕФЕСТ: ступні на y=300, дивиться праворуч. Плече з молотом — точка обертання (112,120) -->
+  <g id="hLegsS">
+    <path class="limb" d="M72 222 L68 290"/><path class="limb-in" d="M72 222 L68 290"/>
+    <path class="limb" d="M94 222 L98 290"/><path class="limb-in" d="M94 222 L98 290"/>
+    <path class="ln fl" d="M50 300 C50 292 66 290 72 294 L74 300Z"/><path class="ln fl" d="M94 300 C94 292 112 290 118 296 L118 300Z"/>
+    <path class="ln thin" d="M60 284 L74 294 M98 284 L110 294"/>
+  </g>
+  <g id="hLegsA">
+    <path class="limb" d="M94 222 L116 256 L126 290"/><path class="limb-in" d="M94 222 L116 256 L126 290"/>
+    <path class="limb" d="M72 222 L58 258 L40 284"/><path class="limb-in" d="M72 222 L58 258 L40 284"/>
+    <ellipse class="ln fl" cx="132" cy="294" rx="13" ry="6"/><ellipse class="ln fl" cx="34" cy="288" rx="12" ry="6" transform="rotate(-25 34 288)"/>
+  </g>
+  <g id="hLegsB">
+    <path class="limb" d="M72 222 L92 258 L100 292"/><path class="limb-in" d="M72 222 L92 258 L100 292"/>
+    <path class="limb" d="M94 222 L84 260 L66 288"/><path class="limb-in" d="M94 222 L84 260 L66 288"/>
+    <ellipse class="ln fl" cx="106" cy="296" rx="13" ry="6"/><ellipse class="ln fl" cx="60" cy="292" rx="12" ry="6" transform="rotate(-20 60 292)"/>
+  </g>
+  <g id="hBody">
+    <path class="limb" d="M54 122 L28 160 L50 186"/><path class="limb-in" d="M54 122 L28 160 L50 186"/>
+    <circle class="ln fl" cx="52" cy="186" r="6"/>
+    <path class="ln fl" d="M50 112 C44 150 40 190 36 226 L128 226 C124 190 120 150 114 112 C104 102 60 102 50 112Z"/>
+    <path class="ln" d="M52 114 C72 140 98 168 124 196"/>
+    <path class="ln thin" d="M58 160 L50 222 M84 186 L82 224 M106 200 L110 224"/>
+    <path class="ln thick" d="M44 178 C70 186 96 186 121 178"/>
+    <path class="ln thin" d="M38 226 L48 219 L60 226 L72 219 L84 226 L96 219 L108 226 L120 219 L128 226"/>
+    <path class="ln fl" d="M64 48 C62 76 70 92 86 92 C102 92 110 76 108 48Z"/>
+    <path class="ln fl" d="M106 60 C118 64 116 74 104 74"/>
+    <path class="ln thin" d="M60 50 C52 54 54 62 60 62 C52 66 54 74 62 74"/>
+    <path class="ln fl" d="M62 72 C52 88 54 108 66 118 C70 128 84 132 92 126 C102 132 114 122 112 108 C120 96 116 80 108 72 C100 84 72 86 62 72Z"/>
+    <path class="ln thin" d="M72 96 c4 -5 9 0 4 4 M90 104 c4 -5 9 0 4 4 M100 90 c4 -5 9 0 4 4 M80 114 c4 -5 9 0 4 4 M66 104 c4 -5 9 0 4 4"/>
+    <path class="ln fl" d="M78 82 C86 75 98 75 106 82 C98 87 86 87 78 82Z"/>
+    <path class="ln hlf" d="M58 48 C58 16 112 16 112 48Z"/>
+    <path class="ln thin" d="M85 21 L85 47 M72 26 C70 34 70 40 70 47"/>
+    <path class="ln hlf" d="M50 46 L122 46 L124 53 L48 53Z"/>
+  </g>
+  <g id="hSmug">
+    <path class="ln" d="M76 63 C80 60 86 60 90 63 M95 63 C98 60 102 60 105 63"/>
+    <path class="ln thick" d="M74 56 L91 53 M93 53 L106 56"/>
+  </g>
+  <g id="hLook">
+    <circle class="ln fl" cx="84" cy="63" r="4.5"/><circle class="ln fl" cx="100" cy="63" r="4.5"/>
+    <circle class="dot" cx="84" cy="64" r="1.9"/><circle class="dot" cx="100" cy="64" r="1.9"/>
+    <path class="ln thick" d="M75 53 L91 57 M93 57 L107 52"/>
+  </g>
+  <!-- рука з молотом у спокої: молот стоїть головою на землі -->
+  <g id="hArm">
+    <path class="limb" d="M142 176 L146 266"/><path class="limb-in" d="M142 176 L146 266"/>
+    <rect class="ln thick hat" x="106" y="260" width="80" height="40" rx="5"/>
+    <rect class="ln fl" x="124" y="270" width="44" height="20" rx="3"/>
+    <text class="t" x="146" y="286" font-size="15" style="font-family:var(--f-mono)">&lt;/&gt;</text>
+    <path class="limb" d="M112 120 L134 156 L141 184"/><path class="limb-in" d="M112 120 L134 156 L141 184"/>
+    <circle class="ln fl" cx="141" cy="186" r="7"/>
+  </g>
+</defs>
+</svg>
+<!-- kit:end -->
+
+<header class="wrap top">
+  <a class="logo" href="../" aria-label="Magistral IT: home">
+    <svg viewBox="0 0 34 34" aria-hidden="true"><g filter="url(#pencil)"><path class="ln fl" d="M5 29 L8 21 L24 5 L29 10 L13 26Z"/><path class="ln" d="M8 21 L13 26 M21 8 L26 13"/><path class="ln hlf" d="M24 5 L29 10 L31 8 L26 3Z"/></g></svg>
+    <span>Magistral<b>IT</b></span>
+  </a>
+  <nav class="nav" aria-label="Site sections">
+    <a href="../">Story</a>
+    <a href="../cases/">Cases</a>
+    <a href="../../ua/blog/">Blog</a>
+    <a href="./" aria-current="page">Order</a>
+  </nav>
+</header>
+
+<main class="wrap ord">
+  <p class="kicker" id="kick">Order a solution · 1 of 3</p>
+  <ol class="dots" aria-hidden="true"><li class="on"></li><li></li><li></li></ol>
+
+  <!-- Екран 1 -->
+  <section class="step" id="s1">
+    <div class="talk">
+      <svg class="dev" viewBox="10 0 100 195" aria-hidden="true"><g filter="url(#pencil)"><use href="#dev"/><use href="#armL"/><use href="#armR"/></g></svg>
+      <div class="say">
+        <h1 tabindex="-1">What's your business?</h1>
+        <p>No forms. Just tell me, and I'll come up with something.</p>
+      </div>
+    </div>
+    <div class="cards" role="group" aria-label="What your business does">
+      <button type="button" class="pick" data-k="cafe" aria-pressed="false">Coffee shop or canteen</button>
+      <button type="button" class="pick" data-k="salon" aria-pressed="false">Salon or studio</button>
+      <button type="button" class="pick" data-k="shop" aria-pressed="false">Shop</button>
+      <button type="button" class="pick" data-k="work" aria-pressed="false">Workshop or service centre</button>
+      <button type="button" class="pick" data-k="serv" aria-pressed="false">Services and consulting</button>
+    </div>
+    <label class="fld"><span>Or in your own words</span><input id="own" type="text" maxlength="60" placeholder="For example: we grow flowers"></label>
+    <div class="acts">
+      <button type="button" class="btn" id="go1" disabled>Next</button>
+    </div>
+    <p class="mute">Nothing is required. You can <a href="../cases/">just look at the cases</a>.</p>
+  </section>
+
+  <!-- Екран 2 -->
+  <section class="step" id="s2" hidden>
+    <div id="ask">
+      <div class="talk">
+        <svg class="dev" viewBox="10 0 100 195" aria-hidden="true"><g filter="url(#pencil)"><use href="#dev"/><use href="#armL"/><use href="#armR"/></g></svg>
+        <div class="say">
+          <h2 style="font-size:clamp(1.6rem,3.8vw,2.4rem)" tabindex="-1">May I imagine myself in your shoes?</h2>
+          <p>I'd like to daydream about how I would build this for you. Do you mind?</p>
+        </div>
+      </div>
+      <div class="acts">
+        <button type="button" class="btn" id="yes">Go ahead, imagine</button>
+        <button type="button" class="btn ghost" id="no">Better not</button>
+      </div>
+    </div>
+    <div id="sketch" class="sk" hidden>
+      <p class="kicker">Pencil sketch</p>
+      <h2 tabindex="-1"><span class="mark" id="app"></span></h2>
+      <svg viewBox="0 0 480 220" role="img" aria-label="Three screens of the future app">
+        <g filter="url(#pencil)">
+          <g transform="translate(14 8)"><rect class="ln fl" x="0" y="0" width="136" height="204" rx="16"/><rect class="ln hlf" x="10" y="14" width="116" height="30" rx="4"/><text class="t y" id="p0" x="68" y="35" font-size="19"></text><path class="ln thin" d="M14 66 L122 66 M14 88 L100 88 M14 110 L116 110 M14 132 L90 132"/><rect class="ln hlf" x="22" y="160" width="92" height="28" rx="8"/></g>
+          <g transform="translate(172 8)"><rect class="ln fl" x="0" y="0" width="136" height="204" rx="16"/><rect class="ln hlf" x="10" y="14" width="116" height="30" rx="4"/><text class="t y" id="p1" x="68" y="35" font-size="19"></text><rect class="ln" x="14" y="58" width="108" height="40"/><rect class="ln" x="14" y="108" width="108" height="40"/><rect class="ln hlf" x="22" y="160" width="92" height="28" rx="8"/></g>
+          <g transform="translate(330 8)"><rect class="ln fl" x="0" y="0" width="136" height="204" rx="16"/><rect class="ln hlf" x="10" y="14" width="116" height="30" rx="4"/><text class="t y" id="p2" x="68" y="35" font-size="19"></text><circle class="ln" cx="68" cy="96" r="28"/><path class="ln thin" d="M14 148 L122 148 M26 164 L110 164"/><rect class="ln hlf" x="22" y="172" width="92" height="22" rx="8"/></g>
+        </g>
+      </svg>
+      <p class="mute" style="margin-top:22px">This happens in businesses like yours. If something looks familiar, tap it. If not, no worries.</p>
+      <div class="sits" id="sits"></div>
+      <div class="acts">
+        <button type="button" class="btn" id="go2">Next</button>
+        <button type="button" class="btn ghost" id="alt">Not it? Show me another way</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Екран 3 -->
+  <section class="step" id="s3" hidden>
+    <div id="form">
+      <div class="talk">
+        <svg class="dev" viewBox="10 0 100 195" aria-hidden="true"><g filter="url(#pencil)"><use href="#dev"/><use href="#armL"/><use href="#armR"/></g></svg>
+        <div class="say">
+          <h2 style="font-size:clamp(1.5rem,3.6vw,2.3rem)" tabindex="-1">Listen, I was trying to entertain you here</h2>
+          <p>And I already know how to make your work easier. If we deserve a kind word, write it and it will appear on our wall. And if our unusual approach to business caught your interest, we are ready to share it with you.</p>
+        </div>
+      </div>
+      <label class="fld"><span>Write anything, in a single field</span>
+        <textarea id="msg" maxlength="2000" placeholder="A word, a wish, a question. If you want a reply, leave a Telegram, phone or email."></textarea>
+      </label>
+      <input type="text" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <p class="mute" id="hint">A contact is optional. If you don't leave one, we won't call.</p>
+      <label class="chk"><input type="checkbox" id="wallok"><span>This is a kind word. It may be shown on the wall without my contact, and only after we approve it.</span></label>
+      <div class="acts">
+        <button type="button" class="btn" id="send">Send</button>
+        <button type="button" class="btn ghost" id="back3">Back</button>
+      </div>
+      <p class="mute" id="err" role="alert" hidden>Couldn't send. Please try again a little later.</p>
+      <p class="mute">We don't call without your word. Changed your mind? <a href="../cases/">Look at the cases</a>.</p>
+    </div>
+    <div id="done" hidden>
+      <h2 tabindex="-1">Thank you for hearing out our daydream</h2>
+      <div class="stamp">SENT</div>
+      <p class="lead" id="doneTxt" style="margin-top:20px"></p>
+      <p class="mute" id="test" hidden>Test mode: the request was not sent anywhere.</p>
+      <div class="acts"><a class="btn" href="../cases/">See the cases</a><a class="btn ghost" href="../">Back to the story</a></div>
+    </div>
+    <div class="wall">
+      <h3>Wall of kind words</h3>
+      <p>The first kind word will go here. Maybe yours?</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 Magistral IT</span>
+  <span>magistral-it.com</span>
+  <span>Toloka ecosystem: P2P messenger <a href="https://golosnik.com.ua/">Holosnyk</a> · marketplace <a href="https://bazar.in.ua/">Bazar Toloka</a> · developed by IT agency <a href="https://magistral-it.com/">Magistral IT</a></span>
+</footer>
+
+<script src="../../assets/comic.js"></script>
+<script>
+(function () {
+  var ENDPOINT = "https://magistral-order.bazartoloka.workers.dev/"; // Worker address that forwards requests to Telegram
+  var T = {
+    cafe: { n: "Coffee shop app", s: ["Menu", "Payment", "Bonuses"], q: ["Guests walk right past", "A queue at lunchtime", "Regulars with no bonuses", "Orders taken in chats", "Nobody notices your promotions", "Can’t see what’s in demand"] },
+    salon: { n: "Salon app", s: ["Booking", "Stylists", "Reminders"], q: ["Bookings kept in a notebook", "Clients forget to come", "Free slots sit empty", "A stylist is on holiday and clients don’t know", "Regulars get no discounts", "Everyone asks by phone"] },
+    shop: { n: "Shop app", s: ["Showcase", "Cart", "Delivery"], q: ["Shoppers only look", "Orders scattered across messengers", "Stock counted by hand", "Customers don’t hear about new arrivals", "No link with regular customers", "Delivery kept in a notebook"] },
+    work: { n: "Workshop app", s: ["Request", "Status", "Photos"], q: ["Clients call: where is my order?", "You work out the price by hand every time", "Nowhere to show your work", "Requests get lost in chats", "Warranty cases live in your head", "Nobody reminds clients about service"] },
+    serv: { n: "Services app", s: ["Catalogue", "Booking", "Payment"], q: ["Everything hangs on phone calls", "Clients look for you in chats", "You issue invoices by hand", "Consultations without reminders", "Regular clients slip away", "Nowhere to keep materials"] },
+    own: { n: "App for your business", s: ["Home", "Orders", "Account"], q: ["Clients don’t know you exist", "Lots of work is done by hand", "No link with regular clients", "Requests get lost in chats", "Can’t see what works and what doesn’t", "You wish it were simpler"] }
+  };
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var type = "", own = "", picks = [], off = 0, t0 = Date.now();
+  var $ = function (id) { return document.getElementById(id); };
+  var steps = ["s1", "s2", "s3"], dots = document.querySelectorAll(".dots li");
+
+  function show(n) {
+    steps.forEach(function (id, i) { $(id).hidden = (i !== n - 1); });
+    for (var i = 0; i < dots.length; i++) dots[i].className = (i < n) ? "on" : "";
+    $("kick").textContent = "Order a solution · " + n + " of 3";
+    var h = $(steps[n - 1]).querySelector("h1,h2");
+    window.scrollTo(0, 0);
+    if (h) h.focus({ preventScroll: true });
+    typeSay($(steps[n - 1]));
+    drawDev($(steps[n - 1]));
+  }
+
+  var cards = document.querySelectorAll(".pick");
+  Array.prototype.forEach.call(cards, function (b) {
+    b.addEventListener("click", function () {
+      type = b.getAttribute("data-k"); own = ""; $("own").value = "";
+      Array.prototype.forEach.call(cards, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      $("go1").disabled = false;
+    });
+  });
+  $("own").addEventListener("input", function () {
+    own = this.value.trim();
+    if (own) {
+      type = "own";
+      Array.prototype.forEach.call(cards, function (x) { x.setAttribute("aria-pressed", "false"); });
+    } else { type = ""; }
+    $("go1").disabled = !type;
+  });
+  $("go1").addEventListener("click", function () {
+    $("ask").hidden = false; $("sketch").hidden = true; show(2);
+  });
+
+  function sits(delay) {
+    var t = T[type], box = $("sits");
+    box.innerHTML = "";
+    for (var i = 0; i < 3; i++) {
+      (function (txt) {
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "sit"; b.textContent = txt;
+        b.setAttribute("aria-pressed", picks.indexOf(txt) > -1 ? "true" : "false");
+        b.addEventListener("click", function () {
+          var k = picks.indexOf(txt);
+          if (k > -1) picks.splice(k, 1); else picks.push(txt);
+          b.setAttribute("aria-pressed", k > -1 ? "false" : "true");
+        });
+        b.style.animationDelay = ((delay || 0) + i * 0.18) + "s";
+        box.appendChild(b);
+      })(t.q[(off + i) % 6]);
+    }
+  }
+  function drawDev(root) {
+    var NS = "http://www.w3.org/2000/svg";
+    function inl(node) {
+      Array.prototype.forEach.call(node.querySelectorAll("use"), function (u) {
+        var src = document.getElementById((u.getAttribute("href") || "").slice(1));
+        if (!src) return;
+        var g = document.createElementNS(NS, "g");
+        Array.prototype.forEach.call(src.childNodes, function (c) { g.appendChild(c.cloneNode(true)); });
+        u.parentNode.replaceChild(g, u);
+        inl(g);
+      });
+    }
+    Array.prototype.forEach.call(root.querySelectorAll("svg.dev"), function (svg) {
+      if (!svg.getClientRects().length || reduce) return;
+      if (!svg._inl) {
+        inl(svg); svg._inl = true;
+        var els = svg.querySelectorAll("path,circle,ellipse,rect");
+        Array.prototype.forEach.call(els, function (el, i) {
+          el.style.setProperty("--dl", (i * 0.03).toFixed(2) + "s");
+          el.style.setProperty("--t", ".5s");
+          if (el.classList.contains("dot")) { el.classList.add("skt"); }
+          else { el.classList.add("d"); el.setAttribute("pathLength", "1"); }
+        });
+      }
+      svg.classList.remove("play");
+      void svg.getBoundingClientRect();
+      svg.classList.add("play");
+    });
+  }
+
+  function typeSay(root) {
+    if (reduce) return;
+    var p = root.querySelector(".say p");
+    if (!p) return;
+    if (p._t) clearInterval(p._t);
+    var full = p.getAttribute("data-full") || p.textContent;
+    p.setAttribute("data-full", full);
+    p.textContent = "";
+    var n = 0;
+    p._t = setInterval(function () {
+      n += 2;
+      p.textContent = full.slice(0, n);
+      if (n >= full.length) { clearInterval(p._t); p.textContent = full; }
+    }, 22);
+  }
+
+  function drawSketch() {
+    var svg = $("sketch").querySelector("svg");
+    svg.classList.remove("play");
+    if (reduce) return;
+    var groups = svg.querySelectorAll("g[filter] > g");
+    Array.prototype.forEach.call(groups, function (g, gi) {
+      var els = g.querySelectorAll("rect,path,circle,ellipse,text");
+      Array.prototype.forEach.call(els, function (el, i) {
+        el.style.setProperty("--dl", (gi * 0.9 + i * 0.09).toFixed(2) + "s");
+        el.style.setProperty("--t", ".6s");
+        if (el.tagName.toLowerCase() === "text") { el.classList.add("skt"); }
+        else { el.classList.add("d"); el.setAttribute("pathLength", "1"); }
+      });
+    });
+    void svg.getBoundingClientRect();
+    svg.classList.add("play");
+  }
+
+  $("yes").addEventListener("click", function () {
+    var t = T[type];
+    $("app").textContent = type === "own" ? "App: " + own.slice(0, 24) : t.n;
+    for (var i = 0; i < 3; i++) $("p" + i).textContent = t.s[i];
+    off = 0; sits(reduce ? 0 : 3); drawSketch();
+    $("ask").hidden = true; $("sketch").hidden = false;
+    $("sketch").querySelector("h2").focus({ preventScroll: true });
+  });
+  $("no").addEventListener("click", function () { show(3); });
+  $("alt").addEventListener("click", function () { off = (off + 3) % 6; sits(); });
+  $("go2").addEventListener("click", function () { show(3); });
+  $("back3").addEventListener("click", function () { show(2); });
+
+  var re = /(@[\w.]{3,})|([\w.+-]+@[\w-]+\.[\w.]+)|(\+?\d[\d\s()-]{8,})/;
+  $("msg").addEventListener("input", function () {
+    $("hint").textContent = re.test(this.value)
+      ? "I see a contact. We'll reply right there."
+      : "A contact is optional. If you don't leave one, we won't call.";
+  });
+
+  $("send").addEventListener("click", function () {
+    var text = $("msg").value.trim();
+    var payload = { type: type, own: own, picks: picks, text: text, wall: $("wallok").checked, page: location.pathname, lang: "en", hp: $("hp").value, t: Date.now() - t0 };
+    function ok() {
+      var has = re.test(text);
+      $("doneTxt").textContent = has
+        ? "We'll reply within a day. We don't call without your word."
+        : "You didn't leave a contact, so we'll wait for your word first.";
+      $("test").hidden = !!ENDPOINT;
+      $("form").hidden = true; $("done").hidden = false;
+      $("done").querySelector("h2").focus();
+    }
+    $("err").hidden = true;
+    if (!ENDPOINT) { ok(); return; }
+    fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+      .then(function (r) { if (r.ok) ok(); else throw new Error("bad"); })
+      .catch(function () { $("err").hidden = false; });
+  });
+drawDev($("s1")); typeSay($("s1"));
+})();
+</script>
+</body>
+</html>
