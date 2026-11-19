@@ -28,6 +28,32 @@ Magistral IT робить мобільні застосунки та інтер�
 - [Безкоштовний мікросайт для продавців TikTok та Instagram](https://magistral-it.com/ua/blog/bezkoshtovnyi-mikrosait-tiktok-instagram/)
 - [Як створити безкоштовний сайт для TikTok та Instagram](https://magistral-it.com/ua/blog/yak-stvoryty-bezkoshtovnyi-sait-tiktok-instagram/)
 
+## Мінісеріал «Навіщо ми зробили Голосник»
+
+- [Про серіал](https://magistral-it.com/ua/holosnyk/): шість коротких історій про те, навіщо створено Голосник.
+- [Серія 1. «Три секунди»](https://magistral-it.com/ua/holosnyk/try-sekundy/)
+- [Серія 2. «Коли згасло світло»: mesh-режим](https://magistral-it.com/ua/holosnyk/koly-zgaslo-svitlo/)
+- [Серія 3. «Тиха тривога»: два режими «Рятуйте»](https://magistral-it.com/ua/holosnyk/tykha-tryvoha/)
+- [Серія 4. «Номер не дам»: Community ID](https://magistral-it.com/ua/holosnyk/nomer-ne-dam/)
+- [Серія 5. «Усе своє в одному місці»: стрічка громади](https://magistral-it.com/ua/holosnyk/vse-svoie/)
+- [Серія 6. «Навіщо насправді»](https://magistral-it.com/ua/holosnyk/navischo-naspravdi/)
+
+## English version
+
+Magistral IT is an IT agency building mobile apps and web solutions for business, and the developer of the P2P messenger Holosnyk and the Bazar Toloka marketplace. The English version of the site is at https://magistral-it.com/en/.
+
+- [Story of Magistral IT](https://magistral-it.com/en/): how we work, told as a comic.
+- [Cases](https://magistral-it.com/en/cases/): Bazar Toloka and Holosnyk.
+- [Free micro-site for TikTok and Instagram sellers](https://magistral-it.com/en/mikrosait/): a storefront with built-in Holosnyk calls and chat. Outside Ukraine the promo is valid from 1 February 2027; requests are accepted now.
+- [Blog](https://magistral-it.com/en/blog/): articles for app buyers and sellers.
+- [How much does a mobile app cost](https://magistral-it.com/en/blog/how-much-does-a-mobile-app-cost/)
+- [How long does app development take](https://magistral-it.com/en/blog/how-long-does-app-development-take/)
+- [App or website for business](https://magistral-it.com/en/blog/app-or-website-for-business/)
+- [What is an MVP](https://magistral-it.com/en/blog/what-is-an-mvp/)
+- [How to choose an app developer](https://magistral-it.com/en/blog/how-to-choose-an-app-developer/)
+- [Android or iOS](https://magistral-it.com/en/blog/android-or-ios/)
+- [Coffee shop app](https://magistral-it.com/en/blog/coffee-shop-app/)
+
 ## Мови
 
-Основна версія українською. Англійська та польська версії готуються.
+Основна версія українською (/ua/), повна англійська версія (/en/). Польська версія готується.
