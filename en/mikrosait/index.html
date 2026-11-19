@@ -1,0 +1,1184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A free micro-site for your TikTok and Instagram shop — Magistral IT</title>
+<meta name="description" content="A Magistral IT promo: we build a free micro-site for your TikTok or Instagram shop, with calls and chat via Holosnyk right from the browser. The story of Marichka, drawn in pencil. Outside Ukraine the promo is valid from 1 February 2027.">
+<link rel="canonical" href="https://magistral-it.com/en/mikrosait/">
+<link rel="alternate" hreflang="uk" href="https://magistral-it.com/ua/mikrosait/">
+<link rel="alternate" hreflang="en" href="https://magistral-it.com/en/mikrosait/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="A free micro-site for your TikTok and Instagram shop">
+<meta property="og:description" content="Buyers write to you but can't reach you? Your own page with a call button, free under the promo terms. Outside Ukraine, from 1 February 2027.">
+<meta property="og:url" content="https://magistral-it.com/en/mikrosait/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Neucha&family=Onest:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/comic.css">
+<link rel="stylesheet" href="../../assets/bird.css">
+<style>
+/* ── hero ── */
+.hero{padding-block:0 clamp(48px,7vw,88px)}
+.hero .kicker{margin-top:6px;margin-bottom:14px}
+.hero .lead{margin-top:18px}
+.hero .row{margin-top:26px}
+.hero .scene{margin-top:clamp(28px,4vw,44px)}
+.badge{display:inline-block;margin-bottom:14px;font:500 .8rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;background:var(--hl);color:var(--hl-ink);border:2px solid var(--ink);border-radius:40px;padding:.5rem .8rem}
+
+/* ── розділ 1: шквал коментарів ── */
+.blink{animation:blink 1.1s steps(1,end) infinite}
+@keyframes blink{50%{opacity:.25}}
+
+/* ── розділ 2: підказка згори (як на головній) ── */
+.descend{transform:translateY(0)}
+.play .descend{animation:descend .7s cubic-bezier(.2,1.3,.4,1) .1s backwards}
+@keyframes descend{from{transform:translateY(-320px)}}
+.tap{transform-box:view-box;transform-origin:112px 120px}
+.play .tap{animation:tap 1.2s ease-in-out .6s backwards}
+@keyframes tap{0%{transform:rotate(0)}35%{transform:rotate(-80deg)}55%{transform:rotate(-49deg)}72%{transform:rotate(-49deg)}100%{transform:rotate(0)}}
+.before{opacity:0}
+.play .before{animation:on 1.3s steps(1,end) backwards}
+.play .after{animation:off 1.3s steps(1,end) backwards}
+@keyframes on{0%,100%{opacity:1}}
+@keyframes off{0%,100%{opacity:0}}
+.stars,.bulb{opacity:0}
+.play .stars{animation:flash .6s ease-out 1.25s}
+.play .bulb{animation:flash .8s ease-out 1.45s}
+@keyframes flash{0%{opacity:0;transform:scale(.4)}20%{opacity:1;transform:scale(1.1)}75%{opacity:1;transform:scale(1)}100%{opacity:0}}
+.phone{transform-box:fill-box;transform-origin:center}
+.play .phone{animation:phonein .7s cubic-bezier(.2,1.5,.4,1) 2.1s backwards}
+@keyframes phonein{from{opacity:0;transform:scale(.3) rotate(-30deg)}}
+
+/* ── розділ 3: умови ── */
+.terms{margin-top:clamp(28px,4vw,40px);border:2.5px dashed var(--ink);border-radius:16px;padding:22px 24px;max-width:72ch}
+.terms h3{margin-bottom:8px}
+.terms ul{margin:0;padding-left:1.2em}
+.terms li{margin-top:8px;line-height:1.55}
+.terms .why{margin-top:14px;color:var(--graphite)}
+
+/* ── розділ 4: дзвінок ── */
+.ring{transform-box:fill-box;transform-origin:center}
+.play .ring{animation:ring .5s ease-in-out 2.4s 4}
+@keyframes ring{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+.wave{opacity:0}
+.play .wave{animation:wave 1s ease-out 2.4s 3}
+@keyframes wave{0%{opacity:0}30%{opacity:1}100%{opacity:0}}
+.tapdot{opacity:0;transform-box:fill-box;transform-origin:center}
+.play .tapdot{animation:tapdot .9s ease-out 1.3s 2}
+@keyframes tapdot{0%{opacity:.9;transform:scale(.3)}100%{opacity:0;transform:scale(1.6)}}
+.line-call{stroke-dasharray:9 9;opacity:0}
+.play .line-call{animation:linecall .6s ease-out 1.9s forwards,flowdash 1s linear 1.9s infinite}
+@keyframes linecall{to{opacity:1}}
+@keyframes flowdash{to{stroke-dashoffset:-18}}
+
+/* ── розділ 5: заявка ── */
+.cta{padding-block:clamp(64px,9vw,120px);border-top:2px dashed color-mix(in srgb,var(--ink) 28%,transparent)}
+.apply{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:860px){.apply{grid-template-columns:1fr}.apply .side{order:-1;max-width:420px}}
+.side .bubble{font-size:clamp(1.1rem,1.9vw,1.35rem)}
+.side svg{display:block;width:120px;height:auto;margin:18px 0 0 auto}
+.fld{display:block;margin-top:22px}
+.fld>span{display:block;font:500 .78rem/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+.fld input,.fld textarea{width:100%;font:400 1.05rem/1.5 var(--f-body);color:var(--ink);background:var(--paper);border:2.5px solid var(--ink);border-radius:12px;padding:.8rem 1rem}
+.fld textarea{min-height:110px;resize:vertical}
+.fld input[aria-invalid="true"]{border-style:dashed;background:color-mix(in srgb,var(--hl) 22%,var(--paper))}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;background:var(--paper-2);border:2.5px solid var(--ink);border-radius:14px;padding:12px 16px;cursor:pointer;font-size:1.02rem}
+.opt input{width:18px;height:18px;accent-color:var(--ink);flex:none}
+.opt:has(input:checked){background:var(--hl);color:var(--hl-ink)}
+.mute{margin-top:16px;color:var(--graphite);font-size:.95rem}
+.acts{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:4px 4px 0 var(--ink);transform:none}
+.stamp{display:inline-block;transform:rotate(-6deg);border:4px solid var(--ink);padding:.4rem 1.1rem;font:400 2rem/1 var(--f-display);margin-top:24px}
+#done h2:focus{outline:none}
+/* ── нові розділи: анкета, посилання, Голосник ── */
+.pf{fill:var(--paper)}
+.lnp{fill:none;stroke:var(--paper);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.m{font-family:var(--f-mono);fill:var(--ink);text-anchor:middle;letter-spacing:.05em}
+.m.l{text-anchor:start}.m.y{fill:var(--hl-ink)}.m.y2{fill:#F5C518}
+.tk{fill:#2A2D33}
+/* ── зразки дизайну ── */
+.smp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:18px;margin-top:clamp(24px,4vw,40px)}
+.smp{display:flex;flex-direction:column;gap:12px;background:var(--paper-2);border:2.5px solid var(--ink);border-radius:255px 14px 225px 14px/14px 225px 14px 255px;padding:16px;min-width:0}
+.smp svg{display:block;width:100%;height:auto;border-radius:12px}
+.smp.soon{border-style:dashed;justify-content:space-between;min-height:150px}
+.smp-row{display:flex;align-items:center;gap:10px}
+.code{font:600 .95rem/1 var(--f-mono);background:var(--hl);color:var(--hl-ink);border:2px solid var(--ink);border-radius:6px;padding:.3rem .5rem;flex:none}
+.soon .code{background:transparent;color:var(--graphite);border-color:var(--graphite)}
+.smp-name{font:400 1.15rem/1.15 var(--f-display)}
+.soon .smp-name{color:var(--graphite)}
+.smp .btn{align-self:flex-start}
+.fld select{width:100%;font:400 1.05rem/1.5 var(--f-body);color:var(--ink);background:var(--paper);border:2.5px solid var(--ink);border-radius:12px;padding:.8rem 1rem}
+
+.demo-wrap{margin:clamp(20px,3vw,32px) 0 clamp(28px,4vw,40px);display:flex;flex-direction:column;align-items:center;gap:10px}
+.demo-phone{position:relative;width:min(390px,94vw);aspect-ratio:390/844;container-type:inline-size;border:3px solid var(--ink);border-radius:30px;overflow:hidden;background:#FBF3E6;box-shadow:4px 4px 0 var(--ink);flex:none}
+.demo-hint{font:500 .9rem/1.4 var(--f-body);color:var(--graphite);text-align:center;max-width:46ch}
+.demo-hint-sm{font-size:.82rem;max-width:34ch;margin-top:2px}
+.demo-colors{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:4px}
+.demo-color{width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);cursor:pointer;padding:0;flex:none;box-shadow:2px 2px 0 var(--ink);transition:transform .15s}
+.demo-color:hover{transform:translateY(-2px)}
+.demo-color.active{outline:3px solid var(--hl-ink);outline-offset:2px}
+.demo-hd{position:absolute;left:0;top:0;width:100%;box-sizing:border-box;padding:5.13cqw 5.13cqw 0;display:flex;align-items:center;gap:3.08cqw}
+.demo-av{width:14.36cqw;height:14.36cqw;border-radius:50%;background:#F6B79C;border:2px solid #4B2C1F;display:flex;align-items:center;justify-content:center;flex:none;transition:background .2s}
+.demo-av span{font:800 5.64cqw/1 'Onest',sans-serif;color:#4B2C1F}
+.demo-name{font:800 5.13cqw/1.1 'Onest',sans-serif;color:#4B2C1F}
+.demo-badge{margin-top:1.03cqw;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:700 3.08cqw/1 'Onest',sans-serif;padding:0.51cqw 2.05cqw;border-radius:10px;background:#F3C35F;border:1.5px solid #4B2C1F;color:#4B2C1F;transition:background .2s}
+.demo-cart{margin-left:auto;width:11.28cqw;height:11.28cqw;border-radius:50%;border:2px solid #4B2C1F;background:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.demo-cart svg{width:5.64cqw;height:5.64cqw}
+.demo-grid{position:absolute;left:5.13cqw;top:29.74cqw;width:89.74cqw;height:117.95cqw;box-sizing:border-box;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3.59cqw}
+.demo-pay{position:absolute;left:5.13cqw;top:150.77cqw;width:89.74cqw}
+.demo-pay-btn{width:100%;height:12.31cqw;border-radius:14px;border:2px solid #4B2C1F;display:flex;align-items:center;justify-content:center;gap:2.05cqw;font:800 3.59cqw/1 'Onest',sans-serif;color:#4B2C1F;cursor:pointer;transition:background .2s}
+.demo-pay-btn svg{width:5.13cqw;height:5.13cqw;flex:none}
+.demo-card{background:#fff;border:2px solid #4B2C1F;border-radius:14px;padding:2.05cqw;box-sizing:border-box;display:flex;flex-direction:column;gap:1.54cqw;min-width:0;min-height:0}
+.demo-ph{flex:1;min-height:0;border-radius:10px;background:#F6E6D2;display:flex;align-items:center;justify-content:center;font:700 2.82cqw/1 'Onest',sans-serif;color:#8A6A58;text-align:center}
+.demo-pname{font:700 3.59cqw/1.2 'Onest',sans-serif;color:#4B2C1F;padding:0 1.03cqw}
+.demo-pprice{font:800 4.10cqw/1 'Onest',sans-serif;color:#4B2C1F;padding:0 1.03cqw 0.51cqw}
+.demo-bar{position:absolute;left:5.13cqw;top:166.15cqw;width:89.74cqw;box-sizing:border-box}
+.demo-bar-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.56cqw}
+.demo-bar-btn{height:20.51cqw;border-radius:14px;border:2px solid #4B2C1F;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.03cqw;font:800 3.33cqw/1 'Onest',sans-serif;color:#4B2C1F}
+.demo-bar-btn svg{width:5.64cqw;height:5.64cqw}
+.demo-bar-sub{margin-top:2.05cqw;text-align:center;font:700 3.08cqw/1 'Onest',sans-serif;color:#4B2C1F}
+.demo-foot{position:absolute;left:0;top:206.67cqw;width:100%;text-align:center;font:600 2.82cqw/1 'Onest',sans-serif;color:#6B4A3A}
+.smp.active{border-color:var(--ink);background:color-mix(in srgb,var(--hl) 28%,var(--paper-2))}
+</style>
+</head>
+<body>
+<!-- kit:start -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <filter id="pencil" x="-4%" y="-4%" width="108%" height="108%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="7" class="hl-line"/>
+  </pattern>
+
+  <!-- ВАСИЛЬ та перехожі: ступні на y=186, центр x=51 -->
+  <g id="legsS">
+    <path class="limb" d="M43 134 L41 178"/><path class="limb-in" d="M43 134 L41 178"/>
+    <path class="limb" d="M59 134 L61 178"/><path class="limb-in" d="M59 134 L61 178"/>
+    <path class="ln fl" d="M30 187 C30 180 44 178 47 181 L47 187Z"/>
+    <path class="ln fl" d="M72 187 C72 180 58 178 55 181 L55 187Z"/>
+  </g>
+  <g id="legsA">
+    <path class="limb" d="M59 134 L80 156 L90 178"/><path class="limb-in" d="M59 134 L80 156 L90 178"/>
+    <path class="limb" d="M43 134 L30 164 L14 158"/><path class="limb-in" d="M43 134 L30 164 L14 158"/>
+    <circle class="ln fl" cx="94" cy="180" r="6"/><circle class="ln fl" cx="10" cy="156" r="6"/>
+  </g>
+  <g id="legsB">
+    <path class="limb" d="M43 134 L66 160 L76 182"/><path class="limb-in" d="M43 134 L66 160 L76 182"/>
+    <path class="limb" d="M59 134 L50 166 L32 172"/><path class="limb-in" d="M59 134 L50 166 L32 172"/>
+    <circle class="ln fl" cx="80" cy="184" r="6"/><circle class="ln fl" cx="27" cy="173" r="6"/>
+  </g>
+  <g id="guyTop">
+    <path class="ln fl" d="M30 78 C26 100 28 120 30 136 L72 136 C74 118 76 98 70 78 C62 74 40 74 30 78Z"/>
+    <path class="ln" d="M51 84 L51 134"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M36 62 C44 70 60 70 68 62 L70 76 C60 84 44 84 34 76Z"/>
+    <path class="ln fl" d="M60 78 L66 116 L75 111 L69 76Z"/>
+    <path class="ln fl" d="M33 31 C28 9 52 -3 69 10 C76 15 73 27 70 32 C62 23 46 20 33 31Z"/>
+  </g>
+  <g id="guy"><use href="#legsS"/><use href="#guyTop"/></g>
+
+  <!-- МАРІЧКА: ступні на y=186, центр x=51, обличчя й руки ті самі, що у Василя -->
+  <g id="girlTop">
+    <path class="ln hat" d="M33 30 C24 52 25 74 29 92 L45 88 C40 74 38 60 39 44Z"/>
+    <path class="ln hat" d="M69 30 C78 52 77 74 73 92 L57 88 C62 74 64 60 63 44Z"/>
+    <path class="ln fl" d="M37 78 C30 100 24 126 20 150 L82 150 C78 126 72 100 65 78 C58 72 44 72 37 78Z"/>
+    <path class="ln" d="M42 77 C46 86 56 86 60 77"/>
+    <path class="ln thin" d="M32 116 C44 120 58 120 70 116"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M46 62 L46 72 M57 62 L57 72"/>
+    <path class="ln hat" d="M33 34 C27 8 52 -4 69 10 C76 16 74 28 69 34 C66 24 58 19 52 25 C46 19 37 24 33 34Z"/>
+    <circle class="ln thin hlf" cx="33" cy="47" r="2.4"/><circle class="ln thin hlf" cx="69" cy="47" r="2.4"/>
+  </g>
+  <g id="girl"><use href="#legsS"/><use href="#girlTop"/></g>
+  <g id="armL"><path class="limb" d="M32 82 C22 100 20 120 24 138"/><path class="limb-in" d="M32 82 C22 100 20 120 24 138"/><circle class="ln fl" cx="24" cy="142" r="5"/></g>
+  <g id="armR"><path class="limb" d="M70 82 C80 100 82 120 78 138"/><path class="limb-in" d="M70 82 C80 100 82 120 78 138"/><circle class="ln fl" cx="78" cy="142" r="5"/></g>
+  <g id="armLup"><path class="limb" d="M32 82 C16 70 12 52 16 34"/><path class="limb-in" d="M32 82 C16 70 12 52 16 34"/><circle class="ln fl" cx="16" cy="29" r="5"/></g>
+  <g id="armRup"><path class="limb" d="M70 82 C86 70 90 52 86 34"/><path class="limb-in" d="M70 82 C86 70 90 52 86 34"/><circle class="ln fl" cx="86" cy="29" r="5"/></g>
+  <g id="armRcup">
+    <path class="limb" d="M70 82 C84 96 86 108 80 112 L62 104"/><path class="limb-in" d="M70 82 C84 96 86 108 80 112 L62 104"/>
+    <path class="ln fl" d="M50 92 L52 110 L64 110 L66 92Z"/><path class="ln" d="M66 96 C72 96 72 104 65 105"/>
+    <path class="ln steam" d="M55 88 C52 82 58 78 55 72 M61 88 C58 82 64 78 61 72"/>
+  </g>
+  <g id="armsRun">
+    <path class="limb" d="M32 84 L16 104 L34 120"/><path class="limb-in" d="M32 84 L16 104 L34 120"/>
+    <path class="limb" d="M70 84 L88 98 L76 84"/><path class="limb-in" d="M70 84 L88 98 L76 84"/>
+  </g>
+  <g id="fSad">
+    <circle class="dot" cx="45" cy="45" r="1.8"/><circle class="dot" cx="58" cy="45" r="1.8"/>
+    <path class="ln thin" d="M39 37 L48 40 M64 37 L55 40"/>
+    <path class="ln thin" d="M45 57 C49 52 55 52 59 57"/>
+  </g>
+  <g id="fHappy">
+    <path class="ln thin" d="M40 45 C43 40 48 40 50 45 M54 45 C56 40 61 40 64 45"/>
+    <path class="ln thin fl" d="M43 51 C47 62 59 62 63 51Z"/>
+  </g>
+  <g id="fWow">
+    <circle class="ln thin fl" cx="45" cy="44" r="3.6"/><circle class="ln thin fl" cx="58" cy="44" r="3.6"/>
+    <circle class="dot" cx="46" cy="44" r="1.3"/><circle class="dot" cx="59" cy="44" r="1.3"/>
+    <path class="ln thin" d="M40 35 C43 32 47 32 50 35 M54 35 C57 32 61 32 64 35"/>
+    <ellipse class="ln thin fl" cx="52" cy="55" rx="4" ry="5"/>
+  </g>
+  <g id="fFire">
+    <path class="ln thin hlf" d="M41 47 C39 41 44 39 44 35 C47 39 50 41 48 47Z"/>
+    <path class="ln thin hlf" d="M55 47 C53 41 58 39 58 35 C61 39 64 41 62 47Z"/>
+    <path class="ln thin fl" d="M43 52 C47 61 58 61 62 52Z"/>
+  </g>
+
+  <!-- ДРУЖИНА Василя: ступні на y=186, центр x=51, обличчя й руки ті самі -->
+  <g id="wifeTop">
+    <circle class="ln hat" cx="52" cy="6" r="11"/>
+    <path class="ln fl" d="M37 78 C30 100 24 128 20 158 L84 158 C80 128 72 100 65 78 C58 72 44 72 37 78Z"/>
+    <path class="ln" d="M42 77 C46 86 56 86 60 77"/>
+    <path class="ln thin" d="M30 112 C44 118 60 118 74 112"/>
+    <path class="ln fl" d="M34 30 C32 50 40 63 52 63 C64 63 70 50 68 31"/>
+    <path class="ln fl" d="M46 62 L46 72 M57 62 L57 72"/>
+    <path class="ln hat" d="M33 38 C27 10 52 -2 69 12 C76 18 74 32 69 38 C65 26 58 21 52 24 C46 21 38 26 33 38Z"/>
+    <circle class="ln thin hlf" cx="33" cy="48" r="2.2"/><circle class="ln thin hlf" cx="69" cy="48" r="2.2"/>
+  </g>
+  <g id="wife"><use href="#legsS"/><use href="#wifeTop"/></g>
+
+  <!-- РОЗРОБНИК: ступні на y=186 -->
+  <g id="devTop">
+    <path class="ln fl" d="M29 80 C25 104 27 122 29 136 L75 136 C77 120 79 102 73 80 C66 72 38 72 29 80Z"/>
+    <path class="ln" d="M38 76 C44 90 62 90 68 76"/>
+    <path class="ln fl" d="M41 112 L63 112 L61 128 L43 128Z"/>
+    <path class="ln fl" d="M35 40 C35 58 42 66 52 66 C62 66 69 58 69 40"/>
+    <path class="ln fl" d="M33 40 C31 12 72 12 71 40 C60 33 44 33 33 40Z"/>
+    <path class="ln" d="M33 39 L71 39"/>
+    <circle class="ln" cx="44" cy="52" r="6"/><circle class="ln" cx="61" cy="52" r="6"/><path class="ln" d="M50 52 L55 52"/>
+    <circle class="dot" cx="44" cy="52" r="1.6"/><circle class="dot" cx="61" cy="52" r="1.6"/>
+    <path class="ln" d="M46 60 C50 64 57 64 60 60"/>
+  </g>
+  <g id="dev"><use href="#legsS"/><use href="#devTop"/></g>
+
+  <!-- ПЕРЕХОЖИЙ з телефоном -->
+  <g id="ped">
+    <path class="limb" d="M46 136 L38 180"/><path class="limb-in" d="M46 136 L38 180"/>
+    <path class="limb" d="M60 136 L68 178"/><path class="limb-in" d="M60 136 L68 178"/>
+    <path class="ln fl" d="M26 187 C26 181 38 179 41 182 L41 187Z"/><path class="ln fl" d="M62 187 C62 181 74 179 77 182 L77 187Z"/>
+    <path class="ln fl" d="M38 70 C33 98 34 122 38 138 L70 138 C72 116 72 92 64 70 C56 64 44 64 38 70Z"/>
+    <circle class="ln fl" cx="56" cy="48" r="14"/>
+    <path class="ln fl" d="M42 46 C42 30 66 30 70 44 C60 38 50 40 42 46Z"/>
+    <path class="limb" d="M44 82 C50 102 62 108 72 100 L75 84"/><path class="limb-in" d="M44 82 C50 102 62 108 72 100 L75 84"/>
+    <rect class="ln scr" x="68" y="62" width="14" height="24" rx="2.5" transform="rotate(10 75 74)"/>
+  </g>
+
+  <!-- ЦИФРОВИЙ ГЕФЕСТ: ступні на y=300, дивиться праворуч. Плече з молотом — точка обертання (112,120) -->
+  <g id="hLegsS">
+    <path class="limb" d="M72 222 L68 290"/><path class="limb-in" d="M72 222 L68 290"/>
+    <path class="limb" d="M94 222 L98 290"/><path class="limb-in" d="M94 222 L98 290"/>
+    <path class="ln fl" d="M50 300 C50 292 66 290 72 294 L74 300Z"/><path class="ln fl" d="M94 300 C94 292 112 290 118 296 L118 300Z"/>
+    <path class="ln thin" d="M60 284 L74 294 M98 284 L110 294"/>
+  </g>
+  <g id="hLegsA">
+    <path class="limb" d="M94 222 L116 256 L126 290"/><path class="limb-in" d="M94 222 L116 256 L126 290"/>
+    <path class="limb" d="M72 222 L58 258 L40 284"/><path class="limb-in" d="M72 222 L58 258 L40 284"/>
+    <ellipse class="ln fl" cx="132" cy="294" rx="13" ry="6"/><ellipse class="ln fl" cx="34" cy="288" rx="12" ry="6" transform="rotate(-25 34 288)"/>
+  </g>
+  <g id="hLegsB">
+    <path class="limb" d="M72 222 L92 258 L100 292"/><path class="limb-in" d="M72 222 L92 258 L100 292"/>
+    <path class="limb" d="M94 222 L84 260 L66 288"/><path class="limb-in" d="M94 222 L84 260 L66 288"/>
+    <ellipse class="ln fl" cx="106" cy="296" rx="13" ry="6"/><ellipse class="ln fl" cx="60" cy="292" rx="12" ry="6" transform="rotate(-20 60 292)"/>
+  </g>
+  <g id="hBody">
+    <path class="limb" d="M54 122 L28 160 L50 186"/><path class="limb-in" d="M54 122 L28 160 L50 186"/>
+    <circle class="ln fl" cx="52" cy="186" r="6"/>
+    <path class="ln fl" d="M50 112 C44 150 40 190 36 226 L128 226 C124 190 120 150 114 112 C104 102 60 102 50 112Z"/>
+    <path class="ln" d="M52 114 C72 140 98 168 124 196"/>
+    <path class="ln thin" d="M58 160 L50 222 M84 186 L82 224 M106 200 L110 224"/>
+    <path class="ln thick" d="M44 178 C70 186 96 186 121 178"/>
+    <path class="ln thin" d="M38 226 L48 219 L60 226 L72 219 L84 226 L96 219 L108 226 L120 219 L128 226"/>
+    <path class="ln fl" d="M64 48 C62 76 70 92 86 92 C102 92 110 76 108 48Z"/>
+    <path class="ln fl" d="M106 60 C118 64 116 74 104 74"/>
+    <path class="ln thin" d="M60 50 C52 54 54 62 60 62 C52 66 54 74 62 74"/>
+    <path class="ln fl" d="M62 72 C52 88 54 108 66 118 C70 128 84 132 92 126 C102 132 114 122 112 108 C120 96 116 80 108 72 C100 84 72 86 62 72Z"/>
+    <path class="ln thin" d="M72 96 c4 -5 9 0 4 4 M90 104 c4 -5 9 0 4 4 M100 90 c4 -5 9 0 4 4 M80 114 c4 -5 9 0 4 4 M66 104 c4 -5 9 0 4 4"/>
+    <path class="ln fl" d="M78 82 C86 75 98 75 106 82 C98 87 86 87 78 82Z"/>
+    <path class="ln hlf" d="M58 48 C58 16 112 16 112 48Z"/>
+    <path class="ln thin" d="M85 21 L85 47 M72 26 C70 34 70 40 70 47"/>
+    <path class="ln hlf" d="M50 46 L122 46 L124 53 L48 53Z"/>
+  </g>
+  <g id="hSmug">
+    <path class="ln" d="M76 63 C80 60 86 60 90 63 M95 63 C98 60 102 60 105 63"/>
+    <path class="ln thick" d="M74 56 L91 53 M93 53 L106 56"/>
+  </g>
+  <g id="hLook">
+    <circle class="ln fl" cx="84" cy="63" r="4.5"/><circle class="ln fl" cx="100" cy="63" r="4.5"/>
+    <circle class="dot" cx="84" cy="64" r="1.9"/><circle class="dot" cx="100" cy="64" r="1.9"/>
+    <path class="ln thick" d="M75 53 L91 57 M93 57 L107 52"/>
+  </g>
+  <!-- рука з молотом у спокої: молот стоїть головою на землі -->
+  <g id="hArm">
+    <path class="limb" d="M142 176 L146 266"/><path class="limb-in" d="M142 176 L146 266"/>
+    <rect class="ln thick hat" x="106" y="260" width="80" height="40" rx="5"/>
+    <rect class="ln fl" x="124" y="270" width="44" height="20" rx="3"/>
+    <text class="t" x="146" y="286" font-size="15" style="font-family:var(--f-mono)">&lt;/&gt;</text>
+    <path class="limb" d="M112 120 L134 156 L141 184"/><path class="limb-in" d="M112 120 L134 156 L141 184"/>
+    <circle class="ln fl" cx="141" cy="186" r="7"/>
+  </g>
+</defs>
+</svg>
+<!-- kit:end -->
+
+<header class="wrap top">
+  <a class="logo" href="../" aria-label="Magistral IT: home">
+    <svg viewBox="0 0 34 34" aria-hidden="true"><g filter="url(#pencil)"><path class="ln fl" d="M5 29 L8 21 L24 5 L29 10 L13 26Z"/><path class="ln" d="M8 21 L13 26 M21 8 L26 13"/><path class="ln hlf" d="M24 5 L29 10 L31 8 L26 3Z"/></g></svg>
+    <span>Magistral<b>IT</b></span>
+  </a>
+  <nav class="nav" aria-label="Site sections">
+    <a href="../">Story</a>
+    <a href="../cases/">Cases</a>
+    <a href="../blog/">Blog</a>
+    <a href="../order/">Order</a>
+  </nav>
+</header>
+
+<main>
+<!-- ═══ Розділ 1. Проблема ═══ -->
+<section class="hero" id="problem">
+  <div class="wrap">
+    <div class="sky" aria-hidden="true">
+      <div class="flier">
+        <div class="toR">
+          <span class="flag">Magistral IT<span class="tag"> · micro-sites for shops</span></span><span class="rope"></span>
+          <svg class="bird" viewBox="0 0 58 44"><g filter="url(#pencil)">
+            <path class="ln fl" d="M6 26 C10 14 30 12 40 18 C46 14 54 16 56 22 L48 24 C46 32 36 38 22 36 C14 35 8 31 6 26Z"/>
+            <path class="ln hlf" d="M54 20 L58 22 L53 24Z"/><circle class="dot" cx="47" cy="19.5" r="1.6"/>
+            <path class="ln fl wing" d="M20 24 C22 10 30 2 36 4 C34 12 30 20 26 26Z"/>
+            <path class="ln" d="M6 26 L0 22 M6 26 L0 30"/>
+          </g></svg>
+        </div>
+        <div class="toL">
+          <span class="flag">Magistral IT<span class="tag"> · micro-sites for shops</span></span><span class="rope"></span>
+          <svg class="bird" viewBox="0 0 58 44"><g filter="url(#pencil)">
+            <path class="ln fl" d="M6 26 C10 14 30 12 40 18 C46 14 54 16 56 22 L48 24 C46 32 36 38 22 36 C14 35 8 31 6 26Z"/>
+            <path class="ln hlf" d="M54 20 L58 22 L53 24Z"/><circle class="dot" cx="47" cy="19.5" r="1.6"/>
+            <path class="ln fl wing" d="M20 24 C22 10 30 2 36 4 C34 12 30 20 26 26Z"/>
+            <path class="ln" d="M6 26 L0 22 M6 26 L0 30"/>
+          </g></svg>
+        </div>
+      </div>
+    </div>
+
+    <span class="badge">Promo · free micro-site</span>
+    <p class="kicker">Chapter 1 · The problem</p>
+    <h1>“Buyers write to me, but they <span class="mark">can't reach me</span>”</h1>
+    <p class="lead">This is Marichka. She knits sweaters and sells them on TikTok and Instagram. Comments pour in under every video, her DMs are overflowing, and she simply can't answer everyone. Some buyers never got a reply.</p>
+    <p class="mute" style="margin-top:14px"><b>Outside Ukraine, the promo is valid from 1 February 2027.</b></p>
+    <div class="row">
+      <a class="btn" href="#hint">What happened next?</a>
+      <a class="btn ghost" href="#apply">I want a micro-site</a>
+    </div>
+
+    <div class="scene">
+      <svg viewBox="0 0 960 380" role="img" aria-label="Pencil drawing: Marichka is live-streaming in front of a ring light with a phone, while comments pour in around her: Price? Got size M? Send it in DMs! Still available? The counter shows 99+ unread">
+        <rect class="bg" width="960" height="380"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="364" style="--t:1.3s"/>
+          <path class="ln d" d="M14 350 L946 350" style="--dl:.2s"/>
+          <path class="ln d thin" d="M40 362 L120 362 M330 364 L450 364 M640 362 L760 362" style="--dl:.4s"/>
+          <!-- кільцева лампа з телефоном -->
+          <g style="--dl:.3s;--t:1.2s">
+            <circle class="ln d thick" cx="150" cy="140" r="62"/>
+            <circle class="ln d thin" cx="150" cy="140" r="50"/>
+            <path class="ln d" d="M150 202 L150 334 M150 334 L112 350 M150 334 L188 350 M150 334 L150 350"/>
+          </g>
+          <g class="pop" style="--dl:.7s">
+            <rect class="ln scr" x="132" y="108" width="36" height="62" rx="6"/>
+            <circle class="dot" cx="150" cy="116" r="2"/>
+            <rect class="ln hlf" x="98" y="58" width="56" height="24" rx="5"/>
+            <circle class="dot blink" cx="110" cy="70" r="4"/>
+            <text class="t y" x="132" y="76" font-size="16">LIVE</text>
+          </g>
+          <!-- Марічка -->
+          <g class="pop" style="--dl:.5s"><g transform="translate(250 144) scale(1.1)"><use href="#girl"/><use href="#armL"/><use href="#armRup"/><use href="#fWow"/></g></g>
+          <!-- коментарі -->
+          <g class="pop" style="--dl:1s">
+            <rect class="ln fl" x="430" y="34" width="120" height="46" rx="14"/>
+            <path class="ln fl" d="M446 80 L436 96 L466 80"/>
+            <text class="t" x="490" y="64" font-size="21">Price?</text>
+          </g>
+          <g class="pop" style="--dl:1.25s">
+            <rect class="ln fl" x="600" y="46" width="190" height="46" rx="14"/>
+            <path class="ln fl" d="M616 92 L606 108 L636 92"/>
+            <text class="t" x="695" y="76" font-size="21">Got size M?</text>
+          </g>
+          <g class="pop" style="--dl:1.5s">
+            <rect class="ln hlf" x="470" y="128" width="216" height="46" rx="14"/>
+            <path class="ln hlf" d="M486 174 L476 190 L506 174"/>
+            <text class="t y" x="578" y="158" font-size="21">Send it in DMs!</text>
+          </g>
+          <g class="pop" style="--dl:1.75s">
+            <rect class="ln fl" x="730" y="138" width="190" height="46" rx="14"/>
+            <path class="ln fl" d="M746 184 L736 200 L766 184"/>
+            <text class="t" x="825" y="168" font-size="21">Still available??</text>
+          </g>
+          <g class="pop" style="--dl:2s">
+            <rect class="ln fl" x="430" y="226" width="200" height="46" rx="14"/>
+            <path class="ln fl" d="M446 272 L436 288 L466 272"/>
+            <text class="t" x="530" y="256" font-size="21">Hello? Reply!</text>
+          </g>
+          <g class="pop" style="--dl:2.25s">
+            <rect class="ln fl" x="672" y="232" width="170" height="46" rx="14"/>
+            <path class="ln fl" d="M688 278 L678 294 L708 278"/>
+            <text class="t" x="757" y="262" font-size="21">How to order?</text>
+          </g>
+          <g class="pop" style="--dl:2.6s">
+            <rect class="ln hlf thick" x="740" y="300" width="196" height="40" rx="8"/>
+            <text class="t y" x="838" y="327" font-size="19">Unread: 99+</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 2. Підказка згори ═══ -->
+<section class="chapter" id="hint">
+  <div class="wrap">
+    <p class="kicker ch">Chapter 2 · A hint from above</p>
+    <div class="scene">
+      <svg viewBox="0 0 960 380" role="img" aria-label="Pencil drawing: from a cloud, a helmeted master-god gently taps Marichka with a hammer, a light bulb lights up above her and turns into a smartphone, and Marichka exclaims: Eureka! I need my own page with a call button">
+        <rect class="bg" width="960" height="380"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="364" style="--t:1.3s"/>
+          <path class="ln d" d="M14 350 L946 350" style="--dl:.2s"/>
+          <!-- Гефест на хмарі -->
+          <g class="descend">
+            <path class="ln thin" d="M150 150 L150 112 M196 146 L196 100 M236 152 L236 118"/>
+            <g transform="translate(110 5) scale(.7)">
+              <use href="#hLegsS"/>
+              <use href="#hBody"/>
+              <use href="#hLook"/>
+              <g class="tap"><use href="#hArm"/></g>
+            </g>
+            <path class="ln fl" d="M110 238 C84 238 80 210 106 206 C108 184 140 178 156 194 C168 176 204 178 210 198 C236 192 252 214 238 232 C252 246 226 252 214 244 C200 256 170 256 160 244 C146 256 116 254 110 238Z"/>
+          </g>
+          <!-- Марічка -->
+          <g transform="translate(234 143) scale(1.1)">
+            <use href="#girl"/><use href="#armL"/>
+            <g class="before"><use href="#armR"/><use href="#fSad"/></g>
+            <g class="after"><use href="#armRup"/><use href="#fWow"/></g>
+          </g>
+          <g class="stars fit"><path class="ln thin" d="M262 132 L254 118 M292 124 L292 108 M322 132 L332 118 M246 146 L232 142 M338 146 L352 142"/></g>
+          <g class="bulb fit">
+            <path class="ln hlf" d="M300 30 C286 30 282 46 290 56 C294 61 294 64 294 68 L306 68 C306 64 306 61 310 56 C318 46 314 30 300 30Z"/>
+            <path class="ln" d="M294 72 L306 72 M296 76 L304 76"/>
+          </g>
+          <g class="phone">
+            <g transform="rotate(-8 300 50)">
+              <rect class="ln hlf" x="286" y="24" width="28" height="48" rx="5"/>
+              <rect class="ln fl" x="290" y="30" width="20" height="33" rx="2"/>
+              <path class="ln thin" d="M294 37 L306 37 M294 43 L306 43"/>
+              <rect class="ln thin hlf" x="293" y="50" width="14" height="8" rx="2"/>
+              <circle class="dot" cx="300" cy="68" r="1.4"/>
+            </g>
+            <path class="ln thin" d="M300 16 L300 6 M276 26 L268 18 M324 26 L332 18 M270 50 L260 50 M330 50 L340 50"/>
+          </g>
+          <!-- Евріка -->
+          <g class="pop" style="--dl:2.3s">
+            <path class="ln fl" d="M446 40 L926 40 L926 236 L520 236 L404 196 L486 236 L446 236Z"/>
+            <text class="t" x="686" y="98" font-size="50">Eureka!</text>
+            <text class="t" x="686" y="146" font-size="27">I need my own page</text>
+            <text class="t" x="686" y="182" font-size="27">where buyers just call me!</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="copy">
+      <div class="rv">
+        <h2>Not one more chat. <span class="mark">Your own page</span></h2>
+      </div>
+      <p class="lead rv" style="--dl:.1s">Our digital master-god is at work again. This time the light bulb becomes a link in the profile, and behind it is Marichka's little website: products, prices and a “Call” button. The buyer taps and hears Marichka at once, with no long exchange of messages and no hunting for a number.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 3. Анкета і дизайн ═══ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <g id="swt">
+    <path class="ln pf" d="M-18 -14 L-8 -20 Q0 -14 8 -20 L18 -14 L24 0 L16 3 L16 18 L-16 18 L-16 3 L-24 0 Z"/>
+    <path class="ln thin" d="M-16 -4 L16 -4 M-16 4 L16 4 M-10 0 L-6 0 M-2 0 L2 0 M6 0 L10 0"/>
+  </g>
+</defs></svg>
+
+<section class="chapter" id="form-step">
+  <div class="wrap">
+    <p class="kicker ch">Chapter 3 · The form</p>
+    <div class="scene">
+      <svg viewBox="0 0 960 400" role="img" aria-label="Pencil drawing: Marichka fills in a form on a laptop and chooses a storefront design from cards A1, A2, A3; card A1 has a “Chosen” stamp">
+        <rect class="bg" width="960" height="400"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="384" style="--t:1.4s"/>
+          <path class="ln d" d="M16 340 L944 340" style="--dl:.3s"/>
+          <g style="--dl:.4s">
+            <path class="ln d fl" d="M180 262 L600 262 L600 276 L180 276Z"/>
+            <path class="ln d" d="M200 276 L196 340 M580 276 L584 340"/>
+            <rect class="ln d pf" x="260" y="92" width="250" height="156" rx="8"/>
+            <path class="ln d fl" d="M240 248 L530 248 L546 262 L224 262Z"/>
+          </g>
+          <g class="pop" style="--dl:.9s">
+            <text class="t" x="385" y="116" font-size="20">Form</text>
+            <text class="m l" x="276" y="142" font-size="9.5">SHOP</text>
+            <rect class="ln fl thin" x="370" y="128" width="124" height="20" rx="4"/>
+            <text class="t l" x="378" y="143" font-size="13">Marichka knits</text>
+            <text class="m l" x="276" y="170" font-size="9.5">ADDRESS</text>
+            <rect class="ln fl thin" x="370" y="156" width="124" height="20" rx="4"/>
+            <text class="t l" x="378" y="171" font-size="13">bazar.in.ua</text>
+            <text class="m l" x="276" y="198" font-size="9.5">COMMUNITY ID</text>
+            <rect class="ln fl thin" x="370" y="184" width="124" height="20" rx="4"/>
+            <text class="t l" x="378" y="199" font-size="13">from Holosnyk</text>
+            <rect class="ln hlf" x="414" y="214" width="80" height="24" rx="6"/>
+            <text class="t y" x="454" y="231" font-size="15">Next</text>
+          </g>
+          <g class="pop" style="--dl:.6s"><g transform="translate(70 150)"><use href="#girl"/><use href="#armL"/><use href="#armRup"/><use href="#fHappy"/></g></g>
+          <g class="pop" style="--dl:1.2s">
+            <circle class="ln pf" cx="570" cy="96" r="16"/>
+            <path class="ln thin" d="M570 86 L570 96 L578 100"/>
+            <text class="t" x="570" y="136" font-size="15">≈ 1 minute</text>
+          </g>
+          <path class="ln d thin" d="M516 170 C560 150 596 150 628 160 M628 160 L616 153 M628 160 L617 167" style="--dl:1.4s"/>
+          <g class="pop" style="--dl:1.6s">
+            <g transform="rotate(-4 682 150)">
+              <rect class="ln thick hlf" x="640" y="84" width="84" height="130" rx="10"/>
+              <rect class="ln pf thin" x="650" y="98" width="28" height="28" rx="4"/><rect class="ln pf thin" x="686" y="98" width="28" height="28" rx="4"/>
+              <rect class="ln pf thin" x="650" y="132" width="28" height="28" rx="4"/><rect class="ln pf thin" x="686" y="132" width="28" height="28" rx="4"/>
+              <rect class="ln pf thin" x="650" y="174" width="18" height="14" rx="4"/><rect class="ln pf thin" x="673" y="174" width="18" height="14" rx="4"/><rect class="ln pf thin" x="696" y="174" width="18" height="14" rx="4"/>
+            </g>
+            <g transform="rotate(3 782 150)">
+              <rect class="ln pf" x="740" y="84" width="84" height="130" rx="10"/>
+              <rect class="ln fl thin" x="750" y="98" width="28" height="28" rx="4"/><rect class="ln fl thin" x="786" y="98" width="28" height="28" rx="4"/>
+              <rect class="ln fl thin" x="750" y="132" width="28" height="28" rx="4"/><rect class="ln fl thin" x="786" y="132" width="28" height="28" rx="4"/>
+              <rect class="ln fl thin" x="750" y="174" width="18" height="14" rx="4"/><rect class="ln fl thin" x="773" y="174" width="18" height="14" rx="4"/><rect class="ln fl thin" x="796" y="174" width="18" height="14" rx="4"/>
+            </g>
+            <g transform="rotate(-2 882 150)">
+              <rect class="ln ink" x="840" y="84" width="84" height="130" rx="10"/>
+              <rect class="lnp thin" x="850" y="98" width="28" height="28" rx="4"/><rect class="lnp thin" x="886" y="98" width="28" height="28" rx="4"/>
+              <rect class="lnp thin" x="850" y="132" width="28" height="28" rx="4"/><rect class="lnp thin" x="886" y="132" width="28" height="28" rx="4"/>
+              <rect class="lnp thin" x="850" y="174" width="18" height="14" rx="4"/><rect class="lnp thin" x="873" y="174" width="18" height="14" rx="4"/><rect class="lnp thin" x="896" y="174" width="18" height="14" rx="4"/>
+            </g>
+            <text class="m" x="682" y="236" font-size="14">A1</text>
+            <text class="m" x="782" y="236" font-size="14">A2</text>
+            <text class="m" x="882" y="236" font-size="14">A3</text>
+          </g>
+          <g class="pop" style="--dl:2.2s">
+            <g transform="rotate(-10 682 268)">
+              <rect class="ln thick" x="628" y="252" width="108" height="32" rx="6"/>
+              <text class="t" x="682" y="275" font-size="18">CHOSEN</text>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="copy">
+      <div class="rv"><h2>One minute and your <span class="mark">storefront</span> is chosen</h2></div>
+      <p class="lead rv">Marichka fills in a short form: a link to her shop, her Community ID from Holosnyk, and where the page should live, on a free bazar.in.ua address or on her own domain. She picks a design by its code, and the site is already being put together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 4. Посилання в профіль ═══ -->
+<section class="chapter" id="link-step">
+  <div class="wrap">
+    <p class="kicker ch">Chapter 4 · The link</p>
+    <div class="scene">
+      <svg viewBox="0 0 960 400" role="img" aria-label="Pencil drawing: Marichka pastes the link marichka.bazar.in.ua into her TikTok profile, and a buyer beside her is happy: you can buy here">
+        <rect class="bg" width="960" height="400"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="384" style="--t:1.4s"/>
+          <path class="ln d" d="M16 340 L944 340" style="--dl:.3s"/>
+          <path class="ln d thin" d="M60 356 L150 356 M640 358 L740 358" style="--dl:.5s"/>
+          <g class="pop" style="--dl:.5s"><g transform="translate(150 150)"><use href="#girl"/><use href="#armL"/><use href="#armRup"/><use href="#fHappy"/></g></g>
+          <g class="pop" style="--dl:.9s">
+            <path class="ln thin" d="M236 175 L244 108" style="stroke-dasharray:3 5"/>
+            <text class="t" x="292" y="50" font-size="16">Copied →</text>
+            <g transform="rotate(-6 291 84)">
+              <rect class="ln hlf" x="196" y="64" width="190" height="40" rx="20"/>
+              <text class="m y" x="291" y="89" font-size="12.5">marichka.bazar.in.ua</text>
+            </g>
+          </g>
+          <g style="--dl:.4s">
+            <rect class="ln d pf" x="400" y="24" width="200" height="316" rx="24"/>
+            <rect class="ln d fl" x="412" y="44" width="176" height="284" rx="8"/>
+          </g>
+          <g class="pop" style="--dl:1s">
+            <circle class="ln pf" cx="500" cy="92" r="28"/>
+            <circle class="ln fl" cx="500" cy="98" r="13"/><path class="ln hat" d="M487 96 C485 80 515 80 513 96 C508 90 492 90 487 96Z"/>
+            <text class="t" x="500" y="142" font-size="16">@marichka</text>
+            <path class="ln thin" d="M436 156 L466 156 M486 156 L516 156 M536 156 L566 156 M440 172 L560 172 M455 184 L545 184"/>
+            <rect class="ln pf thin" x="420" y="234" width="50" height="42" rx="4"/><rect class="ln pf thin" x="476" y="234" width="50" height="42" rx="4"/><rect class="ln pf thin" x="532" y="234" width="50" height="42" rx="4"/>
+            <rect class="ln pf thin" x="420" y="282" width="50" height="42" rx="4"/><rect class="ln pf thin" x="476" y="282" width="50" height="42" rx="4"/><rect class="ln pf thin" x="532" y="282" width="50" height="42" rx="4"/>
+          </g>
+          <path class="ln d thin" d="M386 100 C420 126 404 172 424 200 M424 200 L414 190 M424 200 L428 187" style="--dl:1.4s"/>
+          <g class="pop" style="--dl:1.8s">
+            <rect class="ln hlf" x="424" y="196" width="152" height="26" rx="13"/>
+            <text class="m y" x="500" y="213" font-size="10">marichka.bazar.in.ua</text>
+            <path class="ln thin" d="M600 196 L612 188 M604 212 L620 212 M600 228 L612 236"/>
+          </g>
+          <g class="pop" style="--dl:2.2s"><g transform="translate(760 175) scale(.85)"><use href="#ped"/></g></g>
+          <g class="pop" style="--dl:2.6s">
+            <circle class="ln" cx="800" cy="186" r="4"/><circle class="ln" cx="808" cy="170" r="6"/>
+            <ellipse class="ln pf" cx="840" cy="124" rx="86" ry="36"/>
+            <text class="t" x="840" y="120" font-size="17">Oh, you can</text>
+            <text class="t" x="840" y="142" font-size="17">buy here!</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="copy rev">
+      <p class="lead rv">Marichka gets an address like marichka.bazar.in.ua (or her own domain) and pastes it into her TikTok and Instagram profiles. Now there is one answer to “where can I buy?”: the link in her profile.</p>
+      <div class="rv"><h2>The link goes <span class="mark">in the profile</span></h2></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 5. Покупець тисне «Відео» ═══ -->
+<section class="chapter" id="result">
+  <div class="wrap">
+    <p class="kicker ch">Chapter 5 · The buyer</p>
+    <div class="scene">
+      <svg viewBox="0 0 960 400" role="img" aria-label="Pencil drawing: a buyer opens Marichka's storefront in a browser and presses the “Video” button; the signal flies to Marichka's phone, where Holosnyk is ringing">
+        <rect class="bg" width="960" height="400"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="384" style="--t:1.4s"/>
+          <path class="ln d" d="M16 340 L238 340 M462 340 L944 340" style="--dl:.3s"/>
+          <g class="pop" style="--dl:.4s"><g transform="translate(60 136) scale(1.1)"><use href="#ped"/></g></g>
+          <path class="ln d thin" d="M150 204 L250 40 M150 216 L250 330" style="--dl:.7s"/>
+          <g style="--dl:.6s">
+            <rect class="ln d pf" x="250" y="26" width="196" height="310" rx="24"/>
+            <rect class="ln d fl" x="262" y="44" width="172" height="274" rx="8"/>
+          </g>
+          <g class="pop" style="--dl:1s">
+            <circle class="ln pf" cx="284" cy="70" r="14"/>
+            <path class="ln" d="M306 64 L370 64 M306 76 L346 76"/>
+            <rect class="ln pf" x="404" y="58" width="22" height="22" rx="11"/>
+            <rect class="ln pf" x="270" y="98" width="74" height="74" rx="8"/><rect class="ln pf" x="352" y="98" width="74" height="74" rx="8"/>
+            <rect class="ln pf" x="270" y="182" width="74" height="74" rx="8"/><rect class="ln pf" x="352" y="182" width="74" height="74" rx="8"/>
+            <g transform="translate(307 126) scale(.8)"><use href="#swt"/></g>
+            <g transform="translate(389 126) scale(.8)"><use href="#swt"/></g>
+            <g transform="translate(307 210) scale(.8)"><use href="#swt"/></g>
+            <g transform="translate(389 210) scale(.8)"><use href="#swt"/></g>
+            <path class="ln thin" d="M284 160 L320 160 M366 160 L402 160 M284 244 L320 244 M366 244 L402 244"/>
+            <rect class="ln pf" x="270" y="266" width="50" height="34" rx="9"/>
+            <rect class="ln hlf" x="323" y="266" width="50" height="34" rx="9"/>
+            <rect class="ln pf" x="376" y="266" width="50" height="34" rx="9"/>
+            <path class="ln thin" d="M288 276 C286 286 292 292 302 292 L304 287 L299 284 L296 287 C293 286 291 283 291 280 L294 278 L292 273Z"/>
+            <rect class="ln thin" x="336" y="277" width="16" height="12" rx="2"/><path class="ln thin" d="M352 283 L360 278 L360 288Z"/>
+            <path class="ln thin" d="M391 276 L411 276 L411 288 L398 288 L392 293 L393 288 L391 288Z"/>
+            <text class="m" x="348" y="313" font-size="8">via Holosnyk</text>
+          </g>
+          <circle class="ln thin tapdot" cx="348" cy="283" r="20"/>
+          <g class="pop" style="--dl:1.2s"><path class="limb" d="M372 356 L354 294"/><path class="limb-in" d="M372 356 L354 294"/></g>
+          <path class="ln line-call" d="M470 180 L730 180"/>
+          <g class="wave"><path class="ln" d="M470 150 Q490 180 470 210 M500 134 Q530 180 500 226 M530 118 Q570 180 530 242"/></g>
+          <g class="pop" style="--dl:1.6s">
+            <text class="t" x="610" y="110" font-size="18">no downloads, no numbers</text>
+            <text class="m" x="610" y="214" font-size="11">P2P · ENCRYPTED</text>
+          </g>
+          <path class="ln d" d="M720 274 L910 274 M740 274 L736 340 M890 274 L894 340" style="--dl:.8s"/>
+          <g class="ring">
+            <rect class="ln pf" x="770" y="118" width="90" height="152" rx="16"/>
+            <text class="t" x="815" y="158" font-size="16">Holosnyk</text>
+            <text class="m" x="815" y="188" font-size="8.5">VIDEO CALL</text>
+            <text class="t" x="815" y="208" font-size="13">from the site</text>
+            <circle class="ln fl" cx="795" cy="240" r="11"/><circle class="ln hlf" cx="835" cy="240" r="11"/>
+          </g>
+          <g class="wave"><path class="ln thin" d="M756 132 L744 124 M756 152 L740 152 M874 132 L886 124 M874 152 L890 152"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="copy">
+      <div class="rv"><h2>The buyer presses “Video”, <span class="mark">right in the browser</span></h2></div>
+      <p class="lead rv">Nothing needs to be installed, and no phone number is needed at all. The buyer calls straight from Marichka's site: they press Audio, Video or Chat, and the connection goes directly, encrypted. With no number there is nothing for scammers to grab onto: no “security service” calls and no spam to your phone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 6. Голосник у бізнес-режимі ═══ -->
+<section class="chapter" id="holosnyk">
+  <div class="wrap">
+    <p class="kicker ch">Chapter 6 · Holosnyk</p>
+    <div class="scene">
+      <svg viewBox="0 0 960 400" role="img" aria-label="Pencil drawing: Marichka's Holosnyk screen: a product card on the home screen, and under it a chat with a site buyer, “Got size M?”; Marichka answers: Yes, M is available, I'll ship today">
+        <rect class="bg" width="960" height="400"/>
+        <g filter="url(#pencil)">
+          <rect class="ln d thick" x="8" y="8" width="944" height="384" style="--t:1.4s"/>
+          <path class="ln d" d="M580 340 L944 340" style="--dl:.3s"/>
+          <g class="pop" style="--dl:1.6s">
+            <rect class="ln thin hlf" x="34" y="134" width="124" height="32" rx="4"/>
+            <text class="t l" x="40" y="128" font-size="19">On the home screen:</text>
+            <text class="t l y" x="42" y="158" font-size="25">your product</text>
+          </g>
+          <path class="ln d" d="M196 150 C250 148 290 150 326 152 M326 152 L313 145 M326 152 L313 159" style="--dl:1.9s"/>
+          <g class="pop" style="--dl:2.2s">
+            <rect class="ln thin hlf" x="34" y="244" width="188" height="32" rx="4"/>
+            <text class="t l" x="40" y="238" font-size="19">And under it:</text>
+            <text class="t l y" x="42" y="268" font-size="25">chat with buyers</text>
+          </g>
+          <path class="ln d" d="M226 262 C270 262 300 262 326 262 M326 262 L313 255 M326 262 L313 269" style="--dl:2.5s"/>
+          <rect class="ln d pf" x="320" y="18" width="240" height="364" rx="28" style="--dl:.4s"/>
+          <g class="pop" style="--dl:.8s">
+            <rect class="ln hat" x="332" y="42" width="216" height="50" rx="4"/>
+            <rect class="ln fl" x="340" y="48" width="36" height="36" rx="9"/>
+            <circle class="ln thin pf" cx="358" cy="66" r="11"/>
+            <rect class="ln tk" x="384" y="54" width="120" height="24" rx="5"/>
+            <text class="m y2" x="444" y="70" font-size="9">NEW BUYER</text>
+            <rect class="ln fl" x="508" y="48" width="36" height="36" rx="9"/>
+            <path class="ln thin" d="M520 74 L520 60 M525 74 L525 56 M530 74 L530 57 M535 74 L535 61 M517 70 C517 80 539 82 539 72"/>
+          </g>
+          <g class="pop" style="--dl:1.1s">
+            <rect class="ln fl" x="332" y="100" width="216" height="120" rx="12"/>
+            <text class="m l" x="344" y="120" font-size="8.5">PRODUCT ON SITE</text>
+            <g transform="translate(382 168) scale(1.4)"><use href="#swt"/></g>
+            <text class="t l" x="430" y="152" font-size="18">Sweater</text>
+            <text class="t l" x="430" y="172" font-size="16">“Snowflake”</text>
+            <text class="m l" x="430" y="194" font-size="8.5">3 VIEWING</text>
+            <path class="ln hlf" d="M502 220 L548 174 L548 208 Q548 220 536 220Z"/>
+          </g>
+          <g class="pop" style="--dl:1.4s">
+            <rect class="ln fl" x="332" y="228" width="216" height="66" rx="12"/>
+            <text class="m l" x="344" y="246" font-size="8">SITE BUYER · JUST NOW</text>
+            <rect class="ln pf" x="344" y="254" width="192" height="30" rx="10"/>
+            <text class="t l" x="354" y="274" font-size="15">Hello! Got size M?</text>
+          </g>
+          <g class="pop" style="--dl:1.7s">
+            <rect class="ln fl" x="332" y="302" width="104" height="70" rx="12"/>
+            <rect class="ln fl" x="444" y="302" width="104" height="70" rx="12"/>
+            <circle class="ln pf" cx="384" cy="328" r="13"/>
+            <path class="ln thin" d="M378 322 C376 330 381 336 389 336 L390 332 L386 330 L384 332 C381 331 380 328 380 326 L382 324 L381 320Z"/>
+            <text class="m" x="384" y="362" font-size="7.5">CALLS & CHATS</text>
+            <rect class="ln hlf" x="398" y="296" width="20" height="17" rx="6"/><text class="m y" x="408" y="309" font-size="10">1</text>
+            <rect class="ln hlf" x="420" y="296" width="20" height="17" rx="6"/><text class="m y" x="430" y="309" font-size="10">1</text>
+            <rect class="ln pf" x="484" y="316" width="24" height="22" rx="3"/>
+            <path class="ln thin" d="M496 316 L496 338 M488 322 L493 322 M488 328 L493 328 M499 322 L504 322 M499 328 L504 328"/>
+            <text class="m" x="496" y="362" font-size="7.5">BIZ CATALOG</text>
+          </g>
+          <g class="pop" style="--dl:.6s"><g transform="translate(640 150)"><use href="#girl"/><use href="#armL"/><use href="#armRup"/><use href="#fHappy"/></g></g>
+          <g class="pop" style="--dl:2.8s">
+            <path class="ln pf" d="M730 40 L930 40 L930 110 L790 110 L760 136 L768 110 L730 110Z"/>
+            <text class="t" x="830" y="70" font-size="20">Hello! Yes, M is here.</text>
+            <text class="t" x="830" y="96" font-size="16">Shipping today!</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="copy rev">
+      <p class="lead rv">Holosnyk becomes the shop's working terminal: on the home screen, your product and how many people are looking at it right now, and under it a chat with the site's buyers. She replied, they agreed, she sold.</p>
+      <div class="rv"><h2>Calls and chats <span class="mark">in Holosnyk</span></h2></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 7. Умови ═══ -->
+<section class="chapter" id="steps">
+  <div class="wrap">
+    <p class="kicker ch">Chapter 7 · Promo terms</p>
+    <div class="copy" style="margin-top:0">
+      <div class="rv">
+        <h2>Four steps and the page is <span class="mark">yours</span></h2>
+      </div>
+    </div>
+    <ol class="steps rv" style="margin-top:clamp(24px,4vw,36px)">
+      <li><h3>Install Holosnyk</h3><p>Buyers from your page will call you through it. <a href="https://play.google.com/store/apps/details?id=ua.toloka.holosnyk" target="_blank" rel="noopener">Install from Google Play</a> or download at <a href="https://golosnik.com.ua/" target="_blank" rel="noopener">golosnik.com.ua</a>.</p></li>
+      <li><h3>Choose a design and an address</h3><p>A design code from the <a href="#samples">samples below</a>, and where the page should live: a free address on bazar.in.ua or your own domain.</p></li>
+      <li><h3>Send a request</h3><p>It must include a link to your TikTok or Instagram shop and your Community ID in Holosnyk.</p></li>
+      <li><h3>Get your page</h3><p>We build the micro-site with your products and call and chat buttons, and show it to you before it goes live.</p></li>
+    </ol>
+    <div class="row rv" style="margin-top:30px">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=ua.toloka.holosnyk" target="_blank" rel="noopener">Install Holosnyk</a>
+      <a class="btn ghost" href="https://golosnik.com.ua/" target="_blank" rel="noopener">golosnik.com.ua</a>
+      <a class="btn ghost" href="../../ua/mikrosait/instruktsiya/">Step-by-step guide with screenshots (in Ukrainian)</a>
+    </div>
+    <div class="terms rv">
+      <h3>The terms, honestly</h3>
+      <ul>
+        <li>Outside Ukraine, the promo is valid from 1 February 2027.</li>
+        <li>Building the micro-site is free.</li>
+        <li>A free address on bazar.in.ua (like marichka.bazar.in.ua): up to 4 products in the storefront.</li>
+        <li>Want your own domain? The domain and hosting are yours: we will help you choose and buy them, but you pay for them.</li>
+        <li>We do not consider a request without an installed Holosnyk and a link to your shop.</li>
+      </ul>
+      <p class="why">Why do we do this? It is how we grow Holosnyk and show, with live examples, how our solutions for business work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 8. Зразки дизайну ═══ -->
+<section class="chapter" id="samples">
+  <div class="wrap">
+    <p class="kicker ch">Chapter 8 · Design samples</p>
+    <div class="copy" style="margin-top:0">
+      <div class="rv"><h2>Choose the <span class="mark">code</span> of your storefront</h2></div>
+      <p class="lead rv">All ten designs are ready. Press “Choose” under any sample below and you will see at once what your storefront will look like.</p>
+    </div>
+    <div class="smp-grid rv">
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A1: a ball of yarn and needles"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="56" cy="58" r="22"/><path d="M34 54 Q56 42 78 54 M38 70 Q56 58 76 72 M78 72 Q90 78 96 70 M70 20 L98 48 M80 16 L102 38"/><circle cx="70" cy="20" r="3" fill="#4B2C1F"/><circle cx="80" cy="16" r="3" fill="#4B2C1F"/></g></svg>
+        <div class="smp-row"><span class="code">A1</span><span class="smp-name">Knitting & handmade</span></div>
+        <a class="btn sm" href="#apply" data-pick="A1">Choose A1</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A2: a hanger and a T-shirt"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 28 Q67 28 67 35 Q67 40 60 44 L26 62 L94 62 L60 44"/><path d="M44 72 L32 80 L24 94 L32 98 L38 90 L38 104 L82 104 L82 90 L88 98 L96 94 L88 80 L76 72 Q60 80 44 72Z"/></g></svg>
+        <div class="smp-row"><span class="code">A2</span><span class="smp-name">Market, clothing</span></div>
+        <a class="btn sm" href="#apply" data-pick="A2">Choose A2</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A3: a kettle and a lightning bolt"><rect width="120" height="120" rx="12" fill="#1B1D21"/><g fill="none" stroke="#7FE9F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M38 50 Q38 78 60 78 Q82 78 82 50 Z M82 56 Q98 56 98 64 Q98 72 82 70 M38 50 L24 40 L38 32 M74 26 L58 52 L70 52 L54 80"/></g></svg>
+        <div class="smp-row"><span class="code">A3</span><span class="smp-name">Tech & gadgets</span></div>
+        <a class="btn sm" href="#apply" data-pick="A3">Choose A3</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A4: a needle with thread and a button"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M26 96 L92 28"/><path d="M26 96 L34 100"/><circle cx="88" cy="24" r="5"/><path d="M88 24 Q104 34 94 50 Q86 64 102 70"/><circle cx="32" cy="32" r="13"/><circle cx="27" cy="27" r="1.6" fill="#4B2C1F"/><circle cx="37" cy="27" r="1.6" fill="#4B2C1F"/><circle cx="27" cy="37" r="1.6" fill="#4B2C1F"/><circle cx="37" cy="37" r="1.6" fill="#4B2C1F"/></g></svg>
+        <div class="smp-row"><span class="code">A4</span><span class="smp-name">Sewing</span></div>
+        <a class="btn sm" href="#apply" data-pick="A4">Choose A4</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A5: headphones and a sound wave"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M38 58 Q38 30 60 30 Q82 30 82 58"/><rect x="30" y="56" width="16" height="26" rx="7"/><rect x="74" y="56" width="16" height="26" rx="7"/><path d="M44 96 L44 80 M54 102 L54 70 M64 96 L64 86 M74 100 L74 76"/></g></svg>
+        <div class="smp-row"><span class="code">A5</span><span class="smp-name">Headphones & speakers</span></div>
+        <a class="btn sm" href="#apply" data-pick="A5">Choose A5</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A6: a sneaker and a bag"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 84 L22 66 Q22 58 32 58 L46 58 L58 46 L74 52 L74 66 Q88 66 88 76 Q88 84 74 84 Z"/><path d="M22 76 L88 76"/><path d="M72 36 L96 36 L92 60 L76 60 Z"/><path d="M80 36 Q80 24 84 24 Q88 24 88 36"/></g></svg>
+        <div class="smp-row"><span class="code">A6</span><span class="smp-name">Shoes & bags</span></div>
+        <a class="btn sm" href="#apply" data-pick="A6">Choose A6</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A7: a lipstick and a perfume bottle"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="26" y="60" width="22" height="34" rx="4"/><path d="M26 60 L37 32 L48 60 Z"/><path d="M74 94 L74 58 L82 58 L82 44 L94 44 L94 58 L102 58 L102 94 Z"/><rect x="83" y="32" width="10" height="12" rx="2"/></g></svg>
+        <div class="smp-row"><span class="code">A7</span><span class="smp-name">Cosmetics & care</span></div>
+        <a class="btn sm" href="#apply" data-pick="A7">Choose A7</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A8: a teddy bear and a rattle"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="46" cy="66" r="22"/><circle cx="28" cy="40" r="10"/><circle cx="64" cy="40" r="10"/><circle cx="39" cy="62" r="2.4" fill="#4B2C1F"/><circle cx="53" cy="62" r="2.4" fill="#4B2C1F"/><path d="M39 74 Q46 80 53 74"/><circle cx="90" cy="38" r="12"/><path d="M90 50 L90 92"/><path d="M80 92 L100 92"/></g></svg>
+        <div class="smp-row"><span class="code">A8</span><span class="smp-name">Kids' items</span></div>
+        <a class="btn sm" href="#apply" data-pick="A8">Choose A8</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A9: a potted plant and a flower"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M28 72 L62 72 L56 102 L34 102 Z"/><path d="M27 72 L63 72"/><path d="M45 72 Q25 46 38 28 Q45 50 45 72"/><path d="M45 72 Q65 42 54 24 Q45 46 45 72"/><circle cx="88" cy="40" r="6"/><circle cx="88" cy="26" r="8"/><circle cx="100" cy="34" r="8"/><circle cx="96" cy="50" r="8"/><circle cx="80" cy="50" r="8"/><circle cx="76" cy="34" r="8"/><path d="M88 58 L88 76"/></g></svg>
+        <div class="smp-row"><span class="code">A9</span><span class="smp-name">Plants & garden</span></div>
+        <a class="btn sm" href="#apply" data-pick="A9">Choose A9</a>
+      </div>
+      <div class="smp">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Design motif A10: a universal shopping bag and a star"><rect width="120" height="120" rx="12" fill="#FBF3E6"/><g fill="none" stroke="#4B2C1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 50 L74 50 L70 94 L34 94 Z"/><path d="M42 50 Q42 30 52 30 Q62 30 62 50"/><path d="M90 30 L96 44 L110 44 L99 53 L103 67 L90 59 L77 67 L81 53 L70 44 L84 44 Z"/></g></svg>
+        <div class="smp-row"><span class="code">A10</span><span class="smp-name">Universal</span></div>
+        <a class="btn sm" href="#apply" data-pick="A10">Choose A10</a>
+      </div>
+    </div>
+    <div class="demo-wrap rv">
+      <p class="demo-hint">This is what your storefront will look like:</p>
+      <div class="demo-phone" id="demoPhone">
+  <svg class="demo-bg" aria-hidden="true" focusable="false" viewBox="0 0 390 844" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none" fill="none" stroke="#4B2C1F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.2">
+<g data-code="A1" style="display:block"><defs><g id="A1-sweater"><path d="M-18 -14 L-8 -20 Q0 -14 8 -20 L18 -14 L24 0 L16 3 L16 18 L-16 18 L-16 3 L-24 0 Z"/><path d="M-16 -4 L16 -4 M-16 4 L16 4"/></g>
+<g id="A1-needles"><path d="M-16 16 L16 -16"/><path d="M-10 20 L20 -10"/><circle cx="-16" cy="16" r="2"/><circle cx="20" cy="-10" r="2"/></g>
+<g id="A1-yarn"><circle r="14"/><path d="M-14 -4 Q0 -10 14 -4"/><path d="M-12 6 Q0 0 12 8"/><path d="M14 8 Q22 12 26 6"/></g>
+<g id="A1-heart"><path d="M0 8 Q-12 -2 -8 -8 Q-4 -12 0 -6 Q4 -12 8 -8 Q12 -2 0 8 Z"/></g>
+<g id="A1-scarf"><path d="M-14 -16 L14 -16 L16 16 L-16 16 Z"/><path d="M-15 -8 L15 -8 M-15 0 L15 0 M-16 8 L16 8"/></g>
+<g id="A1-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A1-yarn" transform="translate(40 36) rotate(-10)"/><use href="#A1-sweater" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A1-needles" transform="translate(260 42) rotate(-6)"/><use href="#A1-heart" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A1-scarf" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A1-spark" transform="translate(205 120) rotate(-12)"/><use href="#A1-yarn" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A1-sweater" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A1-needles" transform="translate(30 222) rotate(-8)"/><use href="#A1-heart" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A1-scarf" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A1-spark" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A1-yarn" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A1-sweater" transform="translate(195 308) rotate(-6)"/><use href="#A1-needles" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A1-heart" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A1-scarf" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A1-spark" transform="translate(140 406) rotate(8)"/><use href="#A1-yarn" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A1-sweater" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A1-needles" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A1-heart" transform="translate(200 502) rotate(-8)"/><use href="#A1-scarf" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A1-spark" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A1-yarn" transform="translate(30 606) rotate(-6)"/><use href="#A1-sweater" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A1-needles" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A1-heart" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A1-scarf" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A1-spark" transform="translate(190 694) rotate(6)"/><use href="#A1-yarn" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A1-sweater" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A1-needles" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A1-heart" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A1-scarf" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A1-spark" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A2" style="display:none"><defs><g id="A2-hanger"><path d="M0 -18 Q5 -18 5 -13 Q5 -10 0 -7 L-22 6 L22 6 L0 -7"/></g>
+<g id="A2-shirt"><path d="M-10 -20 L-22 -14 L-30 0 L-22 4 L-18 -2 L-18 22 L18 22 L18 -2 L22 4 L30 0 L22 -14 L10 -20 Q0 -14 -10 -20 Z"/></g>
+<g id="A2-tag"><path d="M-10 -12 L4 -12 L12 0 L4 12 L-10 12 Z"/><circle cx="-5" cy="0" r="2"/></g>
+<g id="A2-basket"><path d="M-18 -4 L18 -4 L14 16 L-14 16 Z"/><path d="M-18 -4 Q0 -18 18 -4"/><path d="M-8 -4 L-6 16 M0 -4 L0 16 M8 -4 L6 16"/></g>
+<g id="A2-coins"><circle cx="-6" cy="4" r="9"/><circle cx="8" cy="-2" r="9"/><path d="M-9 4 L-3 4 M6 -2 L10 -2"/></g>
+<g id="A2-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A2-hanger" transform="translate(40 36) rotate(-10)"/><use href="#A2-shirt" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A2-tag" transform="translate(260 42) rotate(-6)"/><use href="#A2-basket" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A2-coins" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A2-spark" transform="translate(205 120) rotate(-12)"/><use href="#A2-hanger" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A2-shirt" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A2-tag" transform="translate(30 222) rotate(-8)"/><use href="#A2-basket" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A2-coins" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A2-spark" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A2-hanger" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A2-shirt" transform="translate(195 308) rotate(-6)"/><use href="#A2-tag" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A2-basket" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A2-coins" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A2-spark" transform="translate(140 406) rotate(8)"/><use href="#A2-hanger" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A2-shirt" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A2-tag" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A2-basket" transform="translate(200 502) rotate(-8)"/><use href="#A2-coins" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A2-spark" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A2-hanger" transform="translate(30 606) rotate(-6)"/><use href="#A2-shirt" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A2-tag" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A2-basket" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A2-coins" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A2-spark" transform="translate(190 694) rotate(6)"/><use href="#A2-hanger" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A2-shirt" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A2-tag" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A2-basket" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A2-coins" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A2-spark" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A3" style="display:none"><defs><g id="A3-kettle"><path d="M-16 -8 Q-16 14 0 14 Q16 14 16 -8 Z"/><path d="M16 -2 Q26 -2 26 4 Q26 10 16 8"/><path d="M-16 -8 L-24 -14 L-16 -18"/><path d="M-16 -8 L16 -8"/></g>
+<g id="A3-mixer"><path d="M-10 -20 L10 -20 L14 -4 L-14 -4 Z"/><path d="M-14 -4 L14 -4 L12 14 L-12 14 Z"/><path d="M-6 -14 Q-6 -8 -4 -4 M6 -14 Q6 -8 4 -4"/></g>
+<g id="A3-vacuum"><circle cx="0" cy="0" r="14"/><circle cx="0" cy="0" r="5"/><path d="M14 0 Q30 -8 34 -26"/></g>
+<g id="A3-bolt"><path d="M4 -20 L-6 0 L2 0 L-4 20 L8 -4 L0 -4 Z"/></g>
+<g id="A3-plug"><rect x="-10" y="-8" width="20" height="14" rx="3"/><path d="M-5 -8 L-5 -16 M5 -8 L5 -16"/><path d="M0 6 Q0 16 14 20"/></g>
+<g id="A3-knob"><circle r="12"/><path d="M0 0 L0 -8"/><path d="M-12 0 L-14 0 M12 0 L14 0"/></g>
+<g id="A3-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A3-kettle" transform="translate(40 36) rotate(-10)"/><use href="#A3-mixer" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A3-bolt" transform="translate(260 42) rotate(-6)"/><use href="#A3-vacuum" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A3-knob" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A3-plug" transform="translate(205 120) rotate(-12)"/><use href="#A3-spark" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A3-kettle" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A3-mixer" transform="translate(30 222) rotate(-8)"/><use href="#A3-bolt" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A3-vacuum" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A3-knob" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A3-plug" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A3-spark" transform="translate(195 308) rotate(-6)"/><use href="#A3-kettle" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A3-mixer" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A3-bolt" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A3-vacuum" transform="translate(140 406) rotate(8)"/><use href="#A3-knob" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A3-plug" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A3-spark" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A3-kettle" transform="translate(200 502) rotate(-8)"/><use href="#A3-mixer" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A3-bolt" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A3-vacuum" transform="translate(30 606) rotate(-6)"/><use href="#A3-knob" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A3-plug" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A3-spark" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A3-kettle" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A3-mixer" transform="translate(190 694) rotate(6)"/><use href="#A3-bolt" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A3-vacuum" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A3-knob" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A3-plug" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A3-spark" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A3-kettle" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A4" style="display:none"><defs><g id="A4-machine"><path d="M-24 8 L-24 -4 Q-24 -12 -14 -12 L6 -12 Q16 -12 16 -4 L24 -4 L24 4 L16 4 L16 8 Z"/><circle cx="10" cy="-8" r="3.5"/><path d="M-6 -12 L-6 -2"/><path d="M-24 8 L24 8"/></g>
+<g id="A4-needle"><path d="M-20 14 L14 -20"/><path d="M-20 14 L-15 19"/><circle cx="12" cy="-18" r="3"/><path d="M12 -18 Q24 -14 20 -2 Q16 10 26 14"/></g>
+<g id="A4-spool"><path d="M-10 -14 L10 -14 M-10 14 L10 14"/><path d="M-10 -14 L-10 14 M10 -14 L10 14"/><path d="M-10 -8 Q0 -4 10 -8 M-10 0 Q0 4 10 0 M-10 8 Q0 12 10 8"/></g>
+<g id="A4-scissors"><circle cx="-10" cy="10" r="5"/><circle cx="10" cy="10" r="5"/><path d="M-10 10 L14 -16"/><path d="M10 10 L-14 -16"/></g>
+<g id="A4-button2"><circle r="13"/><circle cx="-4" cy="-4" r="1.6"/><circle cx="4" cy="-4" r="1.6"/><circle cx="-4" cy="4" r="1.6"/><circle cx="4" cy="4" r="1.6"/></g>
+<g id="A4-fabric"><path d="M-16 -10 L16 -10 L16 6 Q10 10 4 6 Q-2 10 -8 6 Q-14 10 -16 6 Z"/><path d="M-16 -2 L16 -2"/></g>
+<g id="A4-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A4-machine" transform="translate(40 36) rotate(-10)"/><use href="#A4-needle" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A4-spool" transform="translate(260 42) rotate(-6)"/><use href="#A4-scissors" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A4-button2" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A4-fabric" transform="translate(205 120) rotate(-12)"/><use href="#A4-spark" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A4-machine" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A4-needle" transform="translate(30 222) rotate(-8)"/><use href="#A4-spool" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A4-scissors" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A4-button2" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A4-fabric" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A4-spark" transform="translate(195 308) rotate(-6)"/><use href="#A4-machine" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A4-needle" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A4-spool" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A4-scissors" transform="translate(140 406) rotate(8)"/><use href="#A4-button2" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A4-fabric" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A4-spark" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A4-machine" transform="translate(200 502) rotate(-8)"/><use href="#A4-needle" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A4-spool" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A4-scissors" transform="translate(30 606) rotate(-6)"/><use href="#A4-button2" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A4-fabric" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A4-spark" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A4-machine" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A4-needle" transform="translate(190 694) rotate(6)"/><use href="#A4-spool" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A4-scissors" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A4-button2" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A4-fabric" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A4-spark" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A4-machine" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A5" style="display:none"><defs><g id="A5-hp"><path d="M-18 0 Q-18 -22 0 -22 Q18 -22 18 0"/><rect x="-22" y="-2" width="10" height="16" rx="4"/><rect x="12" y="-2" width="10" height="16" rx="4"/></g>
+<g id="A5-spk"><rect x="-12" y="-18" width="24" height="36" rx="4"/><circle cy="-6" r="6"/><circle cy="10" r="4"/></g>
+<g id="A5-note"><path d="M4 14 L4 -14 L14 -18 L14 -10 L4 -6"/><circle cx="0" cy="14" r="5"/></g>
+<g id="A5-wave"><rect x="-14" y="-4" width="3" height="8"/><rect x="-7" y="-10" width="3" height="20"/><rect x="0" y="-16" width="3" height="32"/><rect x="7" y="-8" width="3" height="16"/><rect x="14" y="-4" width="3" height="8"/></g>
+<g id="A5-phone"><rect x="-9" y="-16" width="18" height="32" rx="3"/><path d="M-4 12 L4 12"/></g>
+<g id="A5-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A5-hp" transform="translate(40 36) rotate(-10)"/><use href="#A5-spk" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A5-note" transform="translate(260 42) rotate(-6)"/><use href="#A5-wave" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A5-phone" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A5-spark" transform="translate(205 120) rotate(-12)"/><use href="#A5-hp" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A5-spk" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A5-note" transform="translate(30 222) rotate(-8)"/><use href="#A5-wave" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A5-phone" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A5-spark" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A5-hp" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A5-spk" transform="translate(195 308) rotate(-6)"/><use href="#A5-note" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A5-wave" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A5-phone" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A5-spark" transform="translate(140 406) rotate(8)"/><use href="#A5-hp" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A5-spk" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A5-note" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A5-wave" transform="translate(200 502) rotate(-8)"/><use href="#A5-phone" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A5-spark" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A5-hp" transform="translate(30 606) rotate(-6)"/><use href="#A5-spk" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A5-note" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A5-wave" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A5-phone" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A5-spark" transform="translate(190 694) rotate(6)"/><use href="#A5-hp" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A5-spk" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A5-note" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A5-wave" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A5-phone" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A5-spark" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A6" style="display:none"><defs><g id="A6-shoe"><path d="M-20 10 L-20 -4 Q-20 -10 -12 -10 L-2 -10 L6 -16 L16 -12 L16 -2 Q24 -2 24 4 Q24 10 16 10 Z"/><path d="M-20 4 L24 4"/></g>
+<g id="A6-heel"><path d="M-16 6 L-16 -4 Q-16 -10 -8 -10 L10 -10 L14 -2 L14 6 L4 6 L-2 20 L-6 20 L-4 6 Z"/></g>
+<g id="A6-bag"><path d="M-16 -4 L16 -4 L14 16 L-14 16 Z"/><path d="M-8 -4 Q-8 -16 0 -16 Q8 -16 8 -4"/></g>
+<g id="A6-box"><rect x="-16" y="-8" width="32" height="16" rx="2"/><path d="M-16 -8 L0 -16 L16 -8"/></g>
+<g id="A6-lace"><path d="M0 0 Q-10 -10 -16 0 Q-10 6 0 0 Q10 -10 16 0 Q10 6 0 0"/></g>
+<g id="A6-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A6-shoe" transform="translate(40 36) rotate(-10)"/><use href="#A6-bag" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A6-lace" transform="translate(260 42) rotate(-6)"/><use href="#A6-heel" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A6-box" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A6-shoe" transform="translate(205 120) rotate(-12)"/><use href="#A6-spark" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A6-shoe" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A6-bag" transform="translate(30 222) rotate(-8)"/><use href="#A6-lace" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A6-heel" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A6-box" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A6-shoe" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A6-spark" transform="translate(195 308) rotate(-6)"/><use href="#A6-shoe" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A6-bag" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A6-lace" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A6-heel" transform="translate(140 406) rotate(8)"/><use href="#A6-box" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A6-shoe" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A6-spark" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A6-shoe" transform="translate(200 502) rotate(-8)"/><use href="#A6-bag" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A6-lace" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A6-heel" transform="translate(30 606) rotate(-6)"/><use href="#A6-box" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A6-shoe" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A6-spark" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A6-shoe" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A6-bag" transform="translate(190 694) rotate(6)"/><use href="#A6-lace" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A6-heel" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A6-box" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A6-shoe" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A6-spark" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A6-shoe" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A7" style="display:none"><defs><g id="A7-lip"><rect x="-7" y="0" width="14" height="18" rx="2"/><path d="M-7 0 L0 -14 L7 0 Z"/></g>
+<g id="A7-perfume"><path d="M-8 20 L-8 -4 L-4 -4 L-4 -12 L4 -12 L4 -4 L8 -4 L8 20 Z"/><rect x="-3" y="-18" width="6" height="6" rx="1"/></g>
+<g id="A7-jar"><path d="M-12 -6 Q-12 -14 0 -14 Q12 -14 12 -6 L12 10 Q12 16 0 16 Q-12 16 -12 10 Z"/><path d="M-12 -4 L12 -4"/></g>
+<g id="A7-mirror"><circle cy="-6" r="14"/><path d="M0 8 L0 22"/></g>
+<g id="A7-brush"><path d="M-4 20 L4 20 L6 -4 L-6 -4 Z"/><ellipse cx="0" cy="-14" rx="8" ry="12"/></g>
+<g id="A7-leaf"><path d="M0 -16 Q16 -10 16 6 Q0 16 0 -16 Z"/><path d="M0 -14 L0 14"/></g>
+<g id="A7-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A7-lip" transform="translate(40 36) rotate(-10)"/><use href="#A7-perfume" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A7-jar" transform="translate(260 42) rotate(-6)"/><use href="#A7-mirror" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A7-brush" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A7-leaf" transform="translate(205 120) rotate(-12)"/><use href="#A7-spark" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A7-lip" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A7-perfume" transform="translate(30 222) rotate(-8)"/><use href="#A7-jar" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A7-mirror" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A7-brush" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A7-leaf" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A7-spark" transform="translate(195 308) rotate(-6)"/><use href="#A7-lip" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A7-perfume" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A7-jar" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A7-mirror" transform="translate(140 406) rotate(8)"/><use href="#A7-brush" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A7-leaf" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A7-spark" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A7-lip" transform="translate(200 502) rotate(-8)"/><use href="#A7-perfume" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A7-jar" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A7-mirror" transform="translate(30 606) rotate(-6)"/><use href="#A7-brush" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A7-leaf" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A7-spark" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A7-lip" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A7-perfume" transform="translate(190 694) rotate(6)"/><use href="#A7-jar" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A7-mirror" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A7-brush" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A7-leaf" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A7-spark" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A7-lip" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A8" style="display:none"><defs><g id="A8-bear"><circle cy="2" r="14"/><circle cx="-12" cy="-10" r="6"/><circle cx="12" cy="-10" r="6"/><circle cx="-5" cy="0" r="1.6"/><circle cx="5" cy="0" r="1.6"/><path d="M-4 8 Q0 11 4 8"/></g>
+<g id="A8-babybottle"><rect x="-7" y="-4" width="14" height="24" rx="4"/><rect x="-4" y="-14" width="8" height="10" rx="2"/><path d="M-4 -16 L4 -16"/></g>
+<g id="A8-paci"><ellipse cx="0" cy="10" rx="10" ry="7"/><circle r="8"/><path d="M-6 -6 L6 -6"/></g>
+<g id="A8-rattle"><circle cy="-10" r="10"/><path d="M0 0 L0 18"/><path d="M-5 18 L5 18"/></g>
+<g id="A8-star"><path d="M0 -14 L4 -4 L14 -4 L6 3 L9 14 L0 7 L-9 14 L-6 3 L-14 -4 L-4 -4 Z"/></g>
+<g id="A8-block"><rect x="-12" y="-12" width="24" height="24" rx="2"/><path d="M-5 -6 L5 6 M5 -6 L-5 6"/></g>
+<g id="A8-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A8-bear" transform="translate(40 36) rotate(-10)"/><use href="#A8-babybottle" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A8-star" transform="translate(260 42) rotate(-6)"/><use href="#A8-rattle" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A8-block" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A8-paci" transform="translate(205 120) rotate(-12)"/><use href="#A8-spark" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A8-bear" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A8-babybottle" transform="translate(30 222) rotate(-8)"/><use href="#A8-star" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A8-rattle" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A8-block" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A8-paci" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A8-spark" transform="translate(195 308) rotate(-6)"/><use href="#A8-bear" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A8-babybottle" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A8-star" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A8-rattle" transform="translate(140 406) rotate(8)"/><use href="#A8-block" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A8-paci" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A8-spark" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A8-bear" transform="translate(200 502) rotate(-8)"/><use href="#A8-babybottle" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A8-star" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A8-rattle" transform="translate(30 606) rotate(-6)"/><use href="#A8-block" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A8-paci" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A8-spark" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A8-bear" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A8-babybottle" transform="translate(190 694) rotate(6)"/><use href="#A8-star" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A8-rattle" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A8-block" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A8-paci" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A8-spark" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A8-bear" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A9" style="display:none"><defs><g id="A9-pot"><path d="M-12 -2 L12 -2 L9 18 L-9 18 Z"/><path d="M-13 -2 L13 -2"/><path d="M0 -2 Q-10 -20 -2 -26 Q0 -16 0 -2"/><path d="M0 -2 Q10 -22 4 -28 Q0 -18 0 -2"/></g>
+<g id="A9-leaf2"><path d="M0 14 Q-14 10 -14 -6 Q-14 -16 0 -16 Q14 -16 14 -6 Q14 10 0 14 Z"/><path d="M0 12 L0 -14"/></g>
+<g id="A9-wcan"><path d="M-14 4 L8 4 L8 -8 L-14 -8 Z"/><path d="M8 -4 L20 -10"/><path d="M-14 -8 L-14 -16 L-8 -16 L-8 -8"/><circle cx="20" cy="-10" r="2"/></g>
+<g id="A9-flower"><circle r="4"/><circle cx="0" cy="-9" r="5"/><circle cx="8" cy="-3" r="5"/><circle cx="5" cy="7" r="5"/><circle cx="-5" cy="7" r="5"/><circle cx="-8" cy="-3" r="5"/><path d="M0 12 L0 24"/></g>
+<g id="A9-seed"><path d="M-10 -14 L10 -14 L10 14 L-10 14 Z"/><path d="M-10 -14 L0 -6 L10 -14"/></g>
+<g id="A9-sprout"><path d="M0 16 L0 -4"/><path d="M0 -4 Q-10 -4 -10 -14 Q0 -14 0 -4"/><path d="M0 0 Q10 0 10 -10 Q0 -10 0 0"/></g>
+<g id="A9-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A9-pot" transform="translate(40 36) rotate(-10)"/><use href="#A9-flower" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A9-leaf2" transform="translate(260 42) rotate(-6)"/><use href="#A9-wcan" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A9-sprout" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A9-seed" transform="translate(205 120) rotate(-12)"/><use href="#A9-spark" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A9-pot" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A9-flower" transform="translate(30 222) rotate(-8)"/><use href="#A9-leaf2" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A9-wcan" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A9-sprout" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A9-seed" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A9-spark" transform="translate(195 308) rotate(-6)"/><use href="#A9-pot" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A9-flower" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A9-leaf2" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A9-wcan" transform="translate(140 406) rotate(8)"/><use href="#A9-sprout" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A9-seed" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A9-spark" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A9-pot" transform="translate(200 502) rotate(-8)"/><use href="#A9-flower" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A9-leaf2" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A9-wcan" transform="translate(30 606) rotate(-6)"/><use href="#A9-sprout" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A9-seed" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A9-spark" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A9-pot" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A9-flower" transform="translate(190 694) rotate(6)"/><use href="#A9-leaf2" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A9-wcan" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A9-sprout" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A9-seed" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A9-spark" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A9-pot" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+<g data-code="A10" style="display:none"><defs><g id="A10-shopbag"><path d="M-14 -6 L14 -6 L12 18 L-12 18 Z"/><path d="M-7 -6 Q-7 -18 0 -18 Q7 -18 7 -6"/></g>
+<g id="A10-ptag"><path d="M-10 -12 L4 -12 L12 0 L4 12 L-10 12 Z"/><circle cx="-5" cy="0" r="2"/></g>
+<g id="A10-ustar"><path d="M0 -14 L4 -4 L14 -4 L6 3 L9 14 L0 7 L-9 14 L-6 3 L-14 -4 L-4 -4 Z"/></g>
+<g id="A10-gift"><rect x="-14" y="-4" width="28" height="20" rx="2"/><path d="M-14 -4 L14 -4"/><path d="M0 -4 L0 16"/><path d="M0 -4 Q-10 -14 -14 -8 Q-8 -2 0 -4"/><path d="M0 -4 Q10 -14 14 -8 Q8 -2 0 -4"/></g>
+<g id="A10-check"><circle r="13"/><path d="M-6 0 L-2 6 L7 -7"/></g>
+<g id="A10-cart"><path d="M-14 -10 L-10 -10 L-6 8 L12 8 L16 -4 L-8 -4"/><circle cx="-4" cy="14" r="2.4"/><circle cx="8" cy="14" r="2.4"/></g>
+<g id="A10-spark"><path d="M0 -10 L2 -2 L10 0 L2 2 L0 10 L-2 2 L-10 0 L-2 -2 Z"/></g></defs><use href="#A10-shopbag" transform="translate(40 36) rotate(-10)"/><use href="#A10-ptag" transform="translate(150 30) rotate(8) scale(0.9)"/><use href="#A10-ustar" transform="translate(260 42) rotate(-6)"/><use href="#A10-gift" transform="translate(360 34) rotate(12) scale(0.85)"/><use href="#A10-check" transform="translate(95 128) rotate(6) scale(0.9)"/><use href="#A10-cart" transform="translate(205 120) rotate(-12)"/><use href="#A10-spark" transform="translate(320 132) rotate(4) scale(0.9)"/><use href="#A10-shopbag" transform="translate(20 150) rotate(10) scale(0.8)"/><use href="#A10-ptag" transform="translate(30 222) rotate(-8)"/><use href="#A10-ustar" transform="translate(140 230) rotate(10) scale(0.85)"/><use href="#A10-gift" transform="translate(250 218) rotate(-4) scale(0.95)"/><use href="#A10-check" transform="translate(360 228) rotate(8) scale(0.9)"/><use href="#A10-cart" transform="translate(85 318) rotate(12) scale(0.9)"/><use href="#A10-spark" transform="translate(195 308) rotate(-6)"/><use href="#A10-shopbag" transform="translate(305 322) rotate(6) scale(0.85)"/><use href="#A10-ptag" transform="translate(20 340) rotate(-10) scale(0.8)"/><use href="#A10-ustar" transform="translate(30 414) rotate(-10) scale(0.85)"/><use href="#A10-gift" transform="translate(140 406) rotate(8)"/><use href="#A10-check" transform="translate(250 418) rotate(-12) scale(0.9)"/><use href="#A10-cart" transform="translate(360 408) rotate(4) scale(0.9)"/><use href="#A10-spark" transform="translate(90 512) rotate(6) scale(0.9)"/><use href="#A10-shopbag" transform="translate(200 502) rotate(-8)"/><use href="#A10-ptag" transform="translate(320 514) rotate(10) scale(0.85)"/><use href="#A10-ustar" transform="translate(15 530) rotate(8) scale(0.8)"/><use href="#A10-gift" transform="translate(30 606) rotate(-6)"/><use href="#A10-check" transform="translate(140 614) rotate(10) scale(0.85)"/><use href="#A10-cart" transform="translate(250 598) rotate(-4) scale(0.95)"/><use href="#A10-spark" transform="translate(360 610) rotate(8) scale(0.9)"/><use href="#A10-shopbag" transform="translate(80 702) rotate(-10) scale(0.9)"/><use href="#A10-ptag" transform="translate(190 694) rotate(6)"/><use href="#A10-ustar" transform="translate(300 706) rotate(-8) scale(0.85)"/><use href="#A10-gift" transform="translate(20 722) rotate(10) scale(0.8)"/><use href="#A10-check" transform="translate(30 792) rotate(8) scale(0.8)"/><use href="#A10-cart" transform="translate(140 800) rotate(-6) scale(0.9)"/><use href="#A10-spark" transform="translate(250 786) rotate(10) scale(0.85)"/><use href="#A10-shopbag" transform="translate(360 796) rotate(-4) scale(0.8)"/></g>
+</svg>
+  <header class="demo-hd">
+  <div class="demo-av" id="demoAv"><span id="demoAvLetter">C</span></div>
+  <div style="flex:1;min-width:0">
+    <div class="demo-name" id="demoName">Cosy Knits</div>
+    <div class="demo-badge" id="demoBadge">Knitting &amp; handmade</div>
+  </div>
+  <button class="demo-cart" aria-label="Cart" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#4B2C1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+  </button>
+</header>
+  <main class="demo-grid" id="demoGrid">
+  <article class="demo-card"><div class="demo-ph">product photo</div><div class="demo-pname" data-p="0-name">Hat</div><div class="demo-pprice"><span data-p="0-price">320</span> ₴</div></article>
+  <article class="demo-card"><div class="demo-ph">product photo</div><div class="demo-pname" data-p="1-name">Scarf</div><div class="demo-pprice"><span data-p="1-price">280</span> ₴</div></article>
+  <article class="demo-card"><div class="demo-ph">product photo</div><div class="demo-pname" data-p="2-name">Sweater</div><div class="demo-pprice"><span data-p="2-price">650</span> ₴</div></article>
+  <article class="demo-card"><div class="demo-ph">product photo</div><div class="demo-pname" data-p="3-name">Gloves</div><div class="demo-pprice"><span data-p="3-price">180</span> ₴</div></article>
+</main>
+  <section class="demo-pay">
+    <button type="button" class="demo-pay-btn" id="demoPayBtn" style="background:#F6B79C">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4B2C1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+      Pay for the order
+    </button>
+  </section>
+  <section class="demo-bar" aria-hidden="true">
+  <div class="demo-bar-grid">
+    <div class="demo-bar-btn" style="background:#E5836A"><svg viewBox="0 0 24 24" fill="none" stroke="#4B2C1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Audio</div>
+    <div class="demo-bar-btn" style="background:#F3C35F"><svg viewBox="0 0 24 24" fill="none" stroke="#4B2C1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 8l-6 4 6 4V8z"/></svg>Video</div>
+    <div class="demo-bar-btn" style="background:#F6B79C"><svg viewBox="0 0 24 24" fill="none" stroke="#4B2C1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chat</div>
+  </div>
+  <div class="demo-bar-sub">via Holosnyk</div>
+</section>
+  <footer class="demo-foot">Built by Magistral IT</footer>
+</div>
+      <div class="demo-colors" id="demoColors" role="group" aria-label="Storefront accent colour">
+        <button type="button" class="demo-color" data-color="#F6B79C" style="background:#F6B79C" aria-label="Peach"></button>
+        <button type="button" class="demo-color" data-color="#F3C35F" style="background:#F3C35F" aria-label="Golden"></button>
+        <button type="button" class="demo-color" data-color="#E5836A" style="background:#E5836A" aria-label="Terracotta"></button>
+        <button type="button" class="demo-color" data-color="#7FE9F4" style="background:#7FE9F4" aria-label="Turquoise"></button>
+        <button type="button" class="demo-color" data-color="#9ED8B0" style="background:#9ED8B0" aria-label="Mint"></button>
+        <button type="button" class="demo-color" data-color="#C9A8E0" style="background:#C9A8E0" aria-label="Lavender"></button>
+        <button type="button" class="demo-color" data-color="#F2A6C6" style="background:#F2A6C6" aria-label="Pink"></button>
+        <button type="button" class="demo-color" data-color="#A8C8E8" style="background:#A8C8E8" aria-label="Sky blue"></button>
+      </div>
+      <p class="demo-hint demo-hint-sm">The accent colour is just an example; we match it to your brand individually</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Розділ 9. Заявка ═══ -->
+<section class="cta" id="apply">
+  <div class="wrap">
+    <p class="kicker" style="margin-bottom:18px">Chapter 9 · The request</p>
+    <div class="apply">
+      <div>
+        <h2 id="ask">Want a page like this <span class="mark">for your shop</span>?</h2>
+        <form id="form" novalidate>
+          <label class="fld"><span>A link to your TikTok or Instagram shop *</span>
+            <input type="url" id="link" inputmode="url" autocomplete="url" maxlength="300" placeholder="https://www.tiktok.com/@your_shop" required>
+          </label>
+          <label class="fld"><span>Your Community ID in Holosnyk *</span>
+            <input type="text" id="gid" maxlength="20" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="GLS-8527-IBS" required>
+            <p class="mute" style="margin-top:8px">Three letters, four digits, three letters. You can see it in your profile in Holosnyk.</p>
+          </label>
+          <fieldset class="fld" style="border:0;padding:0;margin-inline:0">
+            <span>Where the page should live</span>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="domain" value="bazar" checked> A free address on bazar.in.ua</label>
+              <label class="opt"><input type="radio" name="domain" value="own"> I already have my own domain</label>
+              <label class="opt"><input type="radio" name="domain" value="help"> My own domain: I need help buying it</label>
+            </div>
+          </fieldset>
+          <label class="fld"><span>Design code</span>
+            <select id="design">
+              <option value="">Don't know yet: advise me</option>
+              <option>A1</option><option>A2</option><option>A3</option><option>A4</option><option>A5</option>
+              <option>A6</option><option>A7</option><option>A8</option><option>A9</option><option>A10</option>
+            </select>
+          </label>
+          <label class="fld"><span>Wishes (optional)</span>
+            <textarea id="note" maxlength="500" placeholder="For example: what you sell, which colours you like, what the page should have"></textarea>
+          </label>
+          <input type="text" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <div class="acts">
+            <button type="submit" class="btn" id="send">I want a micro-site</button>
+          </div>
+          <p class="mute" id="err" role="alert" hidden></p>
+          <p class="mute"><b>Outside Ukraine, the promo is valid from 1 February 2027.</b></p>
+          <p class="mute">We will reply in Holosnyk to your Community ID. No phone or email needed.</p>
+          <p class="mute">No Holosnyk yet? <a href="https://play.google.com/store/apps/details?id=ua.toloka.holosnyk" target="_blank" rel="noopener">Install from Google Play</a> or at <a href="https://golosnik.com.ua/" target="_blank" rel="noopener">golosnik.com.ua</a>.</p>
+        </form>
+        <div id="done" hidden>
+          <h2 tabindex="-1">Request received</h2>
+          <div class="stamp">ACCEPTED</div>
+          <p class="lead" style="margin-top:20px">We will look at your shop and write to you in Holosnyk. We will show you the page before it goes live.</p>
+          <div class="acts"><a class="btn" href="../cases/">See the cases</a><a class="btn ghost" href="../">Back to Vasyl's story</a></div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="bubble rv">
+          <p>Marichka is made up, but the micro-site will be completely real. <b>Outside Ukraine, the promo starts on 1 February 2027.</b> Send a request, we will look at your shop and show you the page before it goes live.</p>
+        </div>
+        <svg viewBox="10 0 100 195" aria-hidden="true"><g filter="url(#pencil)"><use href="#dev"/><use href="#armL"/><use href="#armRup"/></g></svg>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">
+  <span>© 2026 Magistral IT</span>
+  <span><a href="../cases/">Cases</a> · <a href="../order/">Order</a> · <a href="../../ua/pay/">Payment details</a> · magistral-it.com</span>
+  <span>Toloka ecosystem: P2P messenger <a href="https://golosnik.com.ua/">Holosnyk</a> · marketplace <a href="https://bazar.in.ua/">Bazar Toloka</a> · developed by IT agency <a href="https://magistral-it.com/">Magistral IT</a></span>
+</footer>
+
+<script src="../../assets/comic.js"></script>
+<script>
+(function () {
+  var ENDPOINT = "https://magistral-order.bazartoloka.workers.dev/";
+  var t0 = Date.now();
+  function $(id) { return document.getElementById(id); }
+  var LET = "[\\p{Script=Cyrillic}A-Z]";
+  var GID = new RegExp("^(" + LET + "{3})[-\\s_–—]*(\\d{4})[-\\s_–—]*(" + LET + "{3})$", "u");
+  function gidNorm(v) {
+    var m = String(v || "").trim().toUpperCase().match(GID);
+    return m ? m[1] + "-" + m[2] + "-" + m[3] : "";
+  }
+  function shopLink(v) {
+    var u;
+    try { u = new URL(String(v || "").trim()); } catch (e) { return ""; }
+    if (u.protocol !== "https:" && u.protocol !== "http:") return "";
+    var h = u.hostname.toLowerCase();
+    var ok = ["instagram.com", "tiktok.com"].some(function (d) { return h === d || h.slice(-(d.length + 1)) === "." + d; });
+    return ok ? u.href : "";
+  }
+  var MSG = {
+    link: "We need a link to your TikTok or Instagram shop, for example https://www.tiktok.com/@your_shop",
+    gid: "Enter the ID in the format GLS-8527-IBS: three letters, four digits, three letters.",
+    slow: "Too many requests from this address. Please try again in a few minutes.",
+    fail: "Couldn't send. Please try again a little later."
+  };
+  function fail(key, field) {
+    $("err").textContent = MSG[key]; $("err").hidden = false;
+    ["link", "gid"].forEach(function (f) { $(f).removeAttribute("aria-invalid"); });
+    if (field) { $(field).setAttribute("aria-invalid", "true"); $(field).focus(); }
+  }
+
+  var DEMO_THEMES = {
+    A1: { store: "Cosy Knits", avatar: "C", avatarColor: "#F6B79C", category: "Knitting & handmade", products: [["Hat","320"],["Scarf","280"],["Sweater","650"],["Gloves","180"]] },
+    A2: { store: "Marichka's Market", avatar: "M", avatarColor: "#F3C35F", category: "Market, clothing", products: [["T-shirt","250"],["Dress","420"],["Jeans","550"],["Scarf","180"]] },
+    A3: { store: "TechBazaar", avatar: "T", avatarColor: "#E5836A", category: "Tech & gadgets", products: [["Headphones","650"],["Speaker","890"],["Cable","120"],["Case","150"]] },
+    A4: { store: "Sewing Workshop", avatar: "S", avatarColor: "#F6B79C", category: "Sewing", products: [["Fabric","180"],["Thread","45"],["Pattern","90"],["Buttons","25"]] },
+    A5: { store: "AudioHub", avatar: "A", avatarColor: "#F3C35F", category: "Headphones & speakers", products: [["Headphones","750"],["Speaker","990"],["Microphone","650"],["Cable","120"]] },
+    A6: { store: "Step Style", avatar: "S", avatarColor: "#E5836A", category: "Shoes & bags", products: [["Sneakers","890"],["Bag","650"],["Slippers","280"],["Backpack","720"]] },
+    A7: { store: "Care with Soul", avatar: "C", avatarColor: "#F6B79C", category: "Cosmetics & care", products: [["Cream","320"],["Lipstick","180"],["Perfume","650"],["Brush","150"]] },
+    A8: { store: "Little One shop", avatar: "L", avatarColor: "#F3C35F", category: "Kids' items", products: [["Toy","250"],["Bottle","120"],["Pacifier","60"],["Rattle","90"]] },
+    A9: { store: "Green World", avatar: "G", avatarColor: "#E5836A", category: "Plants & garden", products: [["Ficus","350"],["Pot","120"],["Seeds","40"],["Watering can","180"]] },
+    A10: { store: "My Showcase", avatar: "M", avatarColor: "#F6B79C", category: "Universal", products: [["Item 1","250"],["Item 2","350"],["Item 3","180"],["Item 4","420"]] }
+  };
+  var selectedAccent = null;
+  function applyAccent(color) {
+    $("demoAv").style.background = color;
+    $("demoBadge").style.background = color;
+    $("demoPayBtn").style.background = color;
+  }
+  function showDemo(code) {
+    var t = DEMO_THEMES[code];
+    if (!t) return;
+    var phone = $("demoPhone");
+    if (!phone) return;
+    phone.querySelectorAll(".demo-bg [data-code]").forEach(function (g) {
+      g.style.display = g.getAttribute("data-code") === code ? "block" : "none";
+    });
+    $("demoName").textContent = t.store;
+    $("demoAvLetter").textContent = t.avatar;
+    $("demoBadge").textContent = t.category;
+    applyAccent(selectedAccent || t.avatarColor);
+    t.products.forEach(function (p, i) {
+      var nameEl = phone.querySelector('[data-p="' + i + '-name"]');
+      var priceEl = phone.querySelector('[data-p="' + i + '-price"]');
+      if (nameEl) nameEl.textContent = p[0];
+      if (priceEl) priceEl.textContent = p[1];
+    });
+    document.querySelectorAll(".smp").forEach(function (card) {
+      var btn = card.querySelector("[data-pick]");
+      card.classList.toggle("active", !!btn && btn.getAttribute("data-pick") === code);
+    });
+  }
+  document.querySelectorAll("[data-pick]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var code = a.getAttribute("data-pick");
+      $("design").value = code;
+      showDemo(code);
+      var phone = $("demoPhone");
+      if (phone) phone.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+  showDemo("A1");
+  document.querySelectorAll(".demo-color").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      selectedAccent = btn.getAttribute("data-color");
+      applyAccent(selectedAccent);
+      document.querySelectorAll(".demo-color").forEach(function (b) {
+        b.classList.toggle("active", b === btn);
+      });
+    });
+  });
+  $("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    $("err").hidden = true;
+    var link = shopLink($("link").value);
+    var gid = gidNorm($("gid").value);
+    if (!link) return fail("link", "link");
+    if (!gid) return fail("gid", "gid");
+    var pick = document.querySelector('input[name="domain"]:checked');
+    var dom = pick ? pick.value : "";
+    var code = $("design").value;
+    var head = (dom === "bazar" ? "Адреса: безкоштовна на bazar.in.ua. " : "") + "Дизайн: " + (code || "не обрано") + ".";
+    var note = (head + " " + $("note").value.trim()).trim().slice(0, 500);
+    var payload = { kind: "mikrosait", link: link, gid: gid, domain: dom === "bazar" ? "" : dom, note: note, page: location.pathname, hp: $("hp").value, t: Date.now() - t0 };
+    $("send").disabled = true;
+    fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+      .then(function (r) {
+        if (r.ok) {
+          $("form").hidden = true; $("ask").hidden = true; $("done").hidden = false;
+          $("done").querySelector("h2").focus();
+          return;
+        }
+        return r.text().then(function (t) {
+          if (t === "link") fail("link", "link");
+          else if (t === "gid") fail("gid", "gid");
+          else if (r.status === 429) fail("slow");
+          else fail("fail");
+        });
+      })
+      .catch(function () { fail("fail"); })
+      .then(function () { $("send").disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
