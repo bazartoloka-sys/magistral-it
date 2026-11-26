@@ -27,6 +27,12 @@ Magistral IT робить мобільні застосунки та інтер�
 - [Додаток чи сайт: що обрати бізнесу](https://magistral-it.com/ua/blog/dodatok-chy-sait/)
 - [Безкоштовний мікросайт для продавців TikTok та Instagram](https://magistral-it.com/ua/blog/bezkoshtovnyi-mikrosait-tiktok-instagram/)
 - [Як створити безкоштовний сайт для TikTok та Instagram](https://magistral-it.com/ua/blog/yak-stvoryty-bezkoshtovnyi-sait-tiktok-instagram/)
+- [Як скласти ТЗ на додаток, якщо ви не програміст](https://magistral-it.com/ua/blog/yak-sklasty-tz-na-dodatok/)
+- [Типові помилки замовника додатка і як їх уникнути](https://magistral-it.com/ua/blog/pomylky-zamovnyka-dodatka/)
+- [Що відбувається з додатком після запуску](https://magistral-it.com/ua/blog/pidtrymka-dodatka-pislia-zapusku/)
+- [Додаток разом зі штучним інтелектом: що робить він, а що людина](https://magistral-it.com/ua/blog/dodatok-razom-zi-shi/)
+- [Чи можна зробити додаток самому за допомогою ШІ](https://magistral-it.com/ua/blog/dodatok-samomu-za-dopomohoiu-shi/)
+- [Як ми працюємо з Claude: порядок, який тримає проєкт](https://magistral-it.com/ua/blog/yak-my-pratsiuiemo-z-claude/)
 
 ## Мінісеріал «Навіщо ми зробили Голосник»
 
@@ -53,7 +59,13 @@ Magistral IT is an IT agency building mobile apps and web solutions for business
 - [How to choose an app developer](https://magistral-it.com/en/blog/how-to-choose-an-app-developer/)
 - [Android or iOS](https://magistral-it.com/en/blog/android-or-ios/)
 - [Coffee shop app](https://magistral-it.com/en/blog/coffee-shop-app/)
+- [How to write an app brief if you are not a programmer](https://magistral-it.com/en/blog/how-to-write-an-app-brief/)
+- [Common mistakes app clients make and how to avoid them](https://magistral-it.com/en/blog/app-client-mistakes/)
+- [What happens to an app after launch](https://magistral-it.com/en/blog/app-support-after-launch/)
+- [Building an app with AI: what it does and what a person does](https://magistral-it.com/en/blog/building-an-app-with-ai/)
+- [Can you build an app yourself with the help of AI](https://magistral-it.com/en/blog/build-an-app-yourself-with-ai/)
+- [How we work with Claude: the routine that holds a project together](https://magistral-it.com/en/blog/how-we-work-with-claude/)
 
 ## Мови
 
-Основна версія українською (/ua/), повна англійська версія (/en/). Польською є головна історія (/pl/), кейси (/pl/cases/), форма замовлення (/pl/order/), блог із сімома статтями (/pl/blog/) і сторінка акції мікросайту (/pl/mikrosait/; за межами України акція діє з 1 лютого 2027, заявки приймаємо вже зараз), а також інструкція до нього (/pl/mikrosait/instrukcja/) та серія про Голосник із шести епізодів (/pl/holosnyk/).
+Основна версія українською (/ua/), повна англійська версія (/en/). Польською є головна історія (/pl/), кейси (/pl/cases/), форма замовлення (/pl/order/), блог із тринадцятьма статтями (/pl/blog/) і сторінка акції мікросайту (/pl/mikrosait/; за межами України акція діє з 1 лютого 2027, заявки приймаємо вже зараз), а також інструкція до нього (/pl/mikrosait/instrukcja/) та серія про Голосник із шести епізодів (/pl/holosnyk/).
