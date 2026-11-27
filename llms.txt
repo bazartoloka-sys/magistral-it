@@ -33,6 +33,7 @@ Magistral IT робить мобільні застосунки та інтер�
 - [Додаток разом зі штучним інтелектом: що робить він, а що людина](https://magistral-it.com/ua/blog/dodatok-razom-zi-shi/)
 - [Чи можна зробити додаток самому за допомогою ШІ](https://magistral-it.com/ua/blog/dodatok-samomu-za-dopomohoiu-shi/)
 - [Як ми працюємо з Claude: порядок, який тримає проєкт](https://magistral-it.com/ua/blog/yak-my-pratsiuiemo-z-claude/)
+- [Тренди вебдизайну 2027: п’ять напрямків і що з них брати малому бізнесу](https://magistral-it.com/ua/blog/trendy-vebdyzainu-2027/)
 
 ## Мінісеріал «Навіщо ми зробили Голосник»
 
@@ -65,7 +66,8 @@ Magistral IT is an IT agency building mobile apps and web solutions for business
 - [Building an app with AI: what it does and what a person does](https://magistral-it.com/en/blog/building-an-app-with-ai/)
 - [Can you build an app yourself with the help of AI](https://magistral-it.com/en/blog/build-an-app-yourself-with-ai/)
 - [How we work with Claude: the routine that holds a project together](https://magistral-it.com/en/blog/how-we-work-with-claude/)
+- [Web design trends 2027: five directions and what a small business should take](https://magistral-it.com/en/blog/web-design-trends-2027/)
 
 ## Мови
 
-Основна версія українською (/ua/), повна англійська версія (/en/). Польською є головна історія (/pl/), кейси (/pl/cases/), форма замовлення (/pl/order/), блог із тринадцятьма статтями (/pl/blog/) і сторінка акції мікросайту (/pl/mikrosait/; за межами України акція діє з 1 лютого 2027, заявки приймаємо вже зараз), а також інструкція до нього (/pl/mikrosait/instrukcja/) та серія про Голосник із шести епізодів (/pl/holosnyk/).
+Основна версія українською (/ua/), повна англійська версія (/en/). Польською є головна історія (/pl/), кейси (/pl/cases/), форма замовлення (/pl/order/), блог із чотирнадцятьма статтями (/pl/blog/) і сторінка акції мікросайту (/pl/mikrosait/; за межами України акція діє з 1 лютого 2027, заявки приймаємо вже зараз), а також інструкція до нього (/pl/mikrosait/instrukcja/) та серія про Голосник із шести епізодів (/pl/holosnyk/).
